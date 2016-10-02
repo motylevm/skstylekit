@@ -1,0 +1,13 @@
+{
+    "zIndex": 10,
+    "category1": {
+        
+        "style1": {
+            "param1": 1
+        },
+        
+        "style2": {
+            "param1": 1
+        }
+    }
+}

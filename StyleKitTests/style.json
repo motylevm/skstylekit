@@ -1,0 +1,50 @@
+{
+    "zIndex": 50,
+    "category1": {
+        
+        "style1": {
+            
+            "@2x": {
+                "param2": "2",
+                "param3": true
+            },
+            "param1": 1
+        },
+        
+        "style2": {
+            "param1": 1
+        },
+        
+        "style3": {},
+        
+        "style4": {
+            "param1": 1,
+            "param2@2x": 2,
+            "param3@tv": 3
+        },
+        
+        "subCategory1-1": {
+            
+            "style5": {},
+            
+            "subCategory2-1": {
+                
+                "style6": {},
+                "style7": {}
+            },
+            
+            "subCategory2-2": {
+                
+                "style8": {}
+            }
+        }
+    },
+    
+    "category2": {
+        
+        "style9": {},
+        "style10": {}
+    },
+    
+    "style11": {}
+}

@@ -1,0 +1,55 @@
+{
+
+        "style1": {
+            
+            "aliases": ["category1.style1"],
+            "param2": "2",
+            "param3": true,
+            "param1": 1
+        },
+        
+        "style2": {
+            
+            "aliases": ["category1.style2"],
+            "param1": 1
+        },
+        
+        "style3": {
+            "aliases": ["category1.style3"]
+        },
+        
+        "style4": {
+            
+            "aliases": ["category1.style4"],
+            "param1": 1,
+            "param2": 2,
+            "param3": 3
+        },
+        
+        "style5": {
+            "aliases": ["subCategory1-1.style5", "category1.subCategory1-1.style5"]
+        },
+    
+        "style6": {
+            "aliases": ["subCategory2-1.style6", "subCategory1-1.subCategory2-1.style6", "category1.subCategory1-1.subCategory2-1.style6"]
+        },
+    
+        "style7": {
+            "aliases": ["subCategory2-1.style7", "subCategory1-1.subCategory2-1.style7", "category1.subCategory1-1.subCategory2-1.style7"]
+        },
+    
+        "style8": {
+            "aliases": ["subCategory2-2.style8", "subCategory1-1.subCategory2-2.style8", "category1.subCategory1-1.subCategory2-2.style8"]
+        },
+
+        "style9": {
+            "aliases": ["category2.style9"]
+        },
+    
+        "style10": {
+            "aliases": ["category2.style10"]
+        },
+  
+        "style11": {
+        }
+}

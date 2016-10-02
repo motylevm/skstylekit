@@ -1,0 +1,23 @@
+{
+    "styleKit": {
+        
+        "color": {
+            
+            "black": { "color": "#000000" },
+            "darkGray": { "color": "#545454" },
+            "lightGray": { "color": "#AAAAAA" },
+            "white": { "color": "#FFFFFF" },
+            "gray": { "color": "#7F7F7F" },
+            "red": { "color": "#FF0000" },
+            "green": { "color": "#00FF00" },
+            "blue": { "color": "#0000FF" },
+            "cyan": { "color": "#00FFFF" },
+            "yellow": { "color": "#FFFF00" },
+            "magenta": { "color": "#FF00FF" },
+            "orange": { "color": "#FF7F00" },
+            "purple": { "color": "#7F007F" },
+            "brown": { "color": "#996633" },
+            "clear": { "color": "#00000000" }
+        }
+    }
+}

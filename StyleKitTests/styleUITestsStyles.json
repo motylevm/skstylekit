@@ -1,0 +1,71 @@
+{
+    "color": {
+      
+        "black": {"color": "#000000"},
+        "white": {"color": "#000000"},
+        "red": {"color": "#FF0000"},
+        "green": {"color": "#00FF00"},
+        "blue": {"color": "#0000FF"}
+    },
+    
+    "controls": {
+    
+        "viewStyle": {
+            
+            "backgroundColor": "red",
+            "cornerRadius": 5,
+            "borderWidth": 4,
+            "borderColor": "color.green",
+            "alpha": 0.5,
+            "shadowRadius": 3,
+            "shadowOffset": "{3,2}",
+            "shadowColor": "blue",
+            "shadowOpacity": 0.3
+        },
+        
+        "labelStyle": {
+            
+            "parent": "viewStyle",
+            "fontStyle": "bold",
+            "fontSize": 21,
+            "fontColor": "green",
+            "fontKern": 0.1,
+            "fontLineSpacing": 15,
+            "fontLineHeightMultiple": 3,
+            "fontMinimumLineHeight": 10,
+            "fontMaximumLineHeight": 50,
+            "textAlignment": "right",
+            "textParagraphSpacing": 12,
+            "textParagraphFirstLineHeadIndent": 20,
+            "textParagraphHeadIndent": 4,
+            "textParagraphTailIndent": 8,
+            "textParagraphSpacingBefore": 7,
+            "textHyphenationFactor": 1.5,
+            "textUnderline": "double",
+            "textUnderlinePattern": "dashDotDot"
+
+        },
+        
+        "controlStyle": {
+            
+            "parent": "labelStyle",
+            "contentVerticalAlignment": "top",
+            "contentHorizontalAlignment": "right"
+        },
+        
+        "switchStyle": {
+            
+            "parent": "controlStyle",
+            "onTintColor": "blue",
+            "thumbTintColor": "red"
+        },
+        
+        "buttonNormal": {
+            
+            "parent": "controlStyle",
+            "fontSize": 21,
+            "textAlignment": "right",
+            "fontColor": "green"
+        }
+    }
+}
