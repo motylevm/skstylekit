@@ -156,9 +156,10 @@ public class StyleKit: NSObject {
     
     // MARK: - Logging
     class func log(_ message: String) {
-        guard sharedInstance?.configuration.suppressLogMessages == false else { return }
-            
-        NSLog(message)
+        
+        if sharedInstance == nil || sharedInstance?.configuration.suppressLogMessages == false {
+            NSLog(message)
+        }
     }
 }
 
