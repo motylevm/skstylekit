@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 
     s.version               = '0.6.0'
 
-    s.homepage              = ''
+    s.homepage              = 'https://github.com/motylevm/stylekit'
     s.summary               = 'Framework for styling visual elements in ios apps'
 
     s.author                = { 'Mikhail Motylev' => 'revenantdr@mail.ru' }
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '8.0'
 
     s.source_files          = { 'Sources/*.swift', 'Res/*.json' }
-    s.source                = { :git => 'https://github.com/maxsokolov/TableKit.git', :tag => s.version }
+    s.source                = { :git => 'https://github.com/motylevm/stylekit.git', :tag => s.version }
 end
