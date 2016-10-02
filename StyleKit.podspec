@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
     s.platforms             = { :ios => '8.0' }
     s.ios.deployment_target = '8.0'
 
-    s.source_files          = { 'Sources/*.swift', 'Res/*.json' }
+    s.source_files          = 'Sources/*.swift'
+    s.resources             = 'Res/*.json'
     s.source                = { :git => 'https://github.com/motylevm/stylekit.git', :tag => s.version }
 end
