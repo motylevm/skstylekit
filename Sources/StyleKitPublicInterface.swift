@@ -33,7 +33,8 @@ public extension StyleKit {
     
     // MARK: - Style methods
     public class func style(withName name: String?) -> SKStyle? {
-        
+        guard let name = name else { return nil }
+ 
         guard let styleKit = sharedInstance else {
             
             StyleKit.log("Style kit is not initialized, call initStyleKit()")
