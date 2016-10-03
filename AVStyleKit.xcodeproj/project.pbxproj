@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87A501301D9F9A00007CA1EC /* StyleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A501261D9F9A00007CA1EC /* StyleKit.framework */; };
+		87A501301D9F9A00007CA1EC /* AVStyleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A501261D9F9A00007CA1EC /* AVStyleKit.framework */; };
 		87A5016A1D9F9B91007CA1EC /* DefaultStyleKitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501411D9F9B91007CA1EC /* DefaultStyleKitFactory.swift */; };
 		87A5016B1D9F9B91007CA1EC /* SKBaseConditionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501421D9F9B91007CA1EC /* SKBaseConditionFactory.swift */; };
 		87A5016C1D9F9B91007CA1EC /* SKBaseConditionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501431D9F9B91007CA1EC /* SKBaseConditionProcessor.swift */; };
@@ -93,9 +93,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		87A501261D9F9A00007CA1EC /* StyleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StyleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A501261D9F9A00007CA1EC /* AVStyleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVStyleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A5012A1D9F9A00007CA1EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87A5012F1D9F9A00007CA1EC /* StyleKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StyleKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A5012F1D9F9A00007CA1EC /* AVStyleKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVStyleKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A501361D9F9A00007CA1EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87A501411D9F9B91007CA1EC /* DefaultStyleKitFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultStyleKitFactory.swift; path = Sources/DefaultStyleKitFactory.swift; sourceTree = SOURCE_ROOT; };
 		87A501421D9F9B91007CA1EC /* SKBaseConditionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKBaseConditionFactory.swift; path = Sources/SKBaseConditionFactory.swift; sourceTree = SOURCE_ROOT; };
@@ -183,7 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A501301D9F9A00007CA1EC /* StyleKit.framework in Frameworks */,
+				87A501301D9F9A00007CA1EC /* AVStyleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,8 +202,8 @@
 		87A501271D9F9A00007CA1EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87A501261D9F9A00007CA1EC /* StyleKit.framework */,
-				87A5012F1D9F9A00007CA1EC /* StyleKitTests.xctest */,
+				87A501261D9F9A00007CA1EC /* AVStyleKit.framework */,
+				87A5012F1D9F9A00007CA1EC /* AVStyleKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -485,9 +485,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		87A501251D9F9A00007CA1EC /* StyleKit */ = {
+		87A501251D9F9A00007CA1EC /* AVStyleKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87A5013A1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "StyleKit" */;
+			buildConfigurationList = 87A5013A1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "AVStyleKit" */;
 			buildPhases = (
 				87A501211D9F9A00007CA1EC /* Sources */,
 				87A501221D9F9A00007CA1EC /* Frameworks */,
@@ -498,14 +498,14 @@
 			);
 			dependencies = (
 			);
-			name = StyleKit;
+			name = AVStyleKit;
 			productName = StyleKit;
-			productReference = 87A501261D9F9A00007CA1EC /* StyleKit.framework */;
+			productReference = 87A501261D9F9A00007CA1EC /* AVStyleKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		87A5012E1D9F9A00007CA1EC /* StyleKitTests */ = {
+		87A5012E1D9F9A00007CA1EC /* AVStyleKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87A5013D1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "StyleKitTests" */;
+			buildConfigurationList = 87A5013D1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "AVStyleKitTests" */;
 			buildPhases = (
 				87A5012B1D9F9A00007CA1EC /* Sources */,
 				87A5012C1D9F9A00007CA1EC /* Frameworks */,
@@ -516,9 +516,9 @@
 			dependencies = (
 				87A501321D9F9A00007CA1EC /* PBXTargetDependency */,
 			);
-			name = StyleKitTests;
+			name = AVStyleKitTests;
 			productName = StyleKitTests;
-			productReference = 87A5012F1D9F9A00007CA1EC /* StyleKitTests.xctest */;
+			productReference = 87A5012F1D9F9A00007CA1EC /* AVStyleKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -543,7 +543,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 87A501201D9F9A00007CA1EC /* Build configuration list for PBXProject "StyleKit" */;
+			buildConfigurationList = 87A501201D9F9A00007CA1EC /* Build configuration list for PBXProject "AVStyleKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -555,8 +555,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87A501251D9F9A00007CA1EC /* StyleKit */,
-				87A5012E1D9F9A00007CA1EC /* StyleKitTests */,
+				87A501251D9F9A00007CA1EC /* AVStyleKit */,
+				87A5012E1D9F9A00007CA1EC /* AVStyleKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -670,7 +670,7 @@
 /* Begin PBXTargetDependency section */
 		87A501321D9F9A00007CA1EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 87A501251D9F9A00007CA1EC /* StyleKit */;
+			target = 87A501251D9F9A00007CA1EC /* AVStyleKit */;
 			targetProxy = 87A501311D9F9A00007CA1EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -788,7 +788,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stylekit.StyleKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stylekit.AVStyleKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -809,7 +809,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stylekit.StyleKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stylekit.AVStyleKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -846,7 +846,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		87A501201D9F9A00007CA1EC /* Build configuration list for PBXProject "StyleKit" */ = {
+		87A501201D9F9A00007CA1EC /* Build configuration list for PBXProject "AVStyleKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87A501381D9F9A00007CA1EC /* Debug */,
@@ -855,7 +855,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87A5013A1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "StyleKit" */ = {
+		87A5013A1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "AVStyleKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87A5013B1D9F9A00007CA1EC /* Debug */,
@@ -864,7 +864,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87A5013D1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "StyleKitTests" */ = {
+		87A5013D1D9F9A00007CA1EC /* Build configuration list for PBXNativeTarget "AVStyleKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87A5013E1D9F9A00007CA1EC /* Debug */,

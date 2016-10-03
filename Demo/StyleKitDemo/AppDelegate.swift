@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import StyleKit
+import AVStyleKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
