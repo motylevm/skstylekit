@@ -31,6 +31,10 @@ public extension StyleKit {
         sharedInstance = StyleKit(withConfiguration: configuration)
     }
     
+    public class func isInitialized() -> Bool {
+        return sharedInstance != nil
+    }
+    
     // MARK: - Style methods
     public class func style(withName name: String?) -> SKStyle? {
         guard let name = name else { return nil }
