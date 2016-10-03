@@ -20,7 +20,7 @@
 
 
 import XCTest
-@testable import StyleKit
+@testable import SKStyleKit
 
 class SKStyleHierarchyTests: XCTestCase {
     

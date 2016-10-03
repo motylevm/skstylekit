@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F567BCF1DA29087009AA6ED /* AVStyleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F567BCC1DA29078009AA6ED /* AVStyleKit.framework */; };
-		6F567BD01DA29087009AA6ED /* AVStyleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F567BCC1DA29078009AA6ED /* AVStyleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6F567BDD1DA297AD009AA6ED /* SKStyleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F567BDA1DA297A4009AA6ED /* SKStyleKit.framework */; };
+		6F567BDE1DA297AD009AA6ED /* SKStyleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F567BDA1DA297A4009AA6ED /* SKStyleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87338F941D9FC6E700D06BF7 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 87338F931D9FC6E700D06BF7 /* style.json */; };
 		87A501F01D9FA48F007CA1EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501EF1D9FA48F007CA1EC /* AppDelegate.swift */; };
 		87A501F21D9FA48F007CA1EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501F11D9FA48F007CA1EC /* ViewController.swift */; };
@@ -18,26 +18,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6F567BCB1DA29078009AA6ED /* PBXContainerItemProxy */ = {
+		6F567BD91DA297A4009AA6ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6F567BC61DA29078009AA6ED /* AVStyleKit.xcodeproj */;
+			containerPortal = 6F567BD41DA297A4009AA6ED /* SKStyleKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 87A501261D9F9A00007CA1EC;
-			remoteInfo = AVStyleKit;
+			remoteInfo = SKStyleKit;
 		};
-		6F567BCD1DA29078009AA6ED /* PBXContainerItemProxy */ = {
+		6F567BDB1DA297A4009AA6ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6F567BC61DA29078009AA6ED /* AVStyleKit.xcodeproj */;
+			containerPortal = 6F567BD41DA297A4009AA6ED /* SKStyleKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 87A5012F1D9F9A00007CA1EC;
-			remoteInfo = AVStyleKitTests;
+			remoteInfo = SKStyleKitTests;
 		};
-		6F567BD11DA29087009AA6ED /* PBXContainerItemProxy */ = {
+		6F567BDF1DA297AD009AA6ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6F567BC61DA29078009AA6ED /* AVStyleKit.xcodeproj */;
+			containerPortal = 6F567BD41DA297A4009AA6ED /* SKStyleKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 87A501251D9F9A00007CA1EC;
-			remoteInfo = AVStyleKit;
+			remoteInfo = SKStyleKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -48,7 +48,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6F567BD01DA29087009AA6ED /* AVStyleKit.framework in Embed Frameworks */,
+				6F567BDE1DA297AD009AA6ED /* SKStyleKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,7 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6F567BC61DA29078009AA6ED /* AVStyleKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVStyleKit.xcodeproj; path = ../AVStyleKit.xcodeproj; sourceTree = "<group>"; };
+		6F567BD41DA297A4009AA6ED /* SKStyleKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SKStyleKit.xcodeproj; path = ../SKStyleKit.xcodeproj; sourceTree = "<group>"; };
 		87338F931D9FC6E700D06BF7 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		87A501EC1D9FA48F007CA1EC /* StyleKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A501EF1D9FA48F007CA1EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,18 +72,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F567BCF1DA29087009AA6ED /* AVStyleKit.framework in Frameworks */,
+				6F567BDD1DA297AD009AA6ED /* SKStyleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F567BC71DA29078009AA6ED /* Products */ = {
+		6F567BD51DA297A4009AA6ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6F567BCC1DA29078009AA6ED /* AVStyleKit.framework */,
-				6F567BCE1DA29078009AA6ED /* AVStyleKitTests.xctest */,
+				6F567BDA1DA297A4009AA6ED /* SKStyleKit.framework */,
+				6F567BDC1DA297A4009AA6ED /* SKStyleKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,7 +91,7 @@
 		87A501E31D9FA48F007CA1EC = {
 			isa = PBXGroup;
 			children = (
-				6F567BC61DA29078009AA6ED /* AVStyleKit.xcodeproj */,
+				6F567BD41DA297A4009AA6ED /* SKStyleKit.xcodeproj */,
 				87A501EE1D9FA48F007CA1EC /* StyleKitDemo */,
 				87A501ED1D9FA48F007CA1EC /* Products */,
 				87A502151D9FA7C7007CA1EC /* Frameworks */,
@@ -142,7 +142,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6F567BD21DA29087009AA6ED /* PBXTargetDependency */,
+				6F567BE01DA297AD009AA6ED /* PBXTargetDependency */,
 			);
 			name = StyleKitDemo;
 			productName = StyleKitDemo;
@@ -179,8 +179,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 6F567BC71DA29078009AA6ED /* Products */;
-					ProjectRef = 6F567BC61DA29078009AA6ED /* AVStyleKit.xcodeproj */;
+					ProductGroup = 6F567BD51DA297A4009AA6ED /* Products */;
+					ProjectRef = 6F567BD41DA297A4009AA6ED /* SKStyleKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -191,18 +191,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6F567BCC1DA29078009AA6ED /* AVStyleKit.framework */ = {
+		6F567BDA1DA297A4009AA6ED /* SKStyleKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = AVStyleKit.framework;
-			remoteRef = 6F567BCB1DA29078009AA6ED /* PBXContainerItemProxy */;
+			path = SKStyleKit.framework;
+			remoteRef = 6F567BD91DA297A4009AA6ED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6F567BCE1DA29078009AA6ED /* AVStyleKitTests.xctest */ = {
+		6F567BDC1DA297A4009AA6ED /* SKStyleKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = AVStyleKitTests.xctest;
-			remoteRef = 6F567BCD1DA29078009AA6ED /* PBXContainerItemProxy */;
+			path = SKStyleKitTests.xctest;
+			remoteRef = 6F567BDB1DA297A4009AA6ED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -234,10 +234,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6F567BD21DA29087009AA6ED /* PBXTargetDependency */ = {
+		6F567BE01DA297AD009AA6ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = AVStyleKit;
-			targetProxy = 6F567BD11DA29087009AA6ED /* PBXContainerItemProxy */;
+			name = SKStyleKit;
+			targetProxy = 6F567BDF1DA297AD009AA6ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

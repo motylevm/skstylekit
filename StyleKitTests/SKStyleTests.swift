@@ -19,7 +19,7 @@
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import XCTest
-@testable import StyleKit
+@testable import SKStyleKit
 
 class SKStyleTests: XCTestCase {
     

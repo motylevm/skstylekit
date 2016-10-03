@@ -21,7 +21,7 @@
 
 import UIKit
 import XCTest
-@testable import StyleKit
+@testable import SKStyleKit
 
 class TestClass {
     
