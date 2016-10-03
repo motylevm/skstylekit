@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.homepage              = 'https://github.com/motylevm/stylekit'
     s.summary               = 'Framework for styling visual elements in ios apps'
 
-    s.author                = { 'Mikhail Motylev' => 'revenantdr@mail.ru' }
+    s.author                = { 'Mikhail Motylev' => 'motylevm@gmail.com' }
     s.license               = { :type => 'MIT', :file => 'LICENSE' }
     s.platforms             = { :ios => '8.0' }
     s.ios.deployment_target = '8.0'
