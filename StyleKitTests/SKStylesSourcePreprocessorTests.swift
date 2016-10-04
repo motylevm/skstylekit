@@ -33,6 +33,17 @@ class SKBaseConditionProcessorMock: SKBaseConditionProcessor {
     }
 }
 
+class SKBaseConditionProcessorMock2: SKBaseConditionProcessor {
+    
+    override func checkCondition(key: String) throws -> Bool {
+        return key.range(of: "@2x") != nil
+    }
+    
+    override func checkParamWithCondition(key: String) throws -> (valid: Bool, param: String) {
+        return (true, try super.checkParamWithCondition(key: key).param)
+    }
+}
+
 class SKStylesSourcePreprocessorTests: XCTestCase {
     
     private var preprocessor: SKStylesSourcePreprocessor!
@@ -122,5 +133,19 @@ class SKStylesSourcePreprocessorTests: XCTestCase {
         
         // then
         XCTAssertThrowsError(try preprocessor.preprocess(source: json))
+    }
+    
+    func testPreprocessSameParam() {
+        
+        // given
+        let json: [String: [String: Any]] = ["style1": ["size@1x": 1, "size@2x": 0.5, "size@3x": 0.333]]
+        let expected: [String: [String: Any]] = ["style1": ["size": 0.5]]
+        let preprocessor = SKStylesSourcePreprocessor(conditionProcessor: SKBaseConditionProcessorMock2())
+        
+        // when
+        let processed = try! preprocessor.preprocess(source: json)
+        
+        // then
+        XCTAssertEqual(expected as NSDictionary, processed as NSDictionary)
     }
 }

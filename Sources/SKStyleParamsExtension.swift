@@ -26,6 +26,10 @@ public extension SKStyle {
     public var color: UIColor? {
         return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
     }
+    
+    public var size: CGFloat? {
+        return cgFloatValue(forKey: #function)
+    }
    
     // MARK: - [View] Properties
     

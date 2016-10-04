@@ -1,6 +1,16 @@
 {
     "styleKit": {
         
+        "size": {
+          
+            "1pixel": {
+                
+                "size@1x": 1,
+                "size@2x": 0.5,
+                "size@3x": 0.333333
+            }
+        },
+        
         "color": {
             
             "black": { "color": "#000000" },

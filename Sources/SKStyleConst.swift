@@ -30,4 +30,7 @@ let parametersAliases: [String: [String]] = ["fontColor": ["color"],
                                              "shadowColor": ["color"],
                                              "onTintColor": ["color"],
                                              "thumbTintColor": ["color"],
-                                             "tintColor": ["color"]]
+                                             "tintColor": ["color"],
+                                             "borderWidth": ["size"],
+                                             "fontSize": ["size"],
+                                             "shadowRadius": ["size"]]
