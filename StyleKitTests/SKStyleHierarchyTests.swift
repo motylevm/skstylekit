@@ -123,7 +123,7 @@ class SKStyleHierarchyTests: XCTestCase {
         let style2 = provider.style(withName: "style2")!
         
         // when
-        let sourceStyle = try! style2.sourceStyle(key: "p1", fromProvider: provider)!
+        let sourceStyle = try! style2.sourceStyle(key: "p1", fromProvider: provider, except: ["style2"])!
         
         // then
         XCTAssertEqual(sourceStyle.name, style1.name)
@@ -138,7 +138,7 @@ class SKStyleHierarchyTests: XCTestCase {
         
         // when
         // then
-        XCTAssertThrowsError(try style3.sourceStyle(key: "p1", fromProvider: provider))
+        XCTAssertThrowsError(try style3.sourceStyle(key: "p1", fromProvider: provider, except: ["style3"]))
     }
     
     func testSourcePopulatedParamForKey() {
@@ -149,7 +149,7 @@ class SKStyleHierarchyTests: XCTestCase {
         let style2 = provider.style(withName: "style2")!
         
         // when
-        let param = try! style2.populatedParam(key: "p1", fromProvider: provider)
+        let param = try! style2.populatedParam(key: "p1", fromProvider: provider, except: ["style2"])
         let numberParam = (param as? NSNumber)?.floatValue
         
         // then

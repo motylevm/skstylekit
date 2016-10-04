@@ -42,75 +42,52 @@ public class StyleKit: NSObject {
         
         for provider in styleSourceProviders() {
             
-            var newStyles = [SKStyle]()
-            newStyles.reserveCapacity(provider.source.count)
-            
             for (name, source) in provider.source {
                 
                 guard let source = source as? [String: Any] else { continue }
                 guard let newStyle = configuration.factory.style(withSource: source, name: name) else { continue }
-                
-                newStyles.append(newStyle)
                 
                 styles[name] = newStyle
                 newStyle.aliases?.forEach({
                     styles[$0] = newStyle
                 })
             }
+        }
         
-            populateParents(inStyles: newStyles)
-            populateParams(inStyles: newStyles)
+        for (_, style) in styles {
+            populateParents(inStyle: style)
+        }
+        
+        for (_, style) in styles {
+            populateParams(inStyle: style)
         }
     }
     
-    private func populateParents(inStyles: [SKStyle]) {
+    private func populateParents(inStyle style: SKStyle) {
+        guard !style.isParentsPopulated else { return }
         
-        for style in inStyles {
-            guard !style.wasPopulated else { continue }
-            
-            do {
-                try style.populateParents(fromProvider: self)
-                
-            } catch SKError.styleHaveCircularReference(let name) {
-                
-                StyleKit.log("Style kit error: style  \(name) referencing to itself")
-                continue
-                
-            } catch SKError.styleParentNotFound(let parentStyle) {
-                
-                StyleKit.log("Style kit error: style \(style.name) parent \(parentStyle) not found")
-                continue
-                
-            } catch {
-                
-                StyleKit.log("Style kit error: error resolving hierarchy for style \(style.name)")
-                continue
-            }
+        do {
+            try style.populateParents(fromProvider: self)
+        } catch SKError.styleHaveCircularReference(let name) {
+            StyleKit.log("Style kit error: style  \(name) referencing to itself")
+        } catch SKError.styleParentNotFound(let parentStyle) {
+            StyleKit.log("Style kit error: style \(style.name) parent \(parentStyle) not found")
+        } catch {
+            StyleKit.log("Style kit error: error resolving hierarchy for style \(style.name)")
         }
     }
     
-    private func populateParams(inStyles: [SKStyle]) {
+    private func populateParams(inStyle style: SKStyle) {
+        guard !style.isParamsPopulated else { return }
         
-        for style in inStyles {
-            
-            do {
-                try style.populateParams(fromProvider: self)
-                
-            } catch SKError.styleHaveCircularReference(let name) {
-                
-                StyleKit.log("Style kit error: style  \(name) referencing to itself")
-                continue
-                
-            } catch SKError.styleParentNotFound(let parentStyle) {
-                
-                StyleKit.log("Style kit error: style \(style.name) parent \(parentStyle) not found")
-                continue
-                
-            } catch {
-                
-                StyleKit.log("Style kit error: error resolving hierarchy for param in style \(style.name)")
-                continue
-            }
+        do {
+            try style.populateParams(fromProvider: self)
+        } catch SKError.styleHaveCircularReference(let name) {
+            StyleKit.log("Style kit error: style  \(name) referencing to itself")
+        } catch SKError.styleParentNotFound(let parentStyle) {
+            StyleKit.log("Style kit error: style \(style.name) parent \(parentStyle) not found")
+        } catch {
+            StyleKit.log("Style kit error: error resolving hierarchy for param in style \(style.name)")
         }
     }
     

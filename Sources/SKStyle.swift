@@ -26,7 +26,8 @@ open class SKStyle: NSObject {
     public private(set) var source: [String: Any] = [:]
     public private(set) var name: String = ""
     public private(set) var aliases: [String]?
-    private(set) var wasPopulated: Bool = false
+    private(set) var isParentsPopulated: Bool = false
+    private(set) var isParamsPopulated: Bool = false
     
     // MARK: - Calculated Properties
 
@@ -137,12 +138,12 @@ open class SKStyle: NSObject {
     }
     
     func populateParents(fromProvider provider: SKStylesProvider, except: [String]) throws {
-        guard !wasPopulated else { return }
+        guard !isParentsPopulated else { return }
         
         let parentsStyles = try self.parentsStyles(fromProvider: provider, except: except)
         
         for parentsStyle in parentsStyles {
-            guard !parentsStyle.wasPopulated else { continue }
+            guard !parentsStyle.isParentsPopulated else { continue }
             
             let parentExcept: [String] = except + [parentsStyle.name] + (parentsStyle.aliases ?? [])
             try parentsStyle.populateParents(fromProvider: provider, except: parentExcept)
@@ -152,7 +153,7 @@ open class SKStyle: NSObject {
         source = SKStyle.concat(styleSources: parentSources + [source])
         
         removeParentsLinks()
-        wasPopulated = true
+        isParentsPopulated = true
     }
     
     class func concat(styleSources: [[String: Any]]) -> [String: Any] {
@@ -171,21 +172,22 @@ open class SKStyle: NSObject {
         return result
     }
     
-    func sourceStyle(key: String, fromProvider provider: SKStylesProvider) throws -> SKStyle? {
-        
+    func sourceStyle(key: String, fromProvider provider: SKStylesProvider, except: [String]) throws -> SKStyle? {
         guard let value = stringValue(forKey: key) else { return nil }
-        guard let style = provider.style(withName: value) else { return nil }
         
-        guard value != name else {
+        guard !except.contains(value) else {
             throw SKError.styleHaveCircularReference(name)
         }
         
-        return style
+        return provider.style(withName: value)
     }
     
-    func populatedParam(key: String, fromProvider provider: SKStylesProvider) throws -> Any? {
+    func populatedParam(key: String, fromProvider provider: SKStylesProvider, except: [String]) throws -> Any? {
+        guard let style = try sourceStyle(key: key, fromProvider: provider, except: except) else { return nil }
         
-        guard let style = try sourceStyle(key: key, fromProvider: provider) else { return nil }
+        if !style.isParamsPopulated {
+            try style.populateParams(fromProvider: provider, except: except + [style.name] + (style.aliases ?? []))
+        }
         
         if let value = style.styleValue(forKey: key) {
             return value
@@ -194,15 +196,22 @@ open class SKStyle: NSObject {
         return nil
     }
     
-    func populateParams(fromProvider provider: SKStylesProvider) throws {
+    func populateParams(fromProvider provider: SKStylesProvider, except: [String]) throws {
+        guard !isParamsPopulated else { return }
         
         for key in Array(source.keys) {
             
             guard key != parentKey && key != parentsKey else { continue }
 
-            if let newValue = try populatedParam(key: key, fromProvider: provider) {
+            if let newValue = try populatedParam(key: key, fromProvider: provider, except: except) {
                 source[key] = newValue
             }
         }
+        
+        isParamsPopulated = true
+    }
+    
+    func populateParams(fromProvider provider: SKStylesProvider) throws {
+        try populateParams(fromProvider: provider, except: [name] + (aliases ?? []))
     }
 }
