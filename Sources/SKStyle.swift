@@ -84,7 +84,10 @@ open class SKStyle: NSObject {
             activeRange.length = result.length - activeRange.location
         }
         
-        result.addAttributes(textAttributes(defaultParagraphStyle: defaultParagraphStyle), range: activeRange)
+        if let textAttributes = textAttributes(defaultParagraphStyle: defaultParagraphStyle) {
+            result.addAttributes(textAttributes, range: activeRange)
+        }
+        
         return result
     }
     

@@ -17,20 +17,23 @@
 //    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 import UIKit
 
-public extension UISwitch {
+public extension SKStyle {
     
-    public func sk_apply(switchStyle style: SKStyle?) {
+    public func apply(textView: UITextView?, text: String?) {
         
-        sk_apply(controlStyle: style)
+        apply(view: textView)
         
-        if let onTintColor = style?.onTintColor {
-            self.onTintColor = onTintColor
+        textView?.attributedText = StyleKit.string(withStyle: self, string: text, defaultParagraphStyle: textView?.sk_defaultParagraphStyle())
+        
+        if let textAttributes = textAttributes() {
+            textView?.typingAttributes = textAttributes
         }
         
-        if let thumbTintColor = style?.thumbTintColor {
-            self.thumbTintColor = thumbTintColor
+        if let textAlignment = textAlignment {
+            textView?.textAlignment = textAlignment
         }
     }
 }

@@ -172,11 +172,11 @@ open class SKButton: UIButton {
         if includeTextStyle {
             
             let title = self.title(for: state)
-            sk_apply(title: title, withStyle: style, forState: state)
+            style?.apply(button: self, title: title, forState: state)
             hasExternalAttributedText.updateValue(false, forKey: state.rawValue)
         }
         else {
-            sk_apply(viewStyle: style)
+            style?.apply(control: self)
         }
     }
     

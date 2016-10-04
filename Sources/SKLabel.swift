@@ -49,11 +49,11 @@ open class SKLabel: UILabel {
         
         if includeTextStyle {
             
-            sk_apply(text: text, withStyle: style)
+            style?.apply(label: self, text: text)
             hasExternalAttributedText = false
         }
         else {
-            sk_apply(viewStyle: style)
+            style?.apply(view: self)
         }
     }
     

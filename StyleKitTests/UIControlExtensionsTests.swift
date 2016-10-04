@@ -37,7 +37,7 @@ class UIControlExtensionsTests: XCTestCase {
         let control = UIControl()
         
         // when
-        control.sk_apply(controlStyle: style)
+        style?.apply(control: control)
         
         // then
         XCTAssertNotNil(style)

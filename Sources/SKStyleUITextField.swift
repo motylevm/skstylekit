@@ -20,12 +20,25 @@
 
 import UIKit
 
-public extension UITextField {
+public extension SKStyle {
     
-    func sk_defaultParagraphStyle() -> NSParagraphStyle {
+    public func apply(textField: UITextField?, text: String?) {
         
-        let result = NSMutableParagraphStyle()
-        result.alignment = textAlignment
-        return result
+        apply(control: textField)
+        
+        if let textAttributes = textAttributes(defaultParagraphStyle: textField?.sk_defaultParagraphStyle()) {
+            
+            textField?.defaultTextAttributes = textAttributes
+        }
+
+        textField?.attributedText = StyleKit.string(withStyle: self, string: text, defaultParagraphStyle: textField?.sk_defaultParagraphStyle())
+        
+        if let textAlignment = textAlignment {
+            textField?.textAlignment = textAlignment
+        }
+    }
+    
+    public func apply(textField: UITextField?, placeholderText text: String?) {
+        textField?.attributedPlaceholder = StyleKit.string(withStyle: self, string: text)
     }
 }

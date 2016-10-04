@@ -71,17 +71,17 @@ open class SKTextField: UITextField {
         
         if includeTextStyle {
             
-            sk_apply(text: text, withStyle: style)
+            style?.apply(textField: self, text: text)
             hasExternalAttributedText = false
         }
         else {
-            sk_apply(viewStyle: style)
+            style?.apply(control: self)
         }
     }
     
     private func applyCurrentPlaceholderStyle() {
         
-        sk_apply(placeholderText: placeholder, withStyle: placeholderStyle)
+        placeholderStyle?.apply(textField: self, text: placeholder)
         hasExternalAttributedPlaceholder = false
     }
     

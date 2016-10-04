@@ -22,22 +22,6 @@ import UIKit
 
 public extension UIButton {
     
-    public func sk_apply(title: String?, withStyle style: SKStyle?, forState state: UIControlState) {
-        
-        sk_apply(controlStyle: style)
-        
-        let styledTitle = StyleKit.string(withStyle: style, string: title, defaultParagraphStyle: sk_defaultParagraphStyle())
-        setAttributedTitle(styledTitle, for: state)
-        
-        if buttonType != UIButtonType.custom {
-            StyleKit.log("Style kit warning: style support for non custom button types is limited, consider changing button type to custom")
-        }
-        
-        if let _ = style?.textAlignment {
-            StyleKit.log("Style kit warning: textAlignment have no effect on UIButton, use contentHorizontalAlignment instead")
-        }
-    }
-    
     func sk_defaultParagraphStyle() -> NSParagraphStyle {
         
         let resutl = NSMutableParagraphStyle()

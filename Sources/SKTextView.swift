@@ -49,11 +49,11 @@ open class SKTextView: UITextView {
         
         if includeTextStyle {
             
-            sk_apply(text: text, withStyle: style)
+            style?.apply(textView: self, text: text)
             hasExternalAttributedText = false
         }
         else {
-            sk_apply(viewStyle: style)
+            style?.apply(view: self)
         }
     }
     

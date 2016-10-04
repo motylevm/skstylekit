@@ -37,7 +37,7 @@ open class SKSwitch: UISwitch {
     open var style: SKStyle? {
         
         didSet {
-            sk_apply(switchStyle: style)
+            style?.apply(switchControl: self)
         }
     }
 }

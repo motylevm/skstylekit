@@ -22,18 +22,6 @@ import UIKit
 
 public extension UITextView {
     
-    public func sk_apply(text: String?, withStyle style: SKStyle?) {
-        
-        sk_apply(viewStyle: style)
-        
-        attributedText = StyleKit.string(withStyle: style, string: text, defaultParagraphStyle: sk_defaultParagraphStyle())
-        typingAttributes = style?.textAttributes() ?? typingAttributes
-        
-        if let textAlignment = style?.textAlignment {
-            self.textAlignment = textAlignment
-        }
-    }
-    
     func sk_defaultParagraphStyle() -> NSParagraphStyle {
         
         let result = NSMutableParagraphStyle()

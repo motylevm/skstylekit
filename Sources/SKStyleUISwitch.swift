@@ -20,12 +20,18 @@
 
 import UIKit
 
-public extension UITextField {
+public extension SKStyle {
     
-    func sk_defaultParagraphStyle() -> NSParagraphStyle {
+    public func apply(switchControl: UISwitch?) {
         
-        let result = NSMutableParagraphStyle()
-        result.alignment = textAlignment
-        return result
+        apply(control: switchControl)
+        
+        if let onTintColor = onTintColor {
+            switchControl?.onTintColor = onTintColor
+        }
+        
+        if let thumbTintColor = thumbTintColor {
+            switchControl?.thumbTintColor = thumbTintColor
+        }
     }
 }

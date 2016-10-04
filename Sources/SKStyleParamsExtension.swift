@@ -298,7 +298,7 @@ public extension SKStyle {
         return resultIsEmpty ? nil : result
     }
     
-    public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [String: Any] {
+    public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [String: Any]? {
         
         var result = [String: Any]()
         
@@ -329,6 +329,6 @@ public extension SKStyle {
             result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSUnderlineStyleAttributeName)
         }
         
-        return result
+        return result.isEmpty ? nil : result
     }
 }

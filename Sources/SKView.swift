@@ -36,7 +36,7 @@ open class SKView: UIView {
     open var style: SKStyle? {
         
         didSet {
-            sk_apply(viewStyle: style)
+            style?.apply(view: self)
         }
     }
 }

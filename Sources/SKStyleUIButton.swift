@@ -20,12 +20,21 @@
 
 import UIKit
 
-public extension UITextField {
+public extension SKStyle {
     
-    func sk_defaultParagraphStyle() -> NSParagraphStyle {
+    public func apply(button: UIButton?, title: String?, forState state: UIControlState) {
         
-        let result = NSMutableParagraphStyle()
-        result.alignment = textAlignment
-        return result
+        apply(control: button)
+        
+        let styledTitle = StyleKit.string(withStyle: self, string: title, defaultParagraphStyle: button?.sk_defaultParagraphStyle())
+        button?.setAttributedTitle(styledTitle, for: state)
+        
+        if button?.buttonType != UIButtonType.custom {
+            StyleKit.log("Style kit warning: style support for non custom button types is limited, consider changing button type to custom")
+        }
+        
+        if let _ = textAlignment {
+            StyleKit.log("Style kit warning: textAlignment have no effect on UIButton, use contentHorizontalAlignment instead")
+        }
     }
 }
