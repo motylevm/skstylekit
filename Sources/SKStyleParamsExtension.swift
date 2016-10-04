@@ -21,6 +21,11 @@
 import UIKit
 
 public extension SKStyle {
+    
+    // MARK: - Abstract properties
+    public var color: UIColor? {
+        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+    }
    
     // MARK: - [View] Properties
     
