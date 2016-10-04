@@ -20,13 +20,19 @@
 
 import UIKit
 
-public extension UILabel {
+public extension SKStyle {
+    
+    // MARK: - UIControl
+    public func apply(control: UIControl?) {
         
-    func sk_defaultParagraphStyle() -> NSParagraphStyle {
+        apply(view: control)
         
-        let result = NSMutableParagraphStyle()
-        result.alignment = textAlignment
-        result.lineBreakMode = lineBreakMode
-        return result
+        if let contentVerticalAlignment = contentVerticalAlignment {
+            control?.contentVerticalAlignment = contentVerticalAlignment
+        }
+        
+        if let contentHorizontalAlignment = contentHorizontalAlignment {
+            control?.contentHorizontalAlignment = contentHorizontalAlignment
+        }
     }
 }

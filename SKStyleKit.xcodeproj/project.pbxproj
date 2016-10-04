@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8733DA981DA3659C0045A12B /* SKStyleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733DA971DA3659C0045A12B /* SKStyleUIView.swift */; };
+		8733DA9A1DA365BA0045A12B /* SKStyleUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733DA991DA365BA0045A12B /* SKStyleUIControl.swift */; };
+		8733DA9C1DA365F60045A12B /* SKStyleUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733DA9B1DA365F60045A12B /* SKStyleUILabel.swift */; };
 		87A501301D9F9A00007CA1EC /* SKStyleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A501261D9F9A00007CA1EC /* SKStyleKit.framework */; };
 		87A5016A1D9F9B91007CA1EC /* DefaultStyleKitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501411D9F9B91007CA1EC /* DefaultStyleKitFactory.swift */; };
 		87A5016B1D9F9B91007CA1EC /* SKBaseConditionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501421D9F9B91007CA1EC /* SKBaseConditionFactory.swift */; };
@@ -43,12 +46,10 @@
 		87A5018A1D9F9B91007CA1EC /* StyleKitPublicInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501611D9F9B91007CA1EC /* StyleKitPublicInterface.swift */; };
 		87A5018B1D9F9B91007CA1EC /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501621D9F9B91007CA1EC /* UIButtonExtensions.swift */; };
 		87A5018C1D9F9B91007CA1EC /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501631D9F9B91007CA1EC /* UIColorExtensions.swift */; };
-		87A5018D1D9F9B91007CA1EC /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501641D9F9B91007CA1EC /* UIControlExtensions.swift */; };
 		87A5018E1D9F9B91007CA1EC /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501651D9F9B91007CA1EC /* UILabelExtensions.swift */; };
 		87A5018F1D9F9B91007CA1EC /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501661D9F9B91007CA1EC /* UISwitchExtension.swift */; };
 		87A501901D9F9B91007CA1EC /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501671D9F9B91007CA1EC /* UITextFieldExtensions.swift */; };
 		87A501911D9F9B91007CA1EC /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501681D9F9B91007CA1EC /* UITextViewExtensions.swift */; };
-		87A501921D9F9B91007CA1EC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501691D9F9B91007CA1EC /* UIViewExtensions.swift */; };
 		87A501B11D9F9C57007CA1EC /* PreprocessedTestStyle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 87A501931D9F9C57007CA1EC /* PreprocessedTestStyle1.json */; };
 		87A501B21D9F9C57007CA1EC /* SKBaseConditionFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501941D9F9C57007CA1EC /* SKBaseConditionFactoryTests.swift */; };
 		87A501B31D9F9C57007CA1EC /* SKBaseConditionProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501951D9F9C57007CA1EC /* SKBaseConditionProcessorTests.swift */; };
@@ -93,6 +94,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8733DA971DA3659C0045A12B /* SKStyleUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIView.swift; path = Sources/SKStyleUIView.swift; sourceTree = SOURCE_ROOT; };
+		8733DA991DA365BA0045A12B /* SKStyleUIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIControl.swift; path = Sources/SKStyleUIControl.swift; sourceTree = SOURCE_ROOT; };
+		8733DA9B1DA365F60045A12B /* SKStyleUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUILabel.swift; path = Sources/SKStyleUILabel.swift; sourceTree = SOURCE_ROOT; };
 		87A501261D9F9A00007CA1EC /* SKStyleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKStyleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A5012A1D9F9A00007CA1EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87A5012F1D9F9A00007CA1EC /* SKStyleKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKStyleKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,12 +136,10 @@
 		87A501611D9F9B91007CA1EC /* StyleKitPublicInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKitPublicInterface.swift; path = Sources/StyleKitPublicInterface.swift; sourceTree = SOURCE_ROOT; };
 		87A501621D9F9B91007CA1EC /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonExtensions.swift; path = Sources/UIButtonExtensions.swift; sourceTree = SOURCE_ROOT; };
 		87A501631D9F9B91007CA1EC /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = Sources/UIColorExtensions.swift; sourceTree = SOURCE_ROOT; };
-		87A501641D9F9B91007CA1EC /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIControlExtensions.swift; path = Sources/UIControlExtensions.swift; sourceTree = SOURCE_ROOT; };
 		87A501651D9F9B91007CA1EC /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtensions.swift; path = Sources/UILabelExtensions.swift; sourceTree = SOURCE_ROOT; };
 		87A501661D9F9B91007CA1EC /* UISwitchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISwitchExtension.swift; path = Sources/UISwitchExtension.swift; sourceTree = SOURCE_ROOT; };
 		87A501671D9F9B91007CA1EC /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextFieldExtensions.swift; path = Sources/UITextFieldExtensions.swift; sourceTree = SOURCE_ROOT; };
 		87A501681D9F9B91007CA1EC /* UITextViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextViewExtensions.swift; path = Sources/UITextViewExtensions.swift; sourceTree = SOURCE_ROOT; };
-		87A501691D9F9B91007CA1EC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Sources/UIViewExtensions.swift; sourceTree = SOURCE_ROOT; };
 		87A501931D9F9C57007CA1EC /* PreprocessedTestStyle1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PreprocessedTestStyle1.json; sourceTree = "<group>"; };
 		87A501941D9F9C57007CA1EC /* SKBaseConditionFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKBaseConditionFactoryTests.swift; sourceTree = "<group>"; };
 		87A501951D9F9C57007CA1EC /* SKBaseConditionProcessorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKBaseConditionProcessorTests.swift; sourceTree = "<group>"; };
@@ -190,6 +192,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8733DA941DA365070045A12B /* UI Elements Application */ = {
+			isa = PBXGroup;
+			children = (
+				8733DA971DA3659C0045A12B /* SKStyleUIView.swift */,
+				8733DA9B1DA365F60045A12B /* SKStyleUILabel.swift */,
+				8733DA991DA365BA0045A12B /* SKStyleUIControl.swift */,
+			);
+			name = "UI Elements Application";
+			sourceTree = "<group>";
+		};
 		87A5011C1D9F9A00007CA1EC = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +306,7 @@
 				87A501501D9F9B91007CA1EC /* SKStyle.swift */,
 				87A501521D9F9B91007CA1EC /* SKStyleParamsExtension.swift */,
 				87A501511D9F9B91007CA1EC /* SKStyleConst.swift */,
+				8733DA941DA365070045A12B /* UI Elements Application */,
 			);
 			name = SKStyle;
 			sourceTree = "<group>";
@@ -383,7 +396,6 @@
 			isa = PBXGroup;
 			children = (
 				87A501DB1D9F9F01007CA1EC /* View */,
-				87A501DC1D9F9F0E007CA1EC /* Control */,
 				87A501E21D9F9FC4007CA1EC /* Label */,
 				87A501DD1D9F9F1F007CA1EC /* Button */,
 				87A501DE1D9F9F38007CA1EC /* Switch */,
@@ -398,17 +410,8 @@
 			isa = PBXGroup;
 			children = (
 				87A5015D1D9F9B91007CA1EC /* SKView.swift */,
-				87A501691D9F9B91007CA1EC /* UIViewExtensions.swift */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		87A501DC1D9F9F0E007CA1EC /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				87A501641D9F9B91007CA1EC /* UIControlExtensions.swift */,
-			);
-			name = Control;
 			sourceTree = "<group>";
 		};
 		87A501DD1D9F9F1F007CA1EC /* Button */ = {
@@ -595,11 +598,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8733DA9C1DA365F60045A12B /* SKStyleUILabel.swift in Sources */,
 				87A501771D9F9B91007CA1EC /* SKLabel.swift in Sources */,
 				87A501891D9F9B91007CA1EC /* StyleKitFactory.swift in Sources */,
 				87A501831D9F9B91007CA1EC /* SKTextView.swift in Sources */,
 				87A501701D9F9B91007CA1EC /* SKConditionProcessor.swift in Sources */,
-				87A501921D9F9B91007CA1EC /* UIViewExtensions.swift in Sources */,
 				87A5016A1D9F9B91007CA1EC /* DefaultStyleKitFactory.swift in Sources */,
 				87A5018F1D9F9B91007CA1EC /* UISwitchExtension.swift in Sources */,
 				87A501801D9F9B91007CA1EC /* SKSwitch.swift in Sources */,
@@ -621,9 +624,9 @@
 				87A5017B1D9F9B91007CA1EC /* SKStyleParamsExtension.swift in Sources */,
 				87A501871D9F9B91007CA1EC /* StyleKit.swift in Sources */,
 				87A5016F1D9F9B91007CA1EC /* SKConditionFactory.swift in Sources */,
+				8733DA9A1DA365BA0045A12B /* SKStyleUIControl.swift in Sources */,
 				87A501901D9F9B91007CA1EC /* UITextFieldExtensions.swift in Sources */,
 				87A501881D9F9B91007CA1EC /* StyleKitConfiguration.swift in Sources */,
-				87A5018D1D9F9B91007CA1EC /* UIControlExtensions.swift in Sources */,
 				87A501721D9F9B91007CA1EC /* SKControlContentVerticalAlignment.swift in Sources */,
 				87A5016D1D9F9B91007CA1EC /* SKButton.swift in Sources */,
 				87A501811D9F9B91007CA1EC /* SKTextAlignment.swift in Sources */,
@@ -635,6 +638,7 @@
 				87A501821D9F9B91007CA1EC /* SKTextField.swift in Sources */,
 				87A501761D9F9B91007CA1EC /* SKImageView.swift in Sources */,
 				87A501731D9F9B91007CA1EC /* SKDeviceCondition.swift in Sources */,
+				8733DA981DA3659C0045A12B /* SKStyleUIView.swift in Sources */,
 				87A5018A1D9F9B91007CA1EC /* StyleKitPublicInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

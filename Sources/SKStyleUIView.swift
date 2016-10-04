@@ -20,49 +20,49 @@
 
 import UIKit
 
-public extension UIView {
+public extension SKStyle {
     
-    // MARK: - Style extension
-    public func sk_apply(viewStyle style: SKStyle?) {
-        
-        if let backgroundColor = style?.backgroundColor {
-            self.backgroundColor = backgroundColor
+    // MARK: - UIView
+    public func apply(view: UIView?) {
+
+        if let backgroundColor = backgroundColor {
+            view?.backgroundColor = backgroundColor
         }
         
-        if let cornerRadius = style?.cornerRadius {
-            layer.cornerRadius = cornerRadius
+        if let cornerRadius = cornerRadius {
+            view?.layer.cornerRadius = cornerRadius
         }
         
-        if let borderWidth = style?.borderWidth {
-            layer.borderWidth = borderWidth
+        if let borderWidth = borderWidth {
+            view?.layer.borderWidth = borderWidth
         }
         
-        if let borderColor = style?.borderColor {
-            layer.borderColor = borderColor.cgColor
+        if let borderColor = borderColor {
+            view?.layer.borderColor = borderColor.cgColor
         }
         
-        if let alpha = style?.alpha {
-            self.alpha = alpha
+        if let alpha = alpha {
+            view?.alpha = alpha
         }
         
-        if let shadowRadius = style?.shadowRadius {
-            layer.shadowRadius = shadowRadius
+        if let shadowRadius = shadowRadius {
+            view?.layer.shadowRadius = shadowRadius
         }
         
-        if let shadowOffset = style?.shadowOffset {
-            layer.shadowOffset = shadowOffset
+        if let shadowOffset = shadowOffset {
+            view?.layer.shadowOffset = shadowOffset
         }
         
-        if let shadowColor = style?.shadowColor {
-            layer.shadowColor = shadowColor.cgColor
+        if let shadowColor = shadowColor {
+            view?.layer.shadowColor = shadowColor.cgColor
         }
         
-        if let shadowOpacity = style?.shadowOpacity {
-            layer.shadowOpacity = Float(shadowOpacity)
+        if let shadowOpacity = shadowOpacity {
+            view?.layer.shadowOpacity = Float(shadowOpacity)
         }
         
-        if let tintColor = style?.tintColor {
-            self.tintColor = tintColor
+        if let tintColor = tintColor {
+            view?.tintColor = tintColor
         }
-    }
+    }    
 }

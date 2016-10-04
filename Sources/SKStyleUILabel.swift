@@ -20,19 +20,19 @@
 
 import UIKit
 
-public extension UIControl {
-    
-    // MARK: - Style extension
-    public func sk_apply(controlStyle style: SKStyle?) {
+public extension SKStyle {
+
+    // MARK: - UILabel
+    public func apply(label: UILabel?, text: String?) {
         
-        sk_apply(viewStyle: style)
+        apply(view: label)
         
-        if let contentVerticalAlignment = style?.contentVerticalAlignment {
-            self.contentVerticalAlignment = contentVerticalAlignment
-        }
+        label?.attributedText = StyleKit.string(withStyle: self,
+                                                string: text,
+                                                defaultParagraphStyle: label?.sk_defaultParagraphStyle())
         
-        if let contentHorizontalAlignment = style?.contentHorizontalAlignment {
-            self.contentHorizontalAlignment = contentHorizontalAlignment
+        if let textAlignment = textAlignment {
+            label?.textAlignment = textAlignment
         }
     }
 }
