@@ -48,16 +48,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-## Style Declaration
+# Styles Declaration
 
-Styles are declared in json format, add JSON file to your project, name it style<Your name>.json, and decalre first style:
+Styles are declared in json format, add JSON file to your project, name it style.json, and decalre first style:
 
 ```json
 {
 	"labelStyle": {
 
 		"fontSize": 15,
-		"fontColor": "#7F007F"
+		"fontColor": "#7F007F",
 		"borderWidth": 1,
 		"borderColor": "red",
 		"backgroundColor": "lightGray"
@@ -68,14 +68,10 @@ Now we have style named "labelStyle" with bunch of parameters, we already can us
 
 ```json
 {
-	<...>
-		"backgroundColor": "lightGray"
-	},
-
 	"titleLabelStyle": {
 
 		"fontSize": 25,
-		"fontColor": "#7F007F"
+		"fontColor": "#7F007F",
 		"borderWidth": 1,
 		"borderColor": "red",
 		"backgroundColor": "lightGray"
@@ -96,7 +92,7 @@ Ok, but both styles use same border settings and same fontColor, so decalration 
 
 	"labelStyle": {
 
-		"parent": "defBorder"
+		"parent": "defBorder",
 		"fontSize": 15,
 		"fontColor": "#7F007F"
 	},
@@ -109,12 +105,28 @@ Ok, but both styles use same border settings and same fontColor, so decalration 
 }
 ```
 
-First step
+# Basic Usage
 
-Coming soon
+	Coming soon
 
-## Basic usage
+## Label Example
 
-Coming soon
+	Coming soon
+
+## Button Example
+
+	Coming soon
 
 # Advanced
+
+## Work With Styles Programmatically
+
+	Coming soon
+
+## Using Style Kit With Non SK Components
+
+	Coming soon
+
+## Using Style Kit With Attributed Strings
+
+	Coming soon
