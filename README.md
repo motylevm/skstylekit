@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 # Styles Declaration
 
-Styles are declared in json format, add JSON file to your project, name it style.json, and decalre first style:
+Styles are declared in json format, add JSON file to your project, name it `style.json`, and decalre first style:
 
 ```json
 {
@@ -108,11 +108,21 @@ Ok, but both styles use same border settings and same fontColor, so decalration 
 
 # Basic Usage
 
-	Coming soon
+The most convenient (but not the only!) way to use styles is to use them with SK components or their subclasses. SK components already have properties `style` and `styleName`:
 
 ## Label Example
 
-	Coming soon
+Select any label in xib or storyboard file and make it SKLabel class. 
+
+<p align="center">
+	<img src="https://cloud.githubusercontent.com/assets/5831773/19125795/1cab1b22-8b41-11e6-9f11-5e3ef6552782.png"/>
+</p>
+
+Then switch to attributes inspector and set style name property:
+
+<p align="center">
+	<img src="https://cloud.githubusercontent.com/assets/5831773/19126418/88e80686-8b43-11e6-9f2e-f3309ea8bbaa.png"/>
+</p>
 
 ## Button Example
 
