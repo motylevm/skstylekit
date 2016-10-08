@@ -10,11 +10,11 @@ Styles declared in styles file use following structure:
 {
 	"style1": {
 
-		"param1": value1,
-		"param2": value2,
-		"paramN": valueN
+		"param1": "value1",
+		"param2": "value2",
+		"paramN": "valueN"
 	},
-	"style2": { }
+	"style2": { },
 	"styleN": { }
 }
 ```
@@ -120,8 +120,7 @@ Abstract parameters set values of multiple other parameters. Main purpose of abs
 ```
 
 ### color
-Can be referenced from any other color parameter, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
-SKStyleKit have buildin styles: `black`, `darkGray`, `lightGray`, `white`, `gray`, `red`, `green`, `blue`, `cyan`, `yellow`, `magenta`, `orange`, `purple`, `brown`, `clear`.
+Can be referenced from any other color parameter. SKStyleKit have buildin styles: `black`, `darkGray`, `lightGray`, `white`, `gray`, `red`, `green`, `blue`, `cyan`, `yellow`, `magenta`, `orange`, `purple`, `brown`, `clear`.
 
 ### size
 Can be referenced from any other number type parameter
@@ -144,7 +143,7 @@ Border width, in points
 ### borderColor
 Border color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
-### alpha [Number]
+### alpha
 `alpha` value [0 - 1]
 
 ### shadowRadius
@@ -181,7 +180,7 @@ Thumnb tint color, string representing color in hex format: `#RRGGBB` or `#AARRG
 
 ## Text attributes
 
-Text attributes is applied to text containers UILable, UIButton, UITextView, UITextField and NSAttributedString
+Text attributes is applied to text containers UILabel, UIButton, UITextView, UITextField and NSAttributedString
 
 ### fontName
 Font name
