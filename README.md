@@ -106,7 +106,7 @@ Ok, but both styles use same border settings and same fontColor, so decalration 
 }
 ```
 
-For complete guide and parameters description please check [SKStyleKit parameters guide](docs/jsonGuide.md).
+For complete list of parameters and full syntax description please check [SKStyleKit parameters guide](Docs/jsonGuide.md).
 
 # Basic Usage
 
