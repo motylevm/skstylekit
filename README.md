@@ -106,6 +106,8 @@ Ok, but both styles use same border settings and same fontColor, so decalration 
 }
 ```
 
+For complete guide and parameters description please check [SKStyleKit parameters guide](docs/jsonGuide.md).
+
 # Basic Usage
 
 The most convenient (but not the only!) way to use styles is to use them with SK components or their subclasses. SK components already have properties `style` and `styleName`:
