@@ -12,12 +12,10 @@ Styles declared in styles file use following structure:
 
 		"param1": value1,
 		"param2": value2,
-		...
 		"paramN": valueN
 	},
-	"style2": { ... }
-
-	"styleN": { ... }
+	"style2": { }
+	"styleN": { }
 }
 ```
 
@@ -26,10 +24,10 @@ Styles can be grouped into categories:
 ```json
 {
 	"category": {
-		"style1": { ... }
+		"style1": { }
 	},
 
-	"style2": { ... }
+	"style2": { }
 }
 ```
 In this case `style2` can be fetched by it's name, `style1` by it's name and name with category prefix `category.style1`.
@@ -40,7 +38,7 @@ There are two types of inheritance in SKStyleKit:
 
 ## Full
 
-Full inheritance make one style inherit all parameters from other:
+Full inheritance makes one style inherit all parameters from other:
 
 ```json
 {
@@ -78,137 +76,166 @@ The other type of supported inheritance works only for related parameter:
 So any parameter value can be replaced by other style name from wich actual value should be fetched. 
 General purpose of parameter inheritance is working with abstract parameters (such as `color`)
 
+# Conditions
+
+Parameters can be condition based, so they will be applied only if condition check passes. For example: 
+
+```json
+{
+	"defaultText": {
+
+		"fontSize@pad": 15,
+		"fontSize@phone": 14
+	},
+
+	"defBorder": {
+
+		"borderWidth@1x": 1,
+		"borderWidth@2x": 0.5,
+		"borderWidth@3x": 0.333,
+	}
+}
+```
+
 # Parameters
 
 ## Abstract
 
+Abstract parameters set values of multiple other parameters. Main purpose of abstract parameters is to use them for parameter inheritance. For example, it's good idea to declare all colors your app using in one place:
 
+```json
+{
+	"color": {
+		"dark": { "color": "#000000" },
+		"white": { "color": "#FFFFFF" }
+	},
+
+	"darkText": {
+		"fontColor": "dark"
+	},
+	"whiteView": {
+		"backgroundColor": "white"
+	}
+}
+```
+
+### color
+Can be referenced from any other color parameter, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+SKStyleKit have buildin styles: `black`, `darkGray`, `lightGray`, `white`, `gray`, `red`, `green`, `blue`, `cyan`, `yellow`, `magenta`, `orange`, `purple`, `brown`, `clear`.
+
+### size
+Can be referenced from any other number type parameter
+SKStyleKit have buildin style: `1pixel`
 
 ## UIView
 
-### backgroundColor [String]
-Sets backgroundColor of UIView
-Type - String representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+### backgroundColor 
+Background color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
+### cornerRadius
+Corner radius, in points
 
-### cornerRadius [Number]
-Sets `layer.cornerRadius` of UIView 
+### borderColor
+Border color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
-### borderColor [String]
-Sets `layer.borderColor` of UIView 
-Type - String representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+### borderWidth
+Border width, in points
 
-### borderWidth [Number]
-Sets `layer.borderWidth` of UIView 
-
-### borderColor [String]
-Sets `layer.borderColor` of UIView 
-Type - String representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+### borderColor
+Border color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
 ### alpha [Number]
-Sets `alpha` of UIView
+`alpha` value [0 - 1]
 
-### shadowRadius [Number]
-Sets `layer.shadowRadius` of UIView 
+### shadowRadius
+Shadow radius, in points
 
-### shadowOffset [String]
-Sets layer.shadowOffset of UIView
-Type - String representing CGSize, for example: "{0, -3}"
+### shadowOffset
+Shadow offset, string representing CGSize structure, for example: "{0, -3}"
 
-### shadowColor [String]
-Sets layer.shadowColor of UIView 
-Type - String representing color in hex format: "#RRGGBB" or "#AARRGGBB"
+### shadowColor
+Shadow color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
-### shadowOpacity [Number]
-Sets layer.shadowOpacity of UIView
-Note: This value is automatically sets to 1 when any of shadowColor, shadowOffset or shadowRadius is set
+### shadowOpacity
+Shadow opacity [0 - 1]
+##### Note: This value is automatically sets to 1 when any of `shadowColor`, `shadowOffset` or `shadowRadius` is set
 
-### tintColor [String]
-Sets tintColor of UIView 
-Type - String representing color in hex format: "#RRGGBB" or "#AARRGGBB"
+### tintColor
+Tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
 ## UIControl
 
-### contentVerticalAlignment [String]
-Sets contentVerticalAlignment of UIControl
-Type - String one of "center", "top", "bottom", "fill"
+### contentVerticalAlignment
+Content vertical aligment, possible values: `center`, `top`, `bottom`, `fill`
 
-### contentHorizontalAlignment [String]
-Sets contentHorizontalAlignment of UIControl
-Type - String one of "center", "left", "right", "fill"
+### contentHorizontalAlignment
+Content horizontal aligment, possible values: `center`, `left`, `right`, `fill`
 
 ## UISwitch
 
-### onTintColor [String]
-Sets onTintColor of UISwitch
-Type - String representing color in hex format: "#RRGGBB" or "#AARRGGBB"
+### onTintColor
+Tint color in on state, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
 ### thumbTintColor [String]
-Sets thumbTintColor of UISwitch 
-Type - String representing color in hex format: "#RRGGBB" or "#AARRGGBB"
+Thumnb tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
 ## Text attributes
 
 Text attributes is applied to text containers UILable, UIButton, UITextView, UITextField and NSAttributedString
 
-### fontName [String]
+### fontName
+Font name
 
-Name of font
-
-### fontStyle [String]
+### fontStyle 
 If no fontName specified, sets corresponding system's font style and in thus case should be one of the following:
 `ultraLight`, `thin`, `light`, `regular`, `medium`, `semibold`, `bold`, `heavy`, `black`, `italic`
-If fontName exists fontStyle string will be appended to it: `fontName-fontStyle`
+If fontName exists fontStyle string will be appended to it: `fontName-fontStyle`.
 
-### fontSize [Number]
-Font size in points
+### fontSize
+Font size in points.
 
-### fontColor [String]
-Font color 
-Type - String representing color in hex format: "#RRGGBB" or "#AARRGGBB"
+### fontColor
+Font color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`.
 
-### fontKern [Number]
-Font kern in points
+### fontKern
+Font kern in points.
 
-### fontLineSpacing [Number]
+### fontLineSpacing
 The distance in points between the bottom of one line fragment and the top of the next.
 
-### fontLineHeightMultiple [Number]
+### fontLineHeightMultiple
 The line height multiple.
 
-### fontMinimumLineHeight [Number]
-The font minimum line height
+### fontMinimumLineHeight
+The font minimum line height, in points.
 
-### fontMaximumLineHeight [Number]
-The font maximum line height
+### fontMaximumLineHeight
+The font maximum line height, in points.
 
-### textParagraphSpacing [Number]
-The space after the end of the paragraph.
+### textParagraphSpacing
+The space after the end of the paragraph, in points.
 
-### textParagraphFirstLineHeadIndent [Number]
-The indentation of the first line.
+### textParagraphFirstLineHeadIndent
+The indentation of the first line, in points.
 
-### textParagraphHeadIndent [Number]
-The indentation of the lines other than the first.
+### textParagraphHeadIndent
+The indentation of the lines other than the first, in points.
 
-### textParagraphTailIndent [Number]
-The trailing indentation.
+### textParagraphTailIndent
+The trailing indentation, in points.
 
-### textParagraphSpacingBefore [Number]
-The distance between the paragraph’s top and the beginning of its text content.
+### textParagraphSpacingBefore
+The distance between the paragraph’s top and the beginning of its text content, in points.
 
-### textHyphenationFactor [Number]
+### textHyphenationFactor
 The paragraph’s threshold for hyphenation.
 
-### textUnderline [String]
-Text underline style should be one of the following:
-`none`, `single`, `thick`, `double`
+### textUnderline
+Text underline style, possible values: `none`, `single`, `thick`, `double`
 
-### textUnderlinePattern [String]
-Text underline pattern should be one of the following:
-`solid`, `dot`, `dash`, `dashDot`, `dashDotDot`
+### textUnderlinePattern
+Text underline pattern, possible values: `solid`, `dot`, `dash`, `dashDot`, `dashDotDot`
 
-### textAlignment [String]
-The text alignment should be one of the following:
-`right`, `left`, `center`, `justified`
+### textAlignment
+The text alignment, possible values: `right`, `left`, `center`, `justified`
 
