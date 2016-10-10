@@ -18,23 +18,21 @@
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Foundation
+import UIKit
 
-let parentKey = "parent"
-let parentsKey = "parents"
-let aliasesKey = "aliases"
-
-let parametersAliases: [String: [String]] = ["fontColor": ["color"],
-                                             "backgroundColor": ["color"],
-                                             "borderColor": ["color"],
-                                             "shadowColor": ["color"],
-                                             "onTintColor": ["color"],
-                                             "thumbTintColor": ["color"],
-                                             "tintColor": ["color"],
-                                             "minimumTrackTintColor": ["color"],
-                                             "maximumTrackTintColor": ["color"],
-                                             "progressTintColor": ["color"],
-                                             "trackTintColor": ["color"],
-                                             "borderWidth": ["size"],
-                                             "fontSize": ["size"],
-                                             "shadowRadius": ["size"]]
+public extension SKStyle {
+    
+    // MARK: - UISlider
+    public func apply(progress: UIProgressView?) {
+        
+        apply(view: progress)
+        
+        if let progressTintColor = progressTintColor {
+            progress?.progressTintColor = progressTintColor
+        }
+        
+        if let trackTintColor = trackTintColor {
+            progress?.trackTintColor = trackTintColor
+        }
+    }
+}

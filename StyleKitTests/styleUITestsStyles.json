@@ -66,6 +66,21 @@
             "fontSize": 21,
             "textAlignment": "right",
             "fontColor": "green"
+        },
+        
+        "sliderStyle": {
+            
+            "parent": "controlStyle",
+            "minimumTrackTintColor": "red",
+            "maximumTrackTintColor": "green",
+            "thumbTintColor": "blue"
+        },
+        
+        "progressStyle": {
+            
+            "parent": "viewStyle",
+            "progressTintColor": "red",
+            "trackTintColor": "green"
         }
     }
 }

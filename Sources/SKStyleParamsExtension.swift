@@ -98,6 +98,16 @@ public extension SKStyle {
         return SKControlContentHorizontalAlignment.from(rawValue: stringValue(forKey: #function))?.alignment
     }
     
+    // MARK: - [Slider] Properties
+    
+    public var minimumTrackTintColor: UIColor? {
+        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+    }
+    
+    public var maximumTrackTintColor: UIColor? {
+        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+    }
+    
     // MARK: - [Switch] Properties
     
     /// On tint color, can be applied to Switch
@@ -107,6 +117,16 @@ public extension SKStyle {
     
     /// Thumb tint color, can be applied to Switch
     public var thumbTintColor: UIColor? {
+        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+    }
+    
+    // MARK: - [Progress View] Properties
+    
+    public var progressTintColor: UIColor? {
+        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+    }
+    
+    public var trackTintColor: UIColor? {
         return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
     }
     

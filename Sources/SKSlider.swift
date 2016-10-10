@@ -18,23 +18,26 @@
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Foundation
+import UIKit
 
-let parentKey = "parent"
-let parentsKey = "parents"
-let aliasesKey = "aliases"
-
-let parametersAliases: [String: [String]] = ["fontColor": ["color"],
-                                             "backgroundColor": ["color"],
-                                             "borderColor": ["color"],
-                                             "shadowColor": ["color"],
-                                             "onTintColor": ["color"],
-                                             "thumbTintColor": ["color"],
-                                             "tintColor": ["color"],
-                                             "minimumTrackTintColor": ["color"],
-                                             "maximumTrackTintColor": ["color"],
-                                             "progressTintColor": ["color"],
-                                             "trackTintColor": ["color"],
-                                             "borderWidth": ["size"],
-                                             "fontSize": ["size"],
-                                             "shadowRadius": ["size"]]
+open class SKSlider: UISlider {
+    
+    // MARK: - Style properties
+    @IBInspectable open var styleName: String? {
+        
+        get {
+            return style?.name
+        }
+        
+        set {
+            style = StyleKit.style(withName: newValue)
+        }
+    }
+    
+    open var style: SKStyle? {
+        
+        didSet {
+            style?.apply(slider: self)
+        }
+    }
+}

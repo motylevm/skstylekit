@@ -18,23 +18,44 @@
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Foundation
+import XCTest
+@testable import SKStyleKit
 
-let parentKey = "parent"
-let parentsKey = "parents"
-let aliasesKey = "aliases"
-
-let parametersAliases: [String: [String]] = ["fontColor": ["color"],
-                                             "backgroundColor": ["color"],
-                                             "borderColor": ["color"],
-                                             "shadowColor": ["color"],
-                                             "onTintColor": ["color"],
-                                             "thumbTintColor": ["color"],
-                                             "tintColor": ["color"],
-                                             "minimumTrackTintColor": ["color"],
-                                             "maximumTrackTintColor": ["color"],
-                                             "progressTintColor": ["color"],
-                                             "trackTintColor": ["color"],
-                                             "borderWidth": ["size"],
-                                             "fontSize": ["size"],
-                                             "shadowRadius": ["size"]]
+class SKProgressViewTests: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+        
+        basicSetup()
+    }
+    
+    func testSetStyle() {
+        
+        // given
+        let style = StyleKit.style(withName: "progressStyle")
+        let progress = SKProgressView()
+        
+        // when
+        progress.style = style
+        
+        // then
+        XCTAssertNotNil(progress)
+        XCTAssertEqual(progress.styleName, "progressStyle")
+        checkViewStyle(progress)
+        checkProgressStyle(progress)
+    }
+    
+    func testSetStyleByName() {
+        
+        // given
+        let progress = SKProgressView()
+        
+        // when
+        progress.styleName = "progressStyle"
+        
+        // then
+        XCTAssertNotNil(progress)
+        checkViewStyle(progress)
+        checkProgressStyle(progress)
+    }
+}

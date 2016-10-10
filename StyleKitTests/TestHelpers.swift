@@ -99,6 +99,19 @@ func checkControlStyle(_ control: UIControl?) {
     XCTAssertEqual(control?.contentVerticalAlignment, UIControlContentVerticalAlignment.top)
 }
 
+func checkSliderStyle(_ slider: UISlider?) {
+    
+    XCTAssertEqual(slider?.minimumTrackTintColor, UIColor.red)
+    XCTAssertEqual(slider?.maximumTrackTintColor, UIColor.green)
+    XCTAssertEqual(slider?.thumbTintColor, UIColor.blue)
+}
+
+func checkProgressStyle(_ progress: UIProgressView?) {
+    
+    XCTAssertEqual(progress?.progressTintColor, UIColor.red)
+    XCTAssertEqual(progress?.trackTintColor, UIColor.green)
+}
+
 class SKStylesProviderMock: SKStylesProvider {
     
     func style(withName name: String?) -> SKStyle? {

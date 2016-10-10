@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F2B38C51DAB6FED00D97853 /* SKSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38C41DAB6FED00D97853 /* SKSlider.swift */; };
+		6F2B38C71DAB704A00D97853 /* SKStyleUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38C61DAB704A00D97853 /* SKStyleUISlider.swift */; };
+		6F2B38C91DAB71BD00D97853 /* SKSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38C81DAB71BD00D97853 /* SKSliderTests.swift */; };
+		6F2B38CC1DAB741700D97853 /* SKProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CB1DAB741700D97853 /* SKProgressView.swift */; };
+		6F2B38CE1DAB74C100D97853 /* SKStyleUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */; };
+		6F2B38D01DAB758300D97853 /* SKProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */; };
 		6FAC21AD1DA38C1700A81748 /* SKStyleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC21AC1DA38C1700A81748 /* SKStyleUIButton.swift */; };
 		6FAC21AF1DA38CD200A81748 /* SKStyleUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC21AE1DA38CD200A81748 /* SKStyleUISwitch.swift */; };
 		6FAC21B11DA38DA700A81748 /* SKStyleUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC21B01DA38DA700A81748 /* SKStyleUITextField.swift */; };
@@ -69,7 +75,7 @@
 		87A501BE1D9F9C57007CA1EC /* SKTextAlignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501A01D9F9C57007CA1EC /* SKTextAlignmentTests.swift */; };
 		87A501BF1D9F9C57007CA1EC /* SKUnderlinePatternStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501A11D9F9C57007CA1EC /* SKUnderlinePatternStyleTests.swift */; };
 		87A501C01D9F9C57007CA1EC /* SKUnderlineStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501A21D9F9C57007CA1EC /* SKUnderlineStyleTests.swift */; };
-		87A501C11D9F9C57007CA1EC /* SKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501A31D9F9C57007CA1EC /* SKView.swift */; };
+		87A501C11D9F9C57007CA1EC /* SKViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A501A31D9F9C57007CA1EC /* SKViewTests.swift */; };
 		87A501C21D9F9C57007CA1EC /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 87A501A41D9F9C57007CA1EC /* style.json */; };
 		87A501C31D9F9C57007CA1EC /* styleInvalidCondition.json in Resources */ = {isa = PBXBuildFile; fileRef = 87A501A51D9F9C57007CA1EC /* styleInvalidCondition.json */; };
 		87A501C41D9F9C57007CA1EC /* styleInvalidStructure.json in Resources */ = {isa = PBXBuildFile; fileRef = 87A501A61D9F9C57007CA1EC /* styleInvalidStructure.json */; };
@@ -97,6 +103,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F2B38C41DAB6FED00D97853 /* SKSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKSlider.swift; path = Sources/SKSlider.swift; sourceTree = SOURCE_ROOT; };
+		6F2B38C61DAB704A00D97853 /* SKStyleUISlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUISlider.swift; path = Sources/SKStyleUISlider.swift; sourceTree = SOURCE_ROOT; };
+		6F2B38C81DAB71BD00D97853 /* SKSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSliderTests.swift; sourceTree = "<group>"; };
+		6F2B38CB1DAB741700D97853 /* SKProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKProgressView.swift; path = Sources/SKProgressView.swift; sourceTree = SOURCE_ROOT; };
+		6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIProgressView.swift; path = Sources/SKStyleUIProgressView.swift; sourceTree = SOURCE_ROOT; };
+		6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKProgressViewTests.swift; sourceTree = "<group>"; };
 		6FAC21AC1DA38C1700A81748 /* SKStyleUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIButton.swift; path = Sources/SKStyleUIButton.swift; sourceTree = SOURCE_ROOT; };
 		6FAC21AE1DA38CD200A81748 /* SKStyleUISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUISwitch.swift; path = Sources/SKStyleUISwitch.swift; sourceTree = SOURCE_ROOT; };
 		6FAC21B01DA38DA700A81748 /* SKStyleUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUITextField.swift; path = Sources/SKStyleUITextField.swift; sourceTree = SOURCE_ROOT; };
@@ -162,7 +174,7 @@
 		87A501A01D9F9C57007CA1EC /* SKTextAlignmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTextAlignmentTests.swift; sourceTree = "<group>"; };
 		87A501A11D9F9C57007CA1EC /* SKUnderlinePatternStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKUnderlinePatternStyleTests.swift; sourceTree = "<group>"; };
 		87A501A21D9F9C57007CA1EC /* SKUnderlineStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKUnderlineStyleTests.swift; sourceTree = "<group>"; };
-		87A501A31D9F9C57007CA1EC /* SKView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKView.swift; sourceTree = "<group>"; };
+		87A501A31D9F9C57007CA1EC /* SKViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKViewTests.swift; sourceTree = "<group>"; };
 		87A501A41D9F9C57007CA1EC /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		87A501A51D9F9C57007CA1EC /* styleInvalidCondition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleInvalidCondition.json; sourceTree = "<group>"; };
 		87A501A61D9F9C57007CA1EC /* styleInvalidStructure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleInvalidStructure.json; sourceTree = "<group>"; };
@@ -198,11 +210,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F2B38C31DAB6FD400D97853 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				6F2B38C41DAB6FED00D97853 /* SKSlider.swift */,
+			);
+			name = Slider;
+			sourceTree = "<group>";
+		};
+		6F2B38CA1DAB73F100D97853 /* Progress View */ = {
+			isa = PBXGroup;
+			children = (
+				6F2B38CB1DAB741700D97853 /* SKProgressView.swift */,
+			);
+			name = "Progress View";
+			sourceTree = "<group>";
+		};
 		8733DA941DA365070045A12B /* UI Elements Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8733DA971DA3659C0045A12B /* SKStyleUIView.swift */,
 				8733DA9B1DA365F60045A12B /* SKStyleUILabel.swift */,
+				6F2B38C61DAB704A00D97853 /* SKStyleUISlider.swift */,
+				6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */,
 				8733DA991DA365BA0045A12B /* SKStyleUIControl.swift */,
 				6FAC21AC1DA38C1700A81748 /* SKStyleUIButton.swift */,
 				6FAC21AE1DA38CD200A81748 /* SKStyleUISwitch.swift */,
@@ -260,7 +290,9 @@
 				87A501A01D9F9C57007CA1EC /* SKTextAlignmentTests.swift */,
 				87A501A11D9F9C57007CA1EC /* SKUnderlinePatternStyleTests.swift */,
 				87A501A21D9F9C57007CA1EC /* SKUnderlineStyleTests.swift */,
-				87A501A31D9F9C57007CA1EC /* SKView.swift */,
+				87A501A31D9F9C57007CA1EC /* SKViewTests.swift */,
+				6F2B38C81DAB71BD00D97853 /* SKSliderTests.swift */,
+				6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */,
 				87A501AC1D9F9C57007CA1EC /* TestHelpers.swift */,
 				87A501AF1D9F9C57007CA1EC /* UIColorCategoryTest.swift */,
 				87A501B01D9F9C57007CA1EC /* UIControlExtensionsTests.swift */,
@@ -412,6 +444,8 @@
 				87A501DF1D9F9F4A007CA1EC /* Text Field */,
 				87A501E01D9F9F64007CA1EC /* Text View */,
 				87A501E11D9F9F79007CA1EC /* Image View */,
+				6F2B38C31DAB6FD400D97853 /* Slider */,
+				6F2B38CA1DAB73F100D97853 /* Progress View */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -620,11 +654,13 @@
 				87A5017C1D9F9B91007CA1EC /* SKStylesProvider.swift in Sources */,
 				87A5018B1D9F9B91007CA1EC /* UIButtonExtensions.swift in Sources */,
 				87A5016E1D9F9B91007CA1EC /* SKCondition.swift in Sources */,
+				6F2B38C71DAB704A00D97853 /* SKStyleUISlider.swift in Sources */,
 				87A5017F1D9F9B91007CA1EC /* SKStylesSourceProvider.swift in Sources */,
 				87A501851D9F9B91007CA1EC /* SKUnderlineStyle.swift in Sources */,
 				87A5016C1D9F9B91007CA1EC /* SKBaseConditionProcessor.swift in Sources */,
 				87A501791D9F9B91007CA1EC /* SKStyle.swift in Sources */,
 				87A5018E1D9F9B91007CA1EC /* UILabelExtensions.swift in Sources */,
+				6F2B38C51DAB6FED00D97853 /* SKSlider.swift in Sources */,
 				87A501741D9F9B91007CA1EC /* SKError.swift in Sources */,
 				87A5017E1D9F9B91007CA1EC /* SKStylesSourcePreprocessor.swift in Sources */,
 				87A501911D9F9B91007CA1EC /* UITextViewExtensions.swift in Sources */,
@@ -632,6 +668,7 @@
 				87A501861D9F9B91007CA1EC /* SKView.swift in Sources */,
 				6FAC21AF1DA38CD200A81748 /* SKStyleUISwitch.swift in Sources */,
 				87A5017D1D9F9B91007CA1EC /* SKStylesSource.swift in Sources */,
+				6F2B38CE1DAB74C100D97853 /* SKStyleUIProgressView.swift in Sources */,
 				87A5017B1D9F9B91007CA1EC /* SKStyleParamsExtension.swift in Sources */,
 				87A501871D9F9B91007CA1EC /* StyleKit.swift in Sources */,
 				87A5016F1D9F9B91007CA1EC /* SKConditionFactory.swift in Sources */,
@@ -650,6 +687,7 @@
 				87A501761D9F9B91007CA1EC /* SKImageView.swift in Sources */,
 				87A501731D9F9B91007CA1EC /* SKDeviceCondition.swift in Sources */,
 				6FAC21B11DA38DA700A81748 /* SKStyleUITextField.swift in Sources */,
+				6F2B38CC1DAB741700D97853 /* SKProgressView.swift in Sources */,
 				8733DA981DA3659C0045A12B /* SKStyleUIView.swift in Sources */,
 				87A5018A1D9F9B91007CA1EC /* StyleKitPublicInterface.swift in Sources */,
 			);
@@ -659,12 +697,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A501C11D9F9C57007CA1EC /* SKView.swift in Sources */,
+				87A501C11D9F9C57007CA1EC /* SKViewTests.swift in Sources */,
 				87A501B71D9F9C57007CA1EC /* SKLabelTests.swift in Sources */,
 				87A501B81D9F9C57007CA1EC /* SKScaleConditionTests.swift in Sources */,
 				87A501BC1D9F9C57007CA1EC /* SKStyleTests.swift in Sources */,
 				87A501BB1D9F9C57007CA1EC /* SKStylesSourceTests.swift in Sources */,
 				87A501B21D9F9C57007CA1EC /* SKBaseConditionFactoryTests.swift in Sources */,
+				6F2B38D01DAB758300D97853 /* SKProgressViewTests.swift in Sources */,
 				87A501BA1D9F9C57007CA1EC /* SKStylesSourcePreprocessorTests.swift in Sources */,
 				87A501B61D9F9C57007CA1EC /* SKFontStyleTests.swift in Sources */,
 				87A501B31D9F9C57007CA1EC /* SKBaseConditionProcessorTests.swift in Sources */,
@@ -677,6 +716,7 @@
 				87A501CE1D9F9C57007CA1EC /* UIControlExtensionsTests.swift in Sources */,
 				87A501C01D9F9C57007CA1EC /* SKUnderlineStyleTests.swift in Sources */,
 				87A501B51D9F9C57007CA1EC /* SKDeviceConditionTests.swift in Sources */,
+				6F2B38C91DAB71BD00D97853 /* SKSliderTests.swift in Sources */,
 				87A501B91D9F9C57007CA1EC /* SKStyleHierarchyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

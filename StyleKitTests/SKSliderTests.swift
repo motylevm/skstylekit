@@ -18,23 +18,46 @@
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Foundation
+import XCTest
+@testable import SKStyleKit
 
-let parentKey = "parent"
-let parentsKey = "parents"
-let aliasesKey = "aliases"
-
-let parametersAliases: [String: [String]] = ["fontColor": ["color"],
-                                             "backgroundColor": ["color"],
-                                             "borderColor": ["color"],
-                                             "shadowColor": ["color"],
-                                             "onTintColor": ["color"],
-                                             "thumbTintColor": ["color"],
-                                             "tintColor": ["color"],
-                                             "minimumTrackTintColor": ["color"],
-                                             "maximumTrackTintColor": ["color"],
-                                             "progressTintColor": ["color"],
-                                             "trackTintColor": ["color"],
-                                             "borderWidth": ["size"],
-                                             "fontSize": ["size"],
-                                             "shadowRadius": ["size"]]
+class SKSliderTests: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+        
+        basicSetup()
+    }
+    
+    func testSetStyle() {
+        
+        // given
+        let style = StyleKit.style(withName: "sliderStyle")
+        let slider = SKSlider()
+        
+        // when
+        slider.style = style
+        
+        // then
+        XCTAssertNotNil(style)
+        XCTAssertEqual(slider.styleName, "sliderStyle")
+        checkViewStyle(slider)
+        checkControlStyle(slider)
+        checkSliderStyle(slider)
+    }
+    
+    func testSetStyleByName() {
+        
+        // given
+        let slider = SKSlider()
+        
+        // when
+        slider.styleName = "sliderStyle"
+        
+        // then
+        XCTAssertNotNil(slider.style)
+        checkViewStyle(slider)
+        checkControlStyle(slider)
+        checkSliderStyle(slider)
+    }
+}
