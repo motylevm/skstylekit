@@ -320,12 +320,12 @@
 				87A501A51D9F9C57007CA1EC /* styleInvalidCondition.json */,
 				87A501A61D9F9C57007CA1EC /* styleInvalidStructure.json */,
 				87A501A71D9F9C57007CA1EC /* styleParamParent.json */,
-				87A501A81D9F9C57007CA1EC /* styleUITestsStyles.json */,
 				87A501A91D9F9C57007CA1EC /* styleZIndex10.json */,
 				87A501AA1D9F9C57007CA1EC /* styleZIndex20.json */,
 				87A501AB1D9F9C57007CA1EC /* styleZIndexDefault.json */,
 				87A501AD1D9F9C57007CA1EC /* TestStyleJson1_AllConditionsTrue.json */,
 				87A501AE1D9F9C57007CA1EC /* TestStyleJson1.json */,
+				87A501A81D9F9C57007CA1EC /* styleUITestsStyles.json */,
 			);
 			name = Res;
 			sourceTree = "<group>";

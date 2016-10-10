@@ -150,11 +150,11 @@ class SKStyleHierarchyTests: XCTestCase {
         
         // when
         let param = try! style2.populatedParam(key: "p1", fromProvider: provider, except: ["style2"])
-        let numberParam = (param as? NSNumber)?.floatValue
+        let numberParam = (param as? NSNumber).map({ CGFloat($0.floatValue) })
         
         // then
         XCTAssertNotNil(numberParam)
-        XCTAssertEqual(numberParam, style1.floatValue(forKey: "p1"))
+        XCTAssertEqual(numberParam, style1.cgFloatValue(forKey: "p1"))
     }
     
     func testSourcePopulateParams() {
@@ -168,6 +168,6 @@ class SKStyleHierarchyTests: XCTestCase {
         try! style2.populateParams(fromProvider: provider)
         
         // then
-        XCTAssertEqual(style2.floatValue(forKey: "p1"), style1.floatValue(forKey: "p1"))
+        XCTAssertEqual(style2.cgFloatValue(forKey: "p1"), style1.cgFloatValue(forKey: "p1"))
     }
 }

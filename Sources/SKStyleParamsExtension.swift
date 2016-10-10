@@ -24,7 +24,7 @@ public extension SKStyle {
     
     // MARK: - Abstract properties
     public var color: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     public var size: CGFloat? {
@@ -35,7 +35,7 @@ public extension SKStyle {
     
     /// Background color, can be applied to any View
     public var backgroundColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     /// Cackground radius, can be applied to any View
@@ -50,7 +50,7 @@ public extension SKStyle {
     
     /// Border color, can be applied to any View
     public var borderColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     /// Alpha, can be applied to any View
@@ -75,12 +75,12 @@ public extension SKStyle {
     
     /// Tint color, can be applied to any View
     public var tintColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     /// Shadow color, can be applied to any View
     public var shadowColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     /// Shadow opacity, can be applied to any View
@@ -101,33 +101,33 @@ public extension SKStyle {
     // MARK: - [Slider] Properties
     
     public var minimumTrackTintColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     public var maximumTrackTintColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     // MARK: - [Switch] Properties
     
     /// On tint color, can be applied to Switch
     public var onTintColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     /// Thumb tint color, can be applied to Switch
     public var thumbTintColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     // MARK: - [Progress View] Properties
     
     public var progressTintColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     public var trackTintColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     // MARK: - [Font] Properties
@@ -149,7 +149,7 @@ public extension SKStyle {
     
     /// Font color, can be applied to text containers (Label, TextField, TextView)
     public var fontColor: UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: #function))
+        return colorValue(forKey: #function)
     }
     
     /// Font kern, can be applied to text containers (Label, TextField, TextView)
@@ -211,7 +211,7 @@ public extension SKStyle {
     
     /// Text hypernation factor, can be applied to text containers (Label, TextField, TextView)
     public var textHyphenationFactor: Float? {
-        return floatValue(forKey: #function)
+        return cgFloatValue(forKey: #function).map({ Float($0) })
     }
     
     /// Text underline style, can be applied to text containers (Label, TextField, TextView)

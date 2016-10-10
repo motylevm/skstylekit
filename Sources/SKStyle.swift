@@ -45,12 +45,12 @@ open class SKStyle: NSObject {
         return (styleValue(forKey: key) as? NSNumber).map({ CGFloat($0) })
     }
     
-    open func floatValue(forKey key: String) -> Float? {
-        return (styleValue(forKey: key) as? NSNumber)?.floatValue
-    }
-
     open func stringValue(forKey key: String) -> String? {
         return styleValue(forKey: key) as? String
+    }
+    
+    open func colorValue(forKey key: String) -> UIColor? {
+        return UIColor.sk_Color(fromHexString: stringValue(forKey: key))
     }
     
     open func styleValue(forKey key: String) -> Any? {
@@ -59,11 +59,12 @@ open class SKStyle: NSObject {
             return result
         }
         
-        for alias in parametersAliases[key] ?? [] {
-            
-            if let result = source[alias] {
-                return result
-            }
+        if colorParameters.contains(key) {
+            return source["color"]
+        }
+        
+        if sizeParameters.contains(key) {
+            return source["size"]
         }
         
         return nil
