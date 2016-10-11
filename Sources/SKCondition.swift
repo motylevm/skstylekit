@@ -17,14 +17,11 @@
 //    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 import Foundation
 
 protocol SKCondition: class, CustomStringConvertible {
     
     var groupKey: String { get }
     func check() -> Bool
-}
-
-func ==(c1: SKCondition?, c2: SKCondition?) -> Bool {
-    return c1?.description == c2?.description
 }
