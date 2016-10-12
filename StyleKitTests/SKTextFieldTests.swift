@@ -18,32 +18,50 @@
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import UIKit
+import XCTest
+@testable import SKStyleKit
 
-public extension SKStyle {
+class SKTextFieldTests: XCTestCase {
     
-    public func apply(textField: UITextField?, text: String?) {
+    override func setUp() {
+        super.setUp()
         
-        apply(control: textField)
-        
-        if let textAttributes = textAttributes(defaultParagraphStyle: textField?.sk_defaultParagraphStyle()) {
-            
-            textField?.defaultTextAttributes = textAttributes
-        }
-
-        textField?.attributedText = StyleKit.string(withStyle: self, string: text, defaultParagraphStyle: textField?.sk_defaultParagraphStyle())
-        
-        if let textAlignment = textAlignment {
-            textField?.textAlignment = textAlignment
-        }
+        basicSetup()
     }
     
-    public func apply(textField: UITextField?, placeholderText text: String?) {
+    func testSetStyle() {
         
-        textField?.attributedPlaceholder = StyleKit.string(withStyle: self, string: text)
+        // given
+        let style = StyleKit.style(withName: "textFieldStyle")
+        let textField = SKTextField()
+        textField.text = "123456789"
+        textField.placeholder = "987654321"
         
-        if let _ = textAlignment {
-            StyleKit.log("Style kit warning: textAlignment have no effect on UITextField placeholder")
-        }
+        // when
+        textField.style = style
+        
+        // then
+        XCTAssertNotNil(textField)
+        XCTAssertEqual(textField.styleName, "textFieldStyle")
+        checkViewStyle(textField)
+        checkStringStyle(textField.attributedText)
     }
+    
+    func testSetStylePlaceholder() {
+        
+        // given
+        let style = StyleKit.style(withName: "textFieldPlaceholderStyle")
+        let textField = SKTextField()
+        textField.text = "123456789"
+        textField.placeholder = "987654321"
+        
+        // when
+        textField.placeholderStyle = style
+        
+        // then
+        XCTAssertNotNil(textField)
+        XCTAssertEqual(textField.placeholderStyleName, "textFieldPlaceholderStyle")
+        checkStringStyle(textField.attributedPlaceholder, aligmentCheck: false)
+    }
+
 }

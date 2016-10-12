@@ -200,16 +200,28 @@ open class SKStyle: NSObject {
     func populateParams(fromProvider provider: SKStylesProvider, except: [String]) throws {
         guard !isParamsPopulated else { return }
         
-        for key in Array(source.keys) {
+        var newSource = source
+        
+        for (key, value) in source {
             
             guard key != parentKey && key != parentsKey else { continue }
-
+            guard let value = value as? String else { continue }
+            
+            let forceValue = value.hasPrefix(forceParamValue)
+        
+            if forceValue {
+                
+                newSource[key] = value.substring(from: value.index(after: value.startIndex))
+                continue
+            }
+            
             if let newValue = try populatedParam(key: key, fromProvider: provider, except: except) {
-                source[key] = newValue
+                newSource[key] = newValue
             }
         }
         
         isParamsPopulated = true
+        source = newSource
     }
     
     func populateParams(fromProvider provider: SKStylesProvider) throws {

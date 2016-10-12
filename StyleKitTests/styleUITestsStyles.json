@@ -81,6 +81,14 @@
             "parent": "viewStyle",
             "progressTintColor": "red",
             "trackTintColor": "green"
+        },
+        
+        "textFieldStyle": {
+            "parent": "labelStyle"
+        },
+        
+        "textFieldPlaceholderStyle": {
+            "parent": "labelStyle"
         }
     }
 }

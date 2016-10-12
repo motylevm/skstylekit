@@ -81,7 +81,7 @@ open class SKTextField: UITextField {
     
     private func applyCurrentPlaceholderStyle() {
         
-        placeholderStyle?.apply(textField: self, text: placeholder)
+        placeholderStyle?.apply(textField: self, placeholderText: placeholder)
         hasExternalAttributedPlaceholder = false
     }
     

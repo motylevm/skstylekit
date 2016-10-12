@@ -23,6 +23,7 @@ import Foundation
 let parentKey = "parent"
 let parentsKey = "parents"
 let aliasesKey = "aliases"
+let forceParamValue = "@"
 
 let colorParameters: Set<String> = ["fontColor",
                                     "backgroundColor",
