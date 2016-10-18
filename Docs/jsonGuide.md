@@ -162,6 +162,17 @@ Shadow opacity [0 - 1]
 ### tintColor
 Tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
+## UISlider
+
+### minimumTrackTintColor
+Minimum track color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+
+### maximumTrackTintColor
+Maximum track color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+
+### thumbTintColor
+Thumnb tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+
 ## UIControl
 
 ### contentVerticalAlignment
@@ -177,6 +188,14 @@ Tint color in on state, string representing color in hex format: `#RRGGBB` or `#
 
 ### thumbTintColor [String]
 Thumnb tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+
+## UIProgressView
+
+### progressTintColor
+Progress tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+
+### trackTintColor
+Track tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
 ## Text attributes
 

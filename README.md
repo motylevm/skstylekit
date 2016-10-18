@@ -125,19 +125,63 @@ Then switch to attributes inspector and set style name property:
 	<img src="https://cloud.githubusercontent.com/assets/5831773/19126418/88e80686-8b43-11e6-9f2e-f3309ea8bbaa.png"/>
 </p>
 
+That's it!
+
 ## Button Example
 
-	Coming soon
+Button has separate styles for differets states. Let's declare them:
+
+```json
+{
+	"button.Normal": {
+		"parents": ["button.Text", "button.ViewStyle"],
+		"alpha": 1
+	},
+
+	"button.Selected": {
+		"backgroundColor": "green"
+	},
+
+	"button.Highlighted": {
+		"alpha": 0.5
+	},
+
+	"button.Disabled": {
+		"backgroundColor": "gray"
+	}
+}
+```
+####Note: Style for "normal" should set all parameters that going to be changed in other stats' styles
+
 
 # Advanced
 
 ## Work With Styles Programmatically
 
-	Coming soon
+SKStyleKit entry point is StyleKit class. 
+
+To get instance of the certain style: 
+
+```swift
+let style = StyleKit.style(withName: "StyleName")
+```
+
+
+
 
 ## Using Style Kit With Non SK Components
 
-	Coming soon
+Style can be applied to any standart controls like: 
+
+```swift
+let style = StyleKit.style(withName: "StyleName")
+
+style.apply(view: view)
+style.apply(slider: slider)
+style.apply(label:  label, text: "Text to set")
+style.apply(button: button, title: "Text to set", forState state: .normal)
+```
+However in this case, you should not set text or attributedText property directly, use appropriate SKStyle method.
 
 ## Using Style Kit With Attributed Strings
 
