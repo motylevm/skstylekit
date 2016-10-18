@@ -49,30 +49,20 @@ public extension SKStyle {
             view?.tintColor = tintColor
         }
         
-        var shadowApplied = false
-        
         if let shadowRadius = shadowRadius {
-            
             view?.layer.shadowRadius = shadowRadius
-            shadowApplied = true
         }
         
         if let shadowOffset = shadowOffset {
-            
             view?.layer.shadowOffset = shadowOffset
-            shadowApplied = true
         }
         
         if let shadowColor = shadowColor {
-            
             view?.layer.shadowColor = shadowColor.cgColor
-            shadowApplied = true
         }
         
         if let shadowOpacity = shadowOpacity {
             view?.layer.shadowOpacity = Float(shadowOpacity)
-        } else if shadowApplied {
-            view?.layer.shadowOpacity = 1
         }
     }
 }
