@@ -29,7 +29,12 @@ open class SKStyle: NSObject {
     private(set) var isParentsPopulated: Bool = false
     private(set) var isParamsPopulated: Bool = false
     
-    // MARK: - Calculated Properties
+    // MARK: - UIView flags
+    private(set) var containsViewStyle: Bool = false
+    private(set) var containsViewCommonStyle: Bool = false
+    private(set) var containsViewBorderStyle: Bool = false
+    private(set) var containsViewColorStyle: Bool = false
+    private(set) var containsViewShadowStyle: Bool = false
 
     // MARK: - Init
     public init(source: [String: Any], name: String) {
@@ -38,6 +43,19 @@ open class SKStyle: NSObject {
         self.name = name
         self.source = source
         self.aliases = source[aliasesKey] as? [String]
+        
+        setUIViewFlags()
+    }
+    
+    // MARK: - UIView flags set 
+    private func setUIViewFlags() {
+        
+        containsViewCommonStyle = checkIfContainsViewCommonStyle()
+        containsViewBorderStyle = checkIfContainsViewBorderStyle()
+        containsViewColorStyle = checkIfContainsViewColorStyle()
+        containsViewShadowStyle = checkIfContainsViewShadowStyle()
+        
+        containsViewStyle = containsViewCommonStyle || containsViewBorderStyle || containsViewColorStyle || containsViewShadowStyle
     }
     
     // MARK: - Properties get
@@ -50,7 +68,7 @@ open class SKStyle: NSObject {
     }
     
     open func colorValue(forKey key: String) -> UIColor? {
-        return UIColor.sk_Color(fromHexString: stringValue(forKey: key))
+        return SKColorCache.color(with: stringValue(forKey: key))
     }
     
     open func styleValue(forKey key: String) -> Any? {

@@ -24,15 +24,22 @@ public extension SKStyle {
     
     // MARK: - UIView
     public func apply(view: UIView?) {
-
-        if let backgroundColor = backgroundColor {
-            view?.backgroundColor = backgroundColor
+        guard containsViewStyle else { return }
+        
+        // Common
+        if containsViewCommonStyle {
+            
+        }
+        
+        if let alpha = alpha {
+            view?.alpha = alpha
         }
         
         if let cornerRadius = cornerRadius {
             view?.layer.cornerRadius = cornerRadius
         }
         
+        // Border
         if let borderWidth = borderWidth {
             view?.layer.borderWidth = borderWidth
         }
@@ -41,14 +48,16 @@ public extension SKStyle {
             view?.layer.borderColor = borderColor.cgColor
         }
         
-        if let alpha = alpha {
-            view?.alpha = alpha
+        // Colors
+        if let backgroundColor = backgroundColor {
+            view?.backgroundColor = backgroundColor
         }
         
         if let tintColor = tintColor {
             view?.tintColor = tintColor
         }
         
+        // Shadow
         if let shadowRadius = shadowRadius {
             view?.layer.shadowRadius = shadowRadius
         }
@@ -64,5 +73,22 @@ public extension SKStyle {
         if let shadowOpacity = shadowOpacity {
             view?.layer.shadowOpacity = Float(shadowOpacity)
         }
+    }
+    
+    // MARK: - Check Style
+    func checkIfContainsViewCommonStyle() -> Bool {
+        return alpha != nil || cornerRadius != nil
+    }
+    
+    func checkIfContainsViewBorderStyle() -> Bool {
+        return borderWidth != nil || borderColor != nil
+    }
+    
+    func checkIfContainsViewColorStyle() -> Bool {
+        return backgroundColor != nil || tintColor != nil
+    }
+    
+    func checkIfContainsViewShadowStyle() -> Bool {
+        return shadowRadius != nil || shadowOffset != nil || shadowColor != nil || shadowOpacity != nil
     }
 }
