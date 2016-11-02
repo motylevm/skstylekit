@@ -24,54 +24,65 @@ public extension SKStyle {
     
     // MARK: - UIView
     public func apply(view: UIView?) {
-        guard containsViewStyle else { return }
         
+        let flags = self.flags?.viewFlags ?? viewAllFlags
+        
+        guard flags != 0 else { return }
+
         // Common
-        if containsViewCommonStyle {
+        if flags & viewCommonFlag != 0 {
             
-        }
-        
-        if let alpha = alpha {
-            view?.alpha = alpha
-        }
-        
-        if let cornerRadius = cornerRadius {
-            view?.layer.cornerRadius = cornerRadius
+            if let alpha = alpha {
+                view?.alpha = alpha
+            }
+            
+            if let cornerRadius = cornerRadius {
+                view?.layer.cornerRadius = cornerRadius
+            }
         }
         
         // Border
-        if let borderWidth = borderWidth {
-            view?.layer.borderWidth = borderWidth
+        if flags & viewBorderFlag != 0 {
+            
+            if let borderWidth = borderWidth {
+                view?.layer.borderWidth = borderWidth
+            }
+            
+            if let borderColor = borderColor {
+                view?.layer.borderColor = borderColor.cgColor
+            }
         }
-        
-        if let borderColor = borderColor {
-            view?.layer.borderColor = borderColor.cgColor
-        }
-        
+
         // Colors
-        if let backgroundColor = backgroundColor {
-            view?.backgroundColor = backgroundColor
-        }
-        
-        if let tintColor = tintColor {
-            view?.tintColor = tintColor
+        if flags & viewColorFlag != 0 {
+            
+            if let backgroundColor = backgroundColor {
+                view?.backgroundColor = backgroundColor
+            }
+            
+            if let tintColor = tintColor {
+                view?.tintColor = tintColor
+            }
         }
         
         // Shadow
-        if let shadowRadius = shadowRadius {
-            view?.layer.shadowRadius = shadowRadius
-        }
-        
-        if let shadowOffset = shadowOffset {
-            view?.layer.shadowOffset = shadowOffset
-        }
-        
-        if let shadowColor = shadowColor {
-            view?.layer.shadowColor = shadowColor.cgColor
-        }
-        
-        if let shadowOpacity = shadowOpacity {
-            view?.layer.shadowOpacity = Float(shadowOpacity)
+        if flags & viewShadowFlag != 0 {
+            
+            if let shadowRadius = shadowRadius {
+                view?.layer.shadowRadius = shadowRadius
+            }
+            
+            if let shadowOffset = shadowOffset {
+                view?.layer.shadowOffset = shadowOffset
+            }
+            
+            if let shadowColor = shadowColor {
+                view?.layer.shadowColor = shadowColor.cgColor
+            }
+            
+            if let shadowOpacity = shadowOpacity {
+                view?.layer.shadowOpacity = Float(shadowOpacity)
+            }
         }
     }
     
