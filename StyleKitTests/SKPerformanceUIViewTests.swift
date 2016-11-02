@@ -9,7 +9,7 @@
 import XCTest
 @testable import SKStyleKit
 
-let viewsCount = 500
+let viewsCount = 5000
 
 class SKPerformanceUIViewTests: XCTestCase {
     

@@ -97,21 +97,19 @@
         
         "viewStyleExceptShadow": {
             
-            "parent": "viewStyle",
-
-            "shadowRadius": [],
-            "shadowOffset": [],
-            "shadowColor": [],
-            "shadowOpacity": []
+            "tintColor": "green",
+            "backgroundColor": "red",
+            "cornerRadius": 5,
+            "borderWidth": 4,
+            "borderColor": "color.green",
+            "alpha": 0.5
         },
         
         "viewStyleExceptShadowBorderCorner": {
             
-            "parent": "viewStyleExceptShadow",
-            
-            "cornerRadius": [],
-            "borderWidth": [],
-            "borderColor": []
+            "tintColor": "green",
+            "backgroundColor": "red",
+            "alpha": 0.5
         }
     }
 }
