@@ -13,6 +13,7 @@
 		6F2B38CC1DAB741700D97853 /* SKProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CB1DAB741700D97853 /* SKProgressView.swift */; };
 		6F2B38CE1DAB74C100D97853 /* SKStyleUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */; };
 		6F2B38D01DAB758300D97853 /* SKProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */; };
+		6FA2FE101DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2FE0F1DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift */; };
 		6FAC21AD1DA38C1700A81748 /* SKStyleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC21AC1DA38C1700A81748 /* SKStyleUIButton.swift */; };
 		6FAC21AF1DA38CD200A81748 /* SKStyleUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC21AE1DA38CD200A81748 /* SKStyleUISwitch.swift */; };
 		6FAC21B11DA38DA700A81748 /* SKStyleUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAC21B01DA38DA700A81748 /* SKStyleUITextField.swift */; };
@@ -110,6 +111,7 @@
 		6F2B38CB1DAB741700D97853 /* SKProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKProgressView.swift; path = Sources/SKProgressView.swift; sourceTree = SOURCE_ROOT; };
 		6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIProgressView.swift; path = Sources/SKStyleUIProgressView.swift; sourceTree = SOURCE_ROOT; };
 		6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKProgressViewTests.swift; sourceTree = "<group>"; };
+		6FA2FE0F1DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIViewTests.swift; sourceTree = "<group>"; };
 		6FAC21AC1DA38C1700A81748 /* SKStyleUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIButton.swift; path = Sources/SKStyleUIButton.swift; sourceTree = SOURCE_ROOT; };
 		6FAC21AE1DA38CD200A81748 /* SKStyleUISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUISwitch.swift; path = Sources/SKStyleUISwitch.swift; sourceTree = SOURCE_ROOT; };
 		6FAC21B01DA38DA700A81748 /* SKStyleUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUITextField.swift; path = Sources/SKStyleUITextField.swift; sourceTree = SOURCE_ROOT; };
@@ -299,6 +301,7 @@
 				87A501AC1D9F9C57007CA1EC /* TestHelpers.swift */,
 				87A501AF1D9F9C57007CA1EC /* UIColorCategoryTest.swift */,
 				87A501B01D9F9C57007CA1EC /* UIControlExtensionsTests.swift */,
+				6FA2FE0F1DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift */,
 			);
 			path = StyleKitTests;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				6FB779661DAE159E00BADCFB /* SKTextFieldTests.swift in Sources */,
 				87A501B21D9F9C57007CA1EC /* SKBaseConditionFactoryTests.swift in Sources */,
 				6F2B38D01DAB758300D97853 /* SKProgressViewTests.swift in Sources */,
+				6FA2FE101DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift in Sources */,
 				87A501BA1D9F9C57007CA1EC /* SKStylesSourcePreprocessorTests.swift in Sources */,
 				87A501B61D9F9C57007CA1EC /* SKFontStyleTests.swift in Sources */,
 				87A501B31D9F9C57007CA1EC /* SKBaseConditionProcessorTests.swift in Sources */,
