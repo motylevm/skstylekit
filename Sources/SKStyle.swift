@@ -37,6 +37,8 @@ open class SKStyle: NSObject {
         self.name = name
         self.source = source
         self.aliases = source[aliasesKey] as? [String]
+        
+        updateSourceFlags()
     }
     
     // MARK: - Properties get

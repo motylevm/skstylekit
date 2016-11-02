@@ -12,6 +12,7 @@
     
         "viewStyle": {
             
+            "tintColor": "green",
             "backgroundColor": "red",
             "cornerRadius": 5,
             "borderWidth": 4,
@@ -89,6 +90,26 @@
         
         "textFieldPlaceholderStyle": {
             "parent": "labelStyle"
+        }
+    },
+    
+    "performance": {
+        
+        "viewStyleExceptShadow": {
+            
+            "tintColor": "green",
+            "backgroundColor": "red",
+            "cornerRadius": 5,
+            "borderWidth": 4,
+            "borderColor": "color.green",
+            "alpha": 0.5
+        },
+        
+        "viewStyleExceptShadowBorderCorner": {
+            
+            "tintColor": "green",
+            "backgroundColor": "red",
+            "alpha": 0.5
         }
     }
 }

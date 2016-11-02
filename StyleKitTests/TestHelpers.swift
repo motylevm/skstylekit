@@ -50,6 +50,7 @@ func basicSetup() {
 
 func checkViewStyle(_ view: UIView) {
     
+    XCTAssertEqual(view.tintColor, UIColor.green)
     XCTAssertEqual(view.backgroundColor, UIColor.red)
     XCTAssertEqual(view.layer.cornerRadius, 5.0)
     XCTAssertEqual(view.layer.borderWidth, 4.0)
