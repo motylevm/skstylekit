@@ -1,4 +1,11 @@
 {
+    "sizes": {
+        
+        "5points": {
+            "size": 5
+        }
+    },
+
     "color": {
       
         "black": {"color": "#000000"},
@@ -14,7 +21,7 @@
             
             "tintColor": "green",
             "backgroundColor": "red",
-            "cornerRadius": 5,
+            "cornerRadius": "5points",
             "borderWidth": 4,
             "borderColor": "color.green",
             "alpha": 0.5,

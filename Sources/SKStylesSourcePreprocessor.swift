@@ -123,6 +123,21 @@ class SKStylesSourcePreprocessor {
                     result[param] = value
                 }
             }
+            
+            if key == colorParam {
+                
+                for param in colorParameters {
+                    result[param] = value
+                }
+                
+            }
+            
+            if key == sizeParam {
+                
+                for param in sizeParameters {
+                    result[param] = value
+                }
+            }
         }
         
         return result

@@ -43,32 +43,15 @@ open class SKStyle: NSObject {
     
     // MARK: - Properties get
     open func cgFloatValue(forKey key: String) -> CGFloat? {
-        return (styleValue(forKey: key) as? NSNumber).map({ CGFloat($0) })
+        return (source[key] as? NSNumber).map({ CGFloat($0) })
     }
     
     open func stringValue(forKey key: String) -> String? {
-        return styleValue(forKey: key) as? String
+        return source[key] as? String
     }
     
     open func colorValue(forKey key: String) -> UIColor? {
         return SKColorCache.color(with: stringValue(forKey: key))
-    }
-    
-    open func styleValue(forKey key: String) -> Any? {
-
-        if let result = source[key] {
-            return result
-        }
-        
-        if colorParameters.contains(key) {
-            return source["color"]
-        }
-        
-        if sizeParameters.contains(key) {
-            return source["size"]
-        }
-        
-        return nil
     }
     
     // MARK: - Flags
@@ -102,11 +85,11 @@ open class SKStyle: NSObject {
     // MARK: - Hierarchy
     var parentLinks: [String] {
         
-        if let parent = styleValue(forKey: parentKey) as? String {
+        if let parent = source[parentKey] as? String {
             return [parent]
         }
         
-        if let parents = styleValue(forKey: parentsKey) as? [String] {
+        if let parents = source[parentsKey] as? [String] {
             return parents
         }
         
@@ -196,7 +179,7 @@ open class SKStyle: NSObject {
             try style.populateParams(fromProvider: provider, except: except + [style.name] + (style.aliases ?? []))
         }
         
-        if let value = style.styleValue(forKey: key) {
+        if let value = style.source[key] {
             return value
         }
         

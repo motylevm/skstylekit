@@ -45,7 +45,7 @@ class SKStyleTests: XCTestCase {
         let expected = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         // when
-        let ret = style.fontColor!
+        let ret = style.color!
         
         // then
         XCTAssertEqual(expected, ret)

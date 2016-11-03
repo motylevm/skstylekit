@@ -25,6 +25,8 @@ let parentsKey = "parents"
 let aliasesKey = "aliases"
 let forceParamValue = "@"
 
+
+let colorParam = "color"
 let colorParameters: Set<String> = ["fontColor",
                                     "backgroundColor",
                                     "borderColor",
@@ -37,6 +39,7 @@ let colorParameters: Set<String> = ["fontColor",
                                     "progressTintColor",
                                     "trackTintColor"]
 
+let sizeParam = "size"
 let sizeParameters: Set<String> = ["borderWidth",
                                    "fontSize",
                                    "shadowRadius",

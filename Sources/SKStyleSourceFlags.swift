@@ -8,16 +8,22 @@
 
 import Foundation
 
+// UIView bit flags
 let viewCommonFlag = 1 << 0
 let viewBorderFlag = 1 << 1
 let viewColorFlag  = 1 << 2
 let viewShadowFlag = 1 << 3
 let viewAllFlags = viewCommonFlag | viewBorderFlag | viewColorFlag | viewShadowFlag
 
+// Label bit flags
+let labelCommonFlag = 1 << 0
+let labelAdvancedFlag = 1 << 1
+
 class SKStyleSourceFlags {
     
     // MARK: - UIView
     let viewFlags: Int
+    let labelFlags: Int
     
     // MARK: - Init
     init(from style: SKStyle) {
@@ -25,6 +31,7 @@ class SKStyleSourceFlags {
         viewFlags = SKStyleSourceFlags.getViewFlags(from: style)
     }
     
+    // MARK: - Getting flags
     private class func getViewFlags(from style: SKStyle) -> Int {
         
         var result = 0
@@ -47,4 +54,6 @@ class SKStyleSourceFlags {
         
         return result
     }
+    
+    
 }

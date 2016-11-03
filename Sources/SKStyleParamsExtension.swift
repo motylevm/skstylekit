@@ -216,7 +216,7 @@ public extension SKStyle {
     
     /// Text underline style, can be applied to text containers (Label, TextField, TextView)
     public var textUnderline: NSUnderlineStyle? {
-        return SKUnderlineStyle.from(rawValue: styleValue(forKey: #function) as? String)?.style
+        return SKUnderlineStyle.from(rawValue: stringValue(forKey: #function))?.style
     }
     
     /// Text underline pattern, can be applied to text containers (Label, TextField, TextView)
@@ -259,7 +259,7 @@ public extension SKStyle {
         }
     }
     
-    private func paragraphStyle(defaultParagraphStyle: NSParagraphStyle? = nil) -> NSParagraphStyle? {
+    func paragraphStyle(defaultParagraphStyle: NSParagraphStyle? = nil) -> NSParagraphStyle? {
         
         var resultIsEmpty = true
         let result = (defaultParagraphStyle?.mutableCopy() as? NSMutableParagraphStyle) ?? NSMutableParagraphStyle()
