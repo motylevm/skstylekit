@@ -21,12 +21,7 @@
 import XCTest
 @testable import SKStyleKit
 
-let viewsCount = 500
-let repeatCount = 10
-let rect = CGRect(x: 0, y: 0, width: 300, height: 300)
-let defText = "The quick brown fox jumps over the lazy dog."
-
-class SKPerformanceUIViewFullTests: XCTestCase {
+class SKPerformanceUILabelCommonTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -34,15 +29,18 @@ class SKPerformanceUIViewFullTests: XCTestCase {
         basicSetup()
     }
     
-    func testPerformanceUIViewFull() {
+    func testPerformanceUILabel() {
         
         // given
-        let style = StyleKit.style(withName: "viewStyle")
-        let views = (0 ..< viewsCount).map({ _ in SKView(frame: rect) })
+        let style = StyleKit.style(withName: "labelCommon")
+        let views = (0 ..< viewsCount).map({ _ in SKLabel(frame: rect) })
+        
+        views.forEach({ $0.text = defText })
+        
         
         // when
         self.measure {
-        
+            
             for _ in 0 ..< repeatCount {
                 
                 for view in views {

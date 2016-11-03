@@ -23,7 +23,7 @@ class SKStyleSourceFlags {
     
     // MARK: - UIView
     let viewFlags: Int
-    let labelFlags: Int
+    //let labelFlags: Int
     
     // MARK: - Init
     init(from style: SKStyle) {

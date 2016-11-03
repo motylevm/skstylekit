@@ -117,6 +117,34 @@
             "tintColor": "green",
             "backgroundColor": "red",
             "alpha": 0.5
+        },
+        
+        "labelCommon": {
+            
+            "fontColor": "green",
+            "fontSize": 12,
+            "textAlignment": "right"
+        },
+        
+        "labelAdvanced": {
+            
+            "fontStyle": "bold",
+            "fontSize": 21,
+            "fontColor": "green",
+            "fontKern": 0.1,
+            "fontLineSpacing": 15,
+            "fontLineHeightMultiple": 3,
+            "fontMinimumLineHeight": 10,
+            "fontMaximumLineHeight": 50,
+            "textAlignment": "right",
+            "textParagraphSpacing": 12,
+            "textParagraphFirstLineHeadIndent": 20,
+            "textParagraphHeadIndent": 4,
+            "textParagraphTailIndent": 8,
+            "textParagraphSpacingBefore": 7,
+            "textHyphenationFactor": 1.5,
+            "textUnderline": "double",
+            "textUnderlinePattern": "dashDotDot"
         }
     }
 }

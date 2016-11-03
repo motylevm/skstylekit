@@ -33,7 +33,7 @@ class SKPerformanceUIViewExceptShadowBorderCornerTests: XCTestCase {
         
         // given
         let style = StyleKit.style(withName: "viewStyleExceptShadowBorderCorner")
-        let views = (0 ..< viewsCount).map({ _ in SKView() })
+        let views = (0 ..< viewsCount).map({ _ in SKView(frame: rect) })
         
         // when
         self.measure {
@@ -41,7 +41,9 @@ class SKPerformanceUIViewExceptShadowBorderCornerTests: XCTestCase {
             for _ in 0 ..< repeatCount {
                 
                 for view in views {
+                    
                     view.style = style
+                    view.draw(rect)
                 }
             }
         }
