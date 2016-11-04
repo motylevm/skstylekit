@@ -135,24 +135,29 @@ Button has separate styles for differets states. Let's declare them:
 
 ```json
 {
-	"button.Normal": {
+	"button.normal": {
 		"parents": ["button.Text", "button.ViewStyle"],
 		"alpha": 1
 	},
 
-	"button.Selected": {
+	"button.selected": {
 		"backgroundColor": "green"
 	},
 
-	"button.Highlighted": {
+	"button.highlighted": {
 		"alpha": 0.5
 	},
 
-	"button.Disabled": {
+	"button.disabled": {
 		"backgroundColor": "gray"
 	}
 }
 ```
+
+<p align="center">
+	<img src="https://cloud.githubusercontent.com/assets/5831773/20019939/b4b9faf4-a2df-11e6-8e21-800c6487ab93.png"/>
+</p>
+
 ####Note: Style for "normal" should set all parameters that going to be changed in other stats' styles
 
 

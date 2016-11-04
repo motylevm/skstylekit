@@ -42,6 +42,12 @@
         
         "button.selected": {
             "backgroundColor": "#4444AA"
+        },
+        
+        "button.disabled": {
+            
+            "alpha": 0.5,
+            "backgroundColor": "#222222"
         }
     }
 }

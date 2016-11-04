@@ -49,6 +49,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="button.normal"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="highlightedStyleName" value="button.highlighted"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedStyleName" value="button.selected"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledStyleName" value="button.disabled"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1K-gc-nZP"/>
