@@ -16,8 +16,8 @@ let viewShadowFlag = 1 << 3
 let viewAllFlags = viewCommonFlag | viewBorderFlag | viewColorFlag | viewShadowFlag
 
 // Label bit flags
-let labelCommonFlag = 1 << 0
-let labelAdvancedFlag = 1 << 1
+//let labelCommonFlag = 1 << 0
+//let labelAdvancedFlag = 1 << 1
 
 class SKStyleSourceFlags {
     
