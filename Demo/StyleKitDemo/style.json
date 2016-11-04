@@ -1,5 +1,47 @@
 {
     "defBackground": {
         "backgroundColor": "black"
+    },
+    
+    "text": {
+        
+        "handwritingAppFont": {
+            "fontName": "Zapfino"
+        },
+        
+        "defAppFont": {},
+        
+        "appTextColor": {
+            "fontColor": "gray"
+        },
+        
+        "styleDemoStyle1": {
+            
+            "parents": ["handwritingAppFont", "appTextColor"],
+            "fontSize": 21
+        },
+        
+        "styleDemoStyle2": {
+            
+            "parent": "defAppFont",
+            "fontSize": 17,
+            "fontColor": "red"
+        },
+        
+        "button.normal": {
+            
+            "parent": "styleDemoStyle1",
+            "fontColor": "white",
+            "backgroundColor": "#444444",
+            "alpha": 1
+        },
+        
+        "button.highlighted": {
+            "alpha": 0.5
+        },
+        
+        "button.selected": {
+            "backgroundColor": "#4444AA"
+        }
     }
 }
