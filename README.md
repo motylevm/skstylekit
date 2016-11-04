@@ -127,6 +127,8 @@ Then switch to attributes inspector and set style name property:
 
 That's it!
 
+####Note: Styles also can be combined in thus case style name can be "firstStyleName+secondStyleName+<...>"
+
 ## Button Example
 
 Button has separate styles for differets states. Let's declare them:
@@ -166,9 +168,6 @@ To get instance of the certain style:
 let style = StyleKit.style(withName: "StyleName")
 ```
 
-
-
-
 ## Using Style Kit With Non SK Components
 
 Style can be applied to any standart controls like: 
@@ -178,7 +177,7 @@ let style = StyleKit.style(withName: "StyleName")
 
 style.apply(view: view)
 style.apply(slider: slider)
-style.apply(label:  label, text: "Text to set")
+style.apply(label: label, text: "Text to set")
 style.apply(button: button, title: "Text to set", forState state: .normal)
 ```
 However in this case, you should not set text or attributedText property directly, use appropriate SKStyle method.
