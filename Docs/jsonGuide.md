@@ -157,7 +157,6 @@ Shadow color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
 
 ### shadowOpacity
 Shadow opacity [0 - 1]
-##### Note: This value is automatically sets to 1 when any of `shadowColor`, `shadowOffset` or `shadowRadius` is set
 
 ### tintColor
 Tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
