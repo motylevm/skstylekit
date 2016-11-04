@@ -127,7 +127,7 @@ Then switch to attributes inspector and set style name property:
 
 That's it!
 
-####Note: Styles also can be combined in thus case style name can be "firstStyleName+secondStyleName+<...>"
+####Note: Styles also can be combined like "firstStyleName+secondStyleName+<...>"
 
 ## Button Example
 
