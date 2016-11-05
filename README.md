@@ -2,7 +2,7 @@
 
 <p align="left">
 	<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift_3.0-compatible-4BC51D.svg?style=flat" alt="Swift 3.0 compatible" /></a>
-	<a href="https://cocoapods.org/pods/tablekit"><img src="https://img.shields.io/badge/pod-0.7.5-blue.svg" alt="CocoaPods compatible" /></a>
+	<a href="https://cocoapods.org/pods/tablekit"><img src="https://img.shields.io/badge/pod-0.8.0-blue.svg" alt="CocoaPods compatible" /></a>
 	<img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 	<a href="https://raw.githubusercontent.com/motylevm/skstylekit/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
@@ -131,7 +131,7 @@ That's it!
 
 ## Button Example
 
-Button has separate styles for differets states. Let's declare them:
+SKButton has separate styles for differets states. Let's declare them:
 
 ```json
 {
@@ -153,13 +153,13 @@ Button has separate styles for differets states. Let's declare them:
 	}
 }
 ```
+####Note: Style for "normal" should set all parameters that going to be changed in other stats' styles
+
+Then set them in Interface Bilder:
 
 <p align="center">
 	<img src="https://cloud.githubusercontent.com/assets/5831773/20019939/b4b9faf4-a2df-11e6-8e21-800c6487ab93.png"/>
 </p>
-
-####Note: Style for "normal" should set all parameters that going to be changed in other stats' styles
-
 
 # Advanced
 
@@ -180,10 +180,14 @@ Style can be applied to any standart controls like:
 ```swift
 let style = StyleKit.style(withName: "StyleName")
 
-style.apply(view: view)
-style.apply(slider: slider)
-style.apply(label: label, text: "Text to set")
-style.apply(button: button, title: "Text to set", forState state: .normal)
+style.apply(view: UIView?)
+style.apply(slider: UISlider?)
+style.apply(progress: UIProgressView?)
+style.apply(label: UILabel?, text: String?)
+style.apply(button: UIButton?, title: String?, forState state: UIControlState)
+style.apply(switchControl: UISwitch?)
+style.apply(textField: UITextField?, text: String?)
+style.apply(textView: UITextView?, text: String?)
 ```
 However in this case, you should not set text or attributedText property directly, use appropriate SKStyle method.
 
