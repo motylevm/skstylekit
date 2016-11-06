@@ -21,12 +21,7 @@
 import XCTest
 @testable import SKStyleKit
 
-let viewsCount = 50
-let repeatCount = 10
-let rect = CGRect(x: 0, y: 0, width: 300, height: 300)
-let defText = "The quick brown fox jumps over the lazy dog."
-
-class SKPerformanceUIViewFullTests: XCTestCase {
+class SKTextViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -34,23 +29,20 @@ class SKPerformanceUIViewFullTests: XCTestCase {
         basicSetup()
     }
     
-    func testPerformanceUIViewFull() {
+    func testSetStyle() {
         
         // given
-        let style = StyleKit.style(withName: "viewStyle")
-        let views = (0 ..< viewsCount).map({ _ in SKView(frame: rect) })
+        let style = StyleKit.style(withName: "textFieldStyle")
+        let textView = SKTextView()
+        textView.text = "123456789"
         
         // when
-        self.measure {
+        textView.style = style
         
-            for _ in 0 ..< repeatCount {
-                
-                for view in views {
-                    
-                    view.style = style
-                    view.draw(rect)
-                }
-            }
-        }
+        // then
+        XCTAssertNotNil(textView)
+        XCTAssertEqual(textView.styleName, "textFieldStyle")
+        checkViewStyle(textView)
+        checkStringStyle(textView.attributedText)
     }
 }

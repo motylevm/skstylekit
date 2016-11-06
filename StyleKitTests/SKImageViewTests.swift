@@ -21,12 +21,7 @@
 import XCTest
 @testable import SKStyleKit
 
-let viewsCount = 50
-let repeatCount = 10
-let rect = CGRect(x: 0, y: 0, width: 300, height: 300)
-let defText = "The quick brown fox jumps over the lazy dog."
-
-class SKPerformanceUIViewFullTests: XCTestCase {
+class SKImageViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -34,23 +29,44 @@ class SKPerformanceUIViewFullTests: XCTestCase {
         basicSetup()
     }
     
-    func testPerformanceUIViewFull() {
+    func testSetStyle() {
         
         // given
         let style = StyleKit.style(withName: "viewStyle")
-        let views = (0 ..< viewsCount).map({ _ in SKView(frame: rect) })
+        let view = SKImageView()
         
         // when
-        self.measure {
+        view.style = style
         
-            for _ in 0 ..< repeatCount {
-                
-                for view in views {
-                    
-                    view.style = style
-                    view.draw(rect)
-                }
-            }
-        }
+        // then
+        XCTAssertNotNil(style)
+        XCTAssertEqual(view.styleName, "viewStyle")
+        checkViewStyle(view)
+    }
+    
+    func testSetStyleByName() {
+        
+        // given
+        let view = SKImageView()
+        
+        // when
+        view.styleName = "viewStyle"
+        
+        // then
+        XCTAssertNotNil(view.style)
+        checkViewStyle(view)
+    }
+    
+    func testSetStyleByFullName() {
+        
+        // given
+        let view = SKImageView()
+        
+        // when
+        view.styleName = "controls.viewStyle"
+        
+        // then
+        XCTAssertNotNil(view.style)
+        checkViewStyle(view)
     }
 }

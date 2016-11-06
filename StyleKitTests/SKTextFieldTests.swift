@@ -63,5 +63,4 @@ class SKTextFieldTests: XCTestCase {
         XCTAssertEqual(textField.placeholderStyleName, "textFieldPlaceholderStyle")
         checkStringStyle(textField.attributedPlaceholder, aligmentCheck: false)
     }
-
 }

@@ -41,13 +41,13 @@ public extension StyleKit {
  
         guard let styleKit = sharedInstance else {
             
-            StyleKit.log("Style kit is not initialized, call initStyleKit()")
+            log("Style kit is not initialized, call initStyleKit()")
             return nil
         }
         
         guard let style = styleKit.style(withName: name) else {
             
-            StyleKit.log("Style kit warning: style named \(name) not found")
+            log("Style kit warning: style named \(name) not found")
             return nil
         }
         
