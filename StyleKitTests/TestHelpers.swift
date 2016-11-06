@@ -23,6 +23,8 @@ import UIKit
 import XCTest
 @testable import SKStyleKit
 
+let defString = "123456789"
+
 class TestClass {
     
 }

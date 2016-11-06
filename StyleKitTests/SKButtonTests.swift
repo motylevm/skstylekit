@@ -35,7 +35,7 @@ class SKButtonTests: XCTestCase {
         // given
         let style = StyleKit.style(withName: "buttonNormal")
         let button = SKButton()
-        button.setTitle("123456789", for: .normal)
+        button.setTitle(defString, for: .normal)
         
         // when
         button.style = style

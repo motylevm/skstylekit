@@ -34,7 +34,7 @@ class SKTextFieldTests: XCTestCase {
         // given
         let style = StyleKit.style(withName: "textFieldStyle")
         let textField = SKTextField()
-        textField.text = "123456789"
+        textField.text = defString
         textField.placeholder = "987654321"
         
         // when
@@ -52,7 +52,7 @@ class SKTextFieldTests: XCTestCase {
         // given
         let style = StyleKit.style(withName: "textFieldPlaceholderStyle")
         let textField = SKTextField()
-        textField.text = "123456789"
+        textField.text = defString
         textField.placeholder = "987654321"
         
         // when

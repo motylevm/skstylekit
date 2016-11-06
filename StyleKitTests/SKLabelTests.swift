@@ -35,7 +35,7 @@ class SKLabelTests: XCTestCase {
         // given
         let style = StyleKit.style(withName: "labelStyle")
         let label = SKLabel()
-        label.text = "123456789"
+        label.text = defString
         
         // when
         label.style = style
@@ -52,7 +52,7 @@ class SKLabelTests: XCTestCase {
         
         // given
         let label = SKLabel()
-        label.text = "123456789"
+        label.text = defString
         
         // when
         label.styleName = "labelStyle"
@@ -67,7 +67,7 @@ class SKLabelTests: XCTestCase {
         // given
         let style = StyleKit.style(withName: "labelStyle")
         let label = SKLabel()
-        let attrStr = NSAttributedString(string: "123456789")
+        let attrStr = NSAttributedString(string: defString)
         
         // when
         label.style = style

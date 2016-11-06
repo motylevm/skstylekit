@@ -21,7 +21,7 @@
 import XCTest
 @testable import SKStyleKit
 
-class SKTextViewTests: XCTestCase {
+class SKStylingStringsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -29,20 +29,57 @@ class SKTextViewTests: XCTestCase {
         basicSetup()
     }
     
-    func testSetStyle() {
+    func testStyleString() {
         
         // given
-        let style = StyleKit.style(withName: "textFieldStyle")
-        let textView = SKTextView()
-        textView.text = defString
+        let style = StyleKit.style(withName: "labelStyle")
+        let str = defString
         
         // when
-        textView.style = style
+        let attrString = StyleKit.string(withStyle: style, string: str)
+
+        // then
+        XCTAssertNotNil(style)
+        XCTAssertEqual(str, attrString?.string)
+        checkStringStyle(attrString, aligmentCheck: false)
+    }
+    
+    func testStyleAtrrString() {
+        
+        // given
+        let style = StyleKit.style(withName: "labelStyle")
+        let str = NSAttributedString(string: defString)
+        
+        // when
+        let attrString = StyleKit.string(withStyle: style, attributedString: str)
         
         // then
-        XCTAssertNotNil(textView)
-        XCTAssertEqual(textView.styleName, "textFieldStyle")
-        checkViewStyle(textView)
-        checkStringStyle(textView.attributedText)
+        XCTAssertNotNil(style)
+        XCTAssertEqual(str.string, attrString?.string)
+        checkStringStyle(attrString, aligmentCheck: false)
+    }
+    
+    func testStyleStringNoStyle() {
+        
+        // given
+        let str = "any string"
+        
+        // when
+        let string = StyleKit.string(withStyle: nil, string: str)
+        
+        // then
+        XCTAssertTrue(string == NSAttributedString(string: str))
+    }
+    
+    func testStyleAtrrStringNoStyle() {
+        
+        // given
+        let str = NSAttributedString(string: "any string")
+        
+        // when
+        let attrString = StyleKit.string(withStyle: nil, attributedString: str)
+        
+        // then
+        XCTAssertTrue(attrString === str)
     }
 }
