@@ -7,7 +7,7 @@
 	<a href="https://raw.githubusercontent.com/motylevm/skstylekit/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
 
-SKStyleKit is an easy to use library for styling visual components.
+SKStyleKit is an easy to use library for styling visual components. Written in swift it supports both swift and Objective C.
 
 # Features
 
@@ -193,4 +193,24 @@ However in this case, you should not set text or attributedText property directl
 
 ## Using Style Kit With Attributed Strings
 
-	Coming soon
+Styles can also be applied to strings/attributed strings: 
+
+```swift
+
+let s = "Some string"
+let style = StyleKit.style(withName: "StyleName")
+
+SKStyle.string(withStyle: style, string: s) -> NSAttributedString?
+SKStyle.string(withStyle: style, attributedString: NSAttributedString(string: s)) -> NSAttributedString?
+```
+
+These functions also allow to specify range to apply style like:
+
+```swift
+
+let s = "Some string"
+let style = StyleKit.style(withName: "StyleName")
+
+SKStyle.string(withStyle: style, string: s, range: NSRange(location: 0, length: 5)) -> NSAttributedString?
+SKStyle.string(withStyle: style, attributedString: NSAttributedString(string: s), range: NSRange(location: 0, length: 8)) -> NSAttributedString?
+```
