@@ -67,15 +67,20 @@ func checkStringStyle(_ attributedText: NSAttributedString?, aligmentCheck: Bool
     var effectiveRange: NSRange = NSRange()
     let attributes = attributedText?.attributes(at: 0, effectiveRange: &effectiveRange)
     let pargraphStyle = attributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle
-    let font = attributes?[NSFontAttributeName] as? UIFont
-    let isBold = (font!.fontDescriptor.symbolicTraits.rawValue & UIFontDescriptorSymbolicTraits.traitBold.rawValue) != 0
+
+    guard let font = attributes?[NSFontAttributeName] as? UIFont else {
+        
+        XCTAssert(false)
+        return
+    }
     
-    XCTAssertNotNil(font)
+    let isBold = (font.fontDescriptor.symbolicTraits.rawValue & UIFontDescriptorSymbolicTraits.traitBold.rawValue) != 0
+    
     XCTAssertNotNil(pargraphStyle)
     XCTAssertTrue(isBold)
     
     XCTAssertTrue(NSEqualRanges(NSMakeRange(0, 9), effectiveRange))
-    XCTAssertEqual(font!.pointSize, 21)
+    XCTAssertEqual(font.pointSize, 21)
     XCTAssertEqual(attributes?[NSForegroundColorAttributeName] as? UIColor, UIColor.green)
     XCTAssertEqual((attributes?[NSKernAttributeName] as? NSNumber)?.floatValue, 0.1)
     XCTAssertEqual(pargraphStyle?.lineSpacing, 15)

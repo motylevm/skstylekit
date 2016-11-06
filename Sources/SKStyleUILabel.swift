@@ -36,11 +36,11 @@ public extension SKStyle {
         }
     }
     
-    func checkIfContainsLabelCommonStyle() -> Bool {
+    /*func checkIfContainsLabelCommonStyle() -> Bool {
         return fontColor != nil || textAlignment != nil || font() != nil
     }
     
     func checkIfContainsLabelAdvancedStyle() -> Bool {
         return fontKern != nil || textUnderline != nil || paragraphStyle() != nil
-    }
+    }*/
 }

@@ -44,8 +44,99 @@ class SKButtonTests: XCTestCase {
         XCTAssertNotNil(style)
         
         XCTAssertEqual(button.styleName, "buttonNormal")
+        XCTAssertNotNil(button.style)
+        XCTAssertNil(button.highlightedStyle)
+        XCTAssertNil(button.disabledStyle)
+        XCTAssertNil(button.selectedStyle)
+        XCTAssertNil(button.highlightedStyleName)
+        XCTAssertNil(button.disabledStyleName)
+        XCTAssertNil(button.selectedStyleName)
 
         checkStringStyle(button.attributedTitle(for: .normal), aligmentCheck: false)
+        checkControlStyle(button)
+        checkViewStyle(button)
+    }
+    
+    func testSetStyleHighlighted() {
+        
+        // given
+        let style = StyleKit.style(withName: "buttonNormal")
+        let button = SKButton()
+        button.setTitle(defString, for: .highlighted)
+        
+        // when
+        button.highlightedStyle = style
+        button.isHighlighted = true
+        
+        // then
+        XCTAssertNotNil(style)
+        
+        XCTAssertEqual(button.highlightedStyleName, "buttonNormal")
+        XCTAssertNotNil(button.highlightedStyle)
+        XCTAssertNil(button.style)
+        XCTAssertNil(button.disabledStyle)
+        XCTAssertNil(button.selectedStyle)
+        XCTAssertNil(button.styleName)
+        XCTAssertNil(button.disabledStyleName)
+        XCTAssertNil(button.selectedStyleName)
+        
+        checkStringStyle(button.attributedTitle(for: .highlighted), aligmentCheck: false)
+        checkControlStyle(button)
+        checkViewStyle(button)
+    }
+    
+    func testSetStyleDisabled() {
+        
+        // given
+        let style = StyleKit.style(withName: "buttonNormal")
+        let button = SKButton()
+        button.setTitle(defString, for: .disabled)
+        
+        // when
+        button.disabledStyle = style
+        button.isEnabled = false
+        
+        // then
+        XCTAssertNotNil(style)
+        
+        XCTAssertEqual(button.disabledStyleName, "buttonNormal")
+        XCTAssertNotNil(button.disabledStyle)
+        XCTAssertNil(button.style)
+        XCTAssertNil(button.highlightedStyle)
+        XCTAssertNil(button.selectedStyle)
+        XCTAssertNil(button.styleName)
+        XCTAssertNil(button.highlightedStyleName)
+        XCTAssertNil(button.selectedStyleName)
+        
+        checkStringStyle(button.attributedTitle(for: .disabled), aligmentCheck: false)
+        checkControlStyle(button)
+        checkViewStyle(button)
+    }
+    
+    func testSetStyleSelected() {
+        
+        // given
+        let style = StyleKit.style(withName: "buttonNormal")
+        let button = SKButton()
+        button.setTitle(defString, for: .selected)
+        
+        // when
+        button.selectedStyle = style
+        button.isSelected = true
+        
+        // then
+        XCTAssertNotNil(style)
+        
+        XCTAssertEqual(button.selectedStyleName, "buttonNormal")
+        XCTAssertNotNil(button.selectedStyle)
+        XCTAssertNil(button.style)
+        XCTAssertNil(button.highlightedStyle)
+        XCTAssertNil(button.disabledStyle)
+        XCTAssertNil(button.styleName)
+        XCTAssertNil(button.highlightedStyleName)
+        XCTAssertNil(button.disabledStyleName)
+        
+        checkStringStyle(button.attributedTitle(for: .selected), aligmentCheck: false)
         checkControlStyle(button)
         checkViewStyle(button)
     }

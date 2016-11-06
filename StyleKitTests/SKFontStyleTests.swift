@@ -36,4 +36,30 @@ class SKFontStyleTests: XCTestCase {
         // then
         XCTAssertEqual(expectedWeights, weights)
     }
+    
+    func testInitWithNil() {
+        
+        // when
+        let fontStyle = SKFontStyle.from(rawValue: nil)
+        
+        // then
+        XCTAssertNil(fontStyle)
+    }
+    
+    
+    func testSystemFontGet() {
+        
+        // given
+        let styles = ["ultraLight", "Thin", "light", "regULar", "medium", "heavy", "black", "italic", "bold"]
+        let fontSize: CGFloat = 15
+        var expectedFonts =  [UIFontWeightUltraLight, UIFontWeightThin, UIFontWeightLight, UIFontWeightRegular, UIFontWeightMedium, UIFontWeightHeavy, UIFontWeightBlack].map({ UIFont.systemFont(ofSize: fontSize, weight: $0) })
+        expectedFonts.append(UIFont.italicSystemFont(ofSize: fontSize))
+        expectedFonts.append(UIFont.boldSystemFont(ofSize: fontSize))
+        
+        // when
+        let fonts = styles.flatMap({ SKFontStyle.from(rawValue: $0)?.systemFont(ofSize: fontSize) })
+        
+        // then
+        XCTAssertEqual(fonts, expectedFonts)
+    }
 }
