@@ -29,7 +29,6 @@ open class SKStyle: NSObject {
     private(set) var isParentsPopulated: Bool = false
     private(set) var isParamsPopulated: Bool = false
     private(set) var flags: SKStyleSourceFlags?
-    private var styleHash: Int = 0
 
     // MARK: - Init
     public init(source: [String: Any], name: String) {
@@ -40,8 +39,6 @@ open class SKStyle: NSObject {
         self.aliases = source[aliasesKey] as? [String]
         
         updateSourceFlags()
-        
-        styleHash = name.hash ^ (aliases?.reduce(Int(0), { $0 ^ $1.hash }) ?? 0)
     }
     
     // MARK: - Properties get
@@ -219,34 +216,8 @@ open class SKStyle: NSObject {
     func populateParams(fromProvider provider: SKStylesProvider) throws {
         try populateParams(fromProvider: provider, except: [name] + (aliases ?? []))
     }
-    
-    open func isEqual(toStyle style: SKStyle?) -> Bool {
-        guard let style = style else { return false }
-        
-        if styleHash == style.styleHash {
-            
-            if name != style.name {
-                return false
-            }
-            
-            switch (aliases, style.aliases) {
-                
-                case (nil, nil): return true
-                case let (left?, right?): return Set(left) == Set(right)
-                case (_?, nil), (nil, _?): return false
-            }
-        }
-        
-        return false
-    }
 }
 
 public func ==(left: SKStyle?, right: SKStyle?) -> Bool {
-    
-    switch (left, right) {
-        
-        case (nil, nil): return true
-        case let (left?, right?): return left.isEqual(toStyle: right)
-        case (_?, nil), (nil, _?): return false
-    }
+    return left === right
 }

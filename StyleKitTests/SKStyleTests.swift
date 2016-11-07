@@ -57,7 +57,6 @@ class SKStyleTests: XCTestCase {
         basicSetup()
         
         let style1 = StyleKit.style(withName: "viewStyle")
-        let _style1 = StyleKit.style(withName: "viewStyle")!
         let style2 = StyleKit.style(withName: "labelStyle")
         let style3 = StyleKit.style(withName: "labelStyle")
         
@@ -68,8 +67,6 @@ class SKStyleTests: XCTestCase {
         let e2 = StyleKit.style(withName: "equal2.eqLabelStyle")
         
         // then
-        XCTAssertFalse(_style1.isEqual(toStyle: nil))
-        
         XCTAssertTrue(style1 == style1)
         XCTAssertFalse(style1 == nil)
         XCTAssertFalse(style1 == style2)
