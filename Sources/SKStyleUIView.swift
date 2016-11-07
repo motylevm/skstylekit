@@ -24,10 +24,8 @@ public extension SKStyle {
     
     // MARK: - UIView
     public func apply(view: UIView?) {
-        
-        let flags = self.flags?.viewFlags ?? viewAllFlags
-        
-        guard flags != 0 else { return }
+
+        guard flags & viewAllFlags != 0 else { return }
 
         // Common
         if flags & viewCommonFlag != 0 {

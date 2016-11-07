@@ -16,44 +16,52 @@ let viewShadowFlag = 1 << 3
 let viewAllFlags = viewCommonFlag | viewBorderFlag | viewColorFlag | viewShadowFlag
 
 // Label bit flags
-//let labelCommonFlag = 1 << 0
-//let labelAdvancedFlag = 1 << 1
+let labelCommonFlag = 1 << 4
+let labelAdvancedFlag = 1 << 5
+let labelAllFlags = labelCommonFlag | labelAdvancedFlag
 
-class SKStyleSourceFlags {
-    
-    // MARK: - UIView
-    let viewFlags: Int
-    //let labelFlags: Int
-    
-    // MARK: - Init
-    init(from style: SKStyle) {
-
-        viewFlags = SKStyleSourceFlags.getViewFlags(from: style)
-    }
+extension SKStyle {
     
     // MARK: - Getting flags
-    private class func getViewFlags(from style: SKStyle) -> Int {
+    func getFlags() -> Int {
+        return getViewFlags() | getLabelFlags()
+    }
+
+    private func getViewFlags() -> Int {
         
         var result = 0
         
-        if style.checkIfContainsViewCommonStyle() {
+        if checkIfContainsViewCommonStyle() {
             result = result | viewCommonFlag
         }
         
-        if style.checkIfContainsViewBorderStyle() {
+        if checkIfContainsViewBorderStyle() {
             result = result | viewBorderFlag
         }
         
-        if style.checkIfContainsViewColorStyle() {
+        if checkIfContainsViewColorStyle() {
             result = result | viewColorFlag
         }
         
-        if style.checkIfContainsViewShadowStyle() {
+        if checkIfContainsViewShadowStyle() {
             result = result | viewShadowFlag
         }
         
         return result
     }
     
-    
+    private func getLabelFlags() -> Int {
+        
+        var result = 0
+        
+        if checkIfContainsLabelCommonStyle() {
+            result = result | labelCommonFlag
+        }
+        
+        if checkIfContainsLabelAdvancedStyle() {
+            result = result | labelAdvancedFlag
+        }
+        
+        return result
+    }
 }

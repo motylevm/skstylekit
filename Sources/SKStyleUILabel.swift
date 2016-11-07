@@ -27,20 +27,50 @@ public extension SKStyle {
         
         apply(view: label)
         
-        label?.attributedText = StyleKit.string(withStyle: self,
-                                                string: text,
-                                                defaultParagraphStyle: label?.sk_defaultParagraphStyle())
+        guard flags & labelAllFlags != 0 else { return }
         
-        if let textAlignment = textAlignment {
-            label?.textAlignment = textAlignment
+        // Set style using attributed string
+        if flags & labelAdvancedFlag != 0 {
+            
+            label?.attributedText = StyleKit.string(withStyle: self,
+                                                    string: text,
+                                                    defaultParagraphStyle: label?.sk_defaultParagraphStyle())
+            
+            if let textAlignment = textAlignment {
+                label?.textAlignment = textAlignment
+            }
+            
+            return
+        }
+        
+        // Set style using label properties only (2 times faster!)
+        if flags & labelCommonFlag != 0 {
+            
+            if let fontColor = fontColor {
+                label?.textColor = fontColor
+            }
+            
+            if let textAlignment = textAlignment {
+                label?.textAlignment = textAlignment
+            }
+            
+            if let font = font() {
+                label?.font = font
+            }
+            
+            let skLabel = label as? SKLabel
+            
+            skLabel?.suppressStyleOnTextChange = true
+            label?.text = text
+            skLabel?.suppressStyleOnTextChange = false
         }
     }
     
-    /*func checkIfContainsLabelCommonStyle() -> Bool {
+    func checkIfContainsLabelCommonStyle() -> Bool {
         return fontColor != nil || textAlignment != nil || font() != nil
     }
     
     func checkIfContainsLabelAdvancedStyle() -> Bool {
         return fontKern != nil || textUnderline != nil || paragraphStyle() != nil
-    }*/
+    }
 }

@@ -24,6 +24,7 @@ open class SKLabel: UILabel {
     
     // MARK: - Private properties
     private var hasExternalAttributedText: Bool = false
+    var suppressStyleOnTextChange: Bool = false
     
     // MARK: - Style properties
     @IBInspectable open var styleName: String? {
@@ -64,7 +65,10 @@ open class SKLabel: UILabel {
     override open var text: String? {
         
         didSet {
-            applyCurrentStyle(includeTextStyle: true)
+            
+            if !suppressStyleOnTextChange {
+                applyCurrentStyle(includeTextStyle: true)
+            }
         }
     }
     
