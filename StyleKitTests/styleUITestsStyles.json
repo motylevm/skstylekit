@@ -100,6 +100,20 @@
         }
     },
     
+    "equal1": {
+        
+        "eqLabelStyle": {
+            "parent": "labelStyle",
+        }
+    },
+    
+    "equal2": {
+        
+        "eqLabelStyle": {
+            "parent": "labelStyle",
+        }
+    },
+    
     "performance": {
         
         "viewStyleExceptShadow": {

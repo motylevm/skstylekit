@@ -80,7 +80,10 @@ open class SKButton: UIButton {
         }
         
         set {
-            set(style: newValue, forState: .normal)
+            
+            if style(forState: .normal) != newValue {
+                set(style: newValue, forState: .normal)
+            }
         }
     }
     
@@ -91,7 +94,10 @@ open class SKButton: UIButton {
         }
         
         set {
-            set(style: newValue, forState: .highlighted)
+            
+            if style(forState: .highlighted) != newValue {
+                set(style: newValue, forState: .highlighted)
+            }
         }
     }
     
@@ -102,7 +108,10 @@ open class SKButton: UIButton {
         }
         
         set {
-            set(style: newValue, forState: .disabled)
+            
+            if style(forState: .disabled) != newValue {
+                set(style: newValue, forState: .disabled)
+            }
         }
     }
     
@@ -113,7 +122,10 @@ open class SKButton: UIButton {
         }
         
         set {
-            set(style: newValue, forState: .selected)
+            
+            if style(forState: .selected) != newValue {
+                set(style: newValue, forState: .selected)
+            }
         }
     }
     

@@ -40,7 +40,10 @@ open class SKTextView: UITextView {
     open var style: SKStyle? {
         
         didSet {
-            applyCurrentStyle(includeTextStyle: !hasExternalAttributedText && text != nil)
+            
+            if oldValue != style {
+                applyCurrentStyle(includeTextStyle: !hasExternalAttributedText && text != nil)
+            }
         }
     }
     

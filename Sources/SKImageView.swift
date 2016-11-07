@@ -37,7 +37,10 @@ open class SKImageView: UIImageView {
     open var style: SKStyle? {
         
         didSet {
-            style?.apply(view: self)
+            
+            if oldValue != style {
+                style?.apply(view: self)
+            }
         }
     }
 }

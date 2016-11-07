@@ -36,7 +36,10 @@ open class SKView: UIView {
     open var style: SKStyle? {
         
         didSet {
-            style?.apply(view: self)
+            
+            if oldValue != style {
+                style?.apply(view: self)
+            }
         }
     }
 }

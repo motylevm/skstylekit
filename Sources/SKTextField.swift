@@ -52,7 +52,10 @@ open class SKTextField: UITextField {
     open var style: SKStyle? {
         
         didSet {
-            applyCurrentStyle(includeTextStyle: !hasExternalAttributedText && text != nil)
+            
+            if oldValue != style {
+                applyCurrentStyle(includeTextStyle: !hasExternalAttributedText && text != nil)
+            }
         }
     }
     
@@ -60,8 +63,11 @@ open class SKTextField: UITextField {
         
         didSet {
             
-            if !hasExternalAttributedPlaceholder {
-                applyCurrentPlaceholderStyle()
+            if oldValue != placeholderStyle {
+                
+                if !hasExternalAttributedPlaceholder {
+                    applyCurrentPlaceholderStyle()
+                }
             }
         }
     }

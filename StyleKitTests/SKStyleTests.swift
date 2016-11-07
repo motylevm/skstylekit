@@ -50,4 +50,32 @@ class SKStyleTests: XCTestCase {
         // then
         XCTAssertEqual(expected, ret)
     }
+    
+    func testIsEqualToStyle() {
+        
+        // given 
+        basicSetup()
+        
+        let style1 = StyleKit.style(withName: "viewStyle")
+        let _style1 = StyleKit.style(withName: "viewStyle")!
+        let style2 = StyleKit.style(withName: "labelStyle")
+        let style3 = StyleKit.style(withName: "labelStyle")
+        
+        let nStyle1: SKStyle? = nil
+        let nStyle2: SKStyle? = nil
+        
+        let e1 = StyleKit.style(withName: "equal1.eqLabelStyle")
+        let e2 = StyleKit.style(withName: "equal2.eqLabelStyle")
+        
+        // then
+        XCTAssertFalse(_style1.isEqual(toStyle: nil))
+        
+        XCTAssertTrue(style1 == style1)
+        XCTAssertFalse(style1 == nil)
+        XCTAssertFalse(style1 == style2)
+        XCTAssertTrue(style2 == style3)
+        XCTAssertFalse(style3 == style1)
+        XCTAssertTrue(nStyle1 == nStyle2)
+        XCTAssertFalse(e1 == e2)
+    }
 }

@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = 'SKStyleKit'
     s.module_name           = 'SKStyleKit'
 
-    s.version               = '0.8.0'
+    s.version               = '0.8.1'
 
     s.homepage              = 'https://github.com/motylevm/skstylekit'
     s.summary               = 'Framework for styling visual elements in ios apps'

@@ -37,7 +37,10 @@ open class SKSlider: UISlider {
     open var style: SKStyle? {
         
         didSet {
-            style?.apply(slider: self)
+            
+            if oldValue != style {
+                style?.apply(slider: self)
+            }
         }
     }
 }

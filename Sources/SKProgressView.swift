@@ -37,7 +37,10 @@ open class SKProgressView: UIProgressView {
     open var style: SKStyle? {
         
         didSet {
-            style?.apply(progress: self)
+            
+            if oldValue != style {
+                style?.apply(progress: self)
+            }
         }
     }
 }
