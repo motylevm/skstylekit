@@ -24,15 +24,29 @@ public extension UIButton {
     
     func sk_defaultParagraphStyle() -> NSParagraphStyle {
         
-        let resutl = NSMutableParagraphStyle()
+        let result = NSMutableParagraphStyle()
         
         if let textAlignment = titleLabel?.textAlignment {
-            resutl.alignment = textAlignment
+            result.alignment = textAlignment
         }
         if let lineBreakMode = titleLabel?.lineBreakMode {
-            resutl.lineBreakMode = lineBreakMode
+            result.lineBreakMode = lineBreakMode
         }
         
-        return resutl
+        return result
+    }
+    
+    func sk_setTitleWithoutStyleApplication(_ title: String?, forState state: UIControlState) {
+        
+        if let skButton = self as? SKButton {
+            
+            skButton.suppressStyleOnTextChange = true
+            skButton.setTitle(title, for: state)
+            skButton.suppressStyleOnTextChange = false
+            
+            return
+        }
+        
+        setTitle(title, for: state)
     }
 }

@@ -18,29 +18,37 @@
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import UIKit
+import XCTest
+@testable import SKStyleKit
 
-public extension UILabel {
+class SKPerformanceUIButtonCommon: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
         
-    func sk_defaultParagraphStyle() -> NSParagraphStyle {
-        
-        let result = NSMutableParagraphStyle()
-        result.alignment = textAlignment
-        result.lineBreakMode = lineBreakMode
-        return result
+        basicSetup()
     }
     
-    func sk_setTextWithoutStyleApplication(_ text: String?) {
+    func testPerformanceUIButton() {
         
-        if let skLabel = self as? SKLabel {
+        // given
+        let style = StyleKit.style(withName: "labelCommon")
+        let views = (0 ..< viewsCount).map({ _ in SKButton(frame: rect) })
+        
+        views.forEach({ $0.setTitle(defText, for: .normal) })
+        
+        
+        // when
+        self.measure {
             
-            skLabel.suppressStyleOnTextChange = true
-            skLabel.text = text
-            skLabel.suppressStyleOnTextChange = false
-            
-            return
+            for _ in 0 ..< repeatCount {
+                
+                for view in views {
+                    
+                    view.style = style
+                    view.draw(rect)
+                }
+            }
         }
-        
-        self.text = text
     }
 }

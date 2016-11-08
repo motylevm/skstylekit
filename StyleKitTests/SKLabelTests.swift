@@ -110,7 +110,7 @@ class SKLabelTests: XCTestCase {
         label.styleWasApplied = false
         
         // when
-        label.setTextWithoutStyleApplication(defText)
+        label.sk_setTextWithoutStyleApplication(defText)
         
         // then
         XCTAssertEqual(defText, label.text)

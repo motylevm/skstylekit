@@ -27,6 +27,7 @@ open class SKButton: UIButton {
     // MARK: - Private properties
     private var hasExternalAttributedText = [UInt: Bool]()
     private var styles = [UInt: SKStyle]()
+    var suppressStyleOnTextChange: Bool = false
     
     // MARK: - Style properties
     @IBInspectable open var styleName: String? {
@@ -169,7 +170,7 @@ open class SKButton: UIButton {
     }
     
     // MARK: - Style application
-    private func applyCurrentStyle() {
+    func applyCurrentStyle() {
         
         let hasExternalAttributedText = self.hasExternalAttributedText[state.rawValue] ?? false
         let includeTextStyle = !hasExternalAttributedText && title(for: state) != nil
@@ -177,7 +178,7 @@ open class SKButton: UIButton {
         self.applyCurrentStyle(includeTextStyle: includeTextStyle)
     }
     
-    private func applyCurrentStyle(includeTextStyle: Bool) {
+    func applyCurrentStyle(includeTextStyle: Bool) {
         
         let style = StyleKit.style(withStyles: statePriorityChain.filter({ state.contains($0) }).flatMap({ self.style(forState: $0) }))
         
@@ -196,7 +197,9 @@ open class SKButton: UIButton {
     override open func setTitle(_ title: String?, for state: UIControlState) {
         super.setTitle(title, for: state)
         
-        applyCurrentStyle(includeTextStyle: true)
+        if !suppressStyleOnTextChange {
+            applyCurrentStyle(includeTextStyle: true)
+        }
     }
     
     override open func setAttributedTitle(_ title: NSAttributedString?, for state: UIControlState) {

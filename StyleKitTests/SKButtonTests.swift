@@ -22,6 +22,17 @@
 import XCTest
 @testable import SKStyleKit
 
+class SKButtonApplyMock: SKButton {
+    
+    var styleWasApplied: Bool = false
+    
+    override func applyCurrentStyle(includeTextStyle: Bool) {
+        
+        styleWasApplied = true
+        super.applyCurrentStyle(includeTextStyle: includeTextStyle)
+    }
+}
+
 class SKButtonTests: XCTestCase {
     
     override func setUp() {
@@ -139,5 +150,21 @@ class SKButtonTests: XCTestCase {
         checkStringStyle(button.attributedTitle(for: .selected), aligmentCheck: false)
         checkControlStyle(button)
         checkViewStyle(button)
+    }
+    
+    func testSetTitleWithoutStyle() {
+        
+        // given
+        let style = StyleKit.style(withName: "buttonNormal")
+        let button = SKButtonApplyMock()
+        button.set(style: style, forState: .normal)
+        button.styleWasApplied = false
+        
+        // when
+        button.sk_setTitleWithoutStyleApplication(defText, forState: .normal)
+        
+        // then
+        XCTAssertEqual(defText, button.title(for: .normal))
+        XCTAssertEqual(false, button.styleWasApplied)
     }
 }

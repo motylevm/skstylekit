@@ -29,7 +29,7 @@ public extension SKStyle {
         
         guard flags & labelAllFlags != 0 else {
             
-            label?.setTextWithoutStyleApplication(text)
+            label?.sk_setTextWithoutStyleApplication(text)
             return
         }
         
@@ -62,7 +62,7 @@ public extension SKStyle {
                 label?.font = font
             }
             
-            label?.setTextWithoutStyleApplication(text)
+            label?.sk_setTextWithoutStyleApplication(text)
         }
     }
     
