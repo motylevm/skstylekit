@@ -52,6 +52,15 @@ class SKStyleFlags: XCTestCase {
         let flags = styles.map({ $0.flags })
         
         XCTAssertEqual(flags, expectedFlags)
+    }
+    
+    func testFlagSetControl() {
         
+        // given
+        let style = StyleKit.style(withName: "controlStyle")!
+        let expectedFlags = controllAllFlags
+        
+        // then
+        XCTAssertTrue(style.flags & expectedFlags != 0)
     }
 }

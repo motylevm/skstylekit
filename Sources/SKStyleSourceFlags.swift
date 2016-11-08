@@ -15,16 +15,19 @@ let viewColorFlag  = 1 << 2
 let viewShadowFlag = 1 << 3
 let viewAllFlags = viewCommonFlag | viewBorderFlag | viewColorFlag | viewShadowFlag
 
-// Label bit flags
+// UILabel bit flags
 let labelCommonFlag = 1 << 4
 let labelAdvancedFlag = 1 << 5
 let labelAllFlags = labelCommonFlag | labelAdvancedFlag
+
+// UIControl bit flags
+let controllAllFlags = 1 << 6
 
 extension SKStyle {
     
     // MARK: - Getting flags
     func getFlags() -> Int {
-        return getViewFlags() | getLabelFlags()
+        return getViewFlags() | getLabelFlags() | getControlFlags()
     }
 
     private func getViewFlags() -> Int {
@@ -63,5 +66,9 @@ extension SKStyle {
         }
         
         return result
+    }
+    
+    private func getControlFlags() -> Int {
+        return checkIfContainsControlStyle() ? controllAllFlags : 0
     }
 }

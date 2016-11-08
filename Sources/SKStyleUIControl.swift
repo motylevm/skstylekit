@@ -27,6 +27,8 @@ public extension SKStyle {
         
         apply(view: control)
         
+        guard flags & controllAllFlags != 0 else { return }
+        
         if let contentVerticalAlignment = contentVerticalAlignment {
             control?.contentVerticalAlignment = contentVerticalAlignment
         }
@@ -34,5 +36,10 @@ public extension SKStyle {
         if let contentHorizontalAlignment = contentHorizontalAlignment {
             control?.contentHorizontalAlignment = contentHorizontalAlignment
         }
+    }
+    
+    // MARK: - Check Style
+    func checkIfContainsControlStyle() -> Bool {
+        return contentVerticalAlignment != nil || contentHorizontalAlignment != nil
     }
 }
