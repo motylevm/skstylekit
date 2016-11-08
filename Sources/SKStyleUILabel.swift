@@ -27,7 +27,11 @@ public extension SKStyle {
         
         apply(view: label)
         
-        guard flags & labelAllFlags != 0 else { return }
+        guard flags & labelAllFlags != 0 else {
+            
+            label?.setTextWithoutStyleApplication(text)
+            return
+        }
         
         // Set style using attributed string
         if flags & labelAdvancedFlag != 0 {
@@ -58,11 +62,7 @@ public extension SKStyle {
                 label?.font = font
             }
             
-            let skLabel = label as? SKLabel
-            
-            skLabel?.suppressStyleOnTextChange = true
-            label?.text = text
-            skLabel?.suppressStyleOnTextChange = false
+            label?.setTextWithoutStyleApplication(text)
         }
     }
     

@@ -29,4 +29,18 @@ public extension UILabel {
         result.lineBreakMode = lineBreakMode
         return result
     }
+    
+    func setTextWithoutStyleApplication(_ text: String?) {
+        
+        if let skLabel = self as? SKLabel {
+            
+            skLabel.suppressStyleOnTextChange = true
+            skLabel.text = text
+            skLabel.suppressStyleOnTextChange = false
+            
+            return
+        }
+        
+        self.text = text
+    }
 }

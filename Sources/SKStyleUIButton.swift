@@ -26,9 +26,6 @@ public extension SKStyle {
         
         apply(control: button)
         
-        let styledTitle = StyleKit.string(withStyle: self, string: title, defaultParagraphStyle: button?.sk_defaultParagraphStyle())
-        button?.setAttributedTitle(styledTitle, for: state)
-        
         if button?.buttonType != UIButtonType.custom {
             StyleKit.log("Style kit warning: style support for non custom button types is limited, consider changing button type to custom")
         }
@@ -36,5 +33,8 @@ public extension SKStyle {
         if let _ = textAlignment {
             StyleKit.log("Style kit warning: textAlignment have no effect on UIButton, use contentHorizontalAlignment instead")
         }
+
+        let styledTitle = StyleKit.string(withStyle: self, string: title, defaultParagraphStyle: button?.sk_defaultParagraphStyle())
+        button?.setAttributedTitle(styledTitle, for: state)
     }
 }

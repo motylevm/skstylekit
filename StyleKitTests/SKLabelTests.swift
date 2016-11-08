@@ -22,6 +22,17 @@
 import XCTest
 @testable import SKStyleKit
 
+class SKLabelApplyMock: SKLabel {
+    
+    var styleWasApplied: Bool = false
+    
+    override func applyCurrentStyle(includeTextStyle: Bool) {
+        
+        styleWasApplied = true
+        super.applyCurrentStyle(includeTextStyle: includeTextStyle)
+    }
+}
+
 class SKLabelTests: XCTestCase {
     
     override func setUp() {
@@ -75,5 +86,34 @@ class SKLabelTests: XCTestCase {
         
         // then
         XCTAssertEqual(attrStr, label.attributedText)
+    }
+    
+    func testSetSKLabelTextWithEmptyStyle() {
+        
+        // given
+        let style = SKStyle(source: [:], name: "")
+        let label = SKLabel()
+        
+        // when
+        style.apply(label: label, text: defText)
+        
+        // then
+        XCTAssertEqual(defText, label.text)
+    }
+    
+    func testSetTextWithoutStyle() {
+        
+        // given
+        let style = StyleKit.style(withName: "labelStyle")
+        let label = SKLabelApplyMock()
+        label.style = style
+        label.styleWasApplied = false
+        
+        // when
+        label.setTextWithoutStyleApplication(defText)
+        
+        // then
+        XCTAssertEqual(defText, label.text)
+        XCTAssertEqual(false, label.styleWasApplied)
     }
 }
