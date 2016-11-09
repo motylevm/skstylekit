@@ -26,6 +26,7 @@ public class StyleKit: NSObject {
     
     private(set) var styles: [String: SKStyle]
     private(set) var configuration: StyleKitConfiguration
+    private var onceLoggedMessages: Set<String> = []
 
     // MARK: - Init
     init(withConfiguration configuration: StyleKitConfiguration) {
@@ -136,10 +137,15 @@ public class StyleKit: NSObject {
     }
     
     // MARK: - Logging
-    class func log(_ message: String) {
+    class func log(_ message: String, onlyOnce: Bool = false) {
         
         if sharedInstance == nil || sharedInstance?.configuration.suppressLogMessages == false {
-            NSLog(message)
+            
+            if !onlyOnce || sharedInstance?.onceLoggedMessages.contains(message) == false {
+                
+                sharedInstance?.onceLoggedMessages.insert(message)
+                NSLog(message)
+            }
         }
     }
 }

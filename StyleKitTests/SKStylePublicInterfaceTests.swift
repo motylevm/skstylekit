@@ -26,7 +26,7 @@ class StyleKitLogMock: StyleKit {
     
     static var lastLogMessage: String?
     
-    override class func log(_ message: String) {
+    override class func log(_ message: String, onlyOnce: Bool = false) {
         
         lastLogMessage = message
     }

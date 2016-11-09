@@ -46,7 +46,7 @@ final class SKDeviceCondition: SKCondition {
                 if #available(iOS 9.0, *) {
                     idiom = .tv
                 } else {
-                    return nil
+                    idiom = .unspecified
                 }
             
             case "carPlay", "car":
@@ -54,7 +54,7 @@ final class SKDeviceCondition: SKCondition {
                 if #available(iOS 9.0, *) {
                     idiom = .carPlay
                 } else {
-                    return nil
+                    idiom = .unspecified
                 }
             
             default: return nil
@@ -63,7 +63,7 @@ final class SKDeviceCondition: SKCondition {
     
     // MARK: - SKCondition
     func check() -> Bool {
-    
+        
         let result = UIDevice.current.userInterfaceIdiom == idiom
         return reverse ? !result : result
     }
