@@ -66,6 +66,8 @@ public class StyleKit: NSObject {
         for (_, style) in styles {
             style.updateSourceFlags()
         }
+        
+        NotificationCenter.default.post(name: .SKStyleKitDidLoadStyles, object: nil)
     }
     
     private func populateParents(inStyle style: SKStyle) {

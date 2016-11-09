@@ -22,6 +22,36 @@ import UIKit
 
 open class SKView: UIView {
     
+    // MARK: - Init/Deinit
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        registerStyleKitObserver()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        registerStyleKitObserver()
+    }
+    
+    deinit {
+        unregisterStyleKitObserver()
+    }
+    
+    // MARK: - StyleKit Observer
+    func registerStyleKitObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onStylesDidLoad), name: .SKStyleKitDidLoadStyles, object: nil)
+    }
+    
+    func unregisterStyleKitObserver() {
+        NotificationCenter.default.removeObserver(self, name: .SKStyleKitDidLoadStyles, object: nil)
+    }
+
+    func onStylesDidLoad() {
+        
+    }
+
     // MARK: - Style properties
     @IBInspectable open var styleName: String? {
         

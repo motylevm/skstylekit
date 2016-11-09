@@ -15,6 +15,7 @@
 		6F2B38D01DAB758300D97853 /* SKProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */; };
 		6F3A0D3F1DD1C56C0002C948 /* SKPerformanceUIButtonCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */; };
 		6F3A0D401DD1C56F0002C948 /* SKPerformanceUIButtonAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A0D3B1DD1C4AC0002C948 /* SKPerformanceUIButtonAdvanced.swift */; };
+		6F88B4D21DD37E2E005A8A87 /* NotificationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B4D11DD37E2E005A8A87 /* NotificationExtensions.swift */; };
 		6FA2FE0C1DC8C723004C3A6A /* SKColorCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2FE0B1DC8C723004C3A6A /* SKColorCache.swift */; };
 		6FA2FE0E1DC9C5FD004C3A6A /* SKStyleSourceFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2FE0D1DC9C5FD004C3A6A /* SKStyleSourceFlags.swift */; };
 		6FA2FE101DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2FE0F1DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift */; };
@@ -126,6 +127,7 @@
 		6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKProgressViewTests.swift; sourceTree = "<group>"; };
 		6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonCommon.swift; sourceTree = "<group>"; };
 		6F3A0D3B1DD1C4AC0002C948 /* SKPerformanceUIButtonAdvanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonAdvanced.swift; sourceTree = "<group>"; };
+		6F88B4D11DD37E2E005A8A87 /* NotificationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationExtensions.swift; path = Sources/NotificationExtensions.swift; sourceTree = SOURCE_ROOT; };
 		6FA2FE0B1DC8C723004C3A6A /* SKColorCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKColorCache.swift; path = Sources/SKColorCache.swift; sourceTree = SOURCE_ROOT; };
 		6FA2FE0D1DC9C5FD004C3A6A /* SKStyleSourceFlags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleSourceFlags.swift; path = Sources/SKStyleSourceFlags.swift; sourceTree = SOURCE_ROOT; };
 		6FA2FE0F1DC9D1DD004C3A6A /* SKPerformanceUIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIViewTests.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				87A501481D9F9B91007CA1EC /* SKControlContentHorizontalAlignment.swift */,
 				87A501491D9F9B91007CA1EC /* SKControlContentVerticalAlignment.swift */,
 				87A501631D9F9B91007CA1EC /* UIColorExtensions.swift */,
+				6F88B4D11DD37E2E005A8A87 /* NotificationExtensions.swift */,
 				6FA2FE0B1DC8C723004C3A6A /* SKColorCache.swift */,
 			);
 			name = Common;
@@ -738,6 +741,7 @@
 				87A501711D9F9B91007CA1EC /* SKControlContentHorizontalAlignment.swift in Sources */,
 				87A5018C1D9F9B91007CA1EC /* UIColorExtensions.swift in Sources */,
 				87A501841D9F9B91007CA1EC /* SKUnderlinePatternStyle.swift in Sources */,
+				6F88B4D21DD37E2E005A8A87 /* NotificationExtensions.swift in Sources */,
 				87A501821D9F9B91007CA1EC /* SKTextField.swift in Sources */,
 				87A501761D9F9B91007CA1EC /* SKImageView.swift in Sources */,
 				87A501731D9F9B91007CA1EC /* SKDeviceCondition.swift in Sources */,
