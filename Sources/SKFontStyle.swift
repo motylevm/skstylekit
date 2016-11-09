@@ -64,7 +64,7 @@ enum SKFontStyle: String {
                 return UIFont.systemFont(ofSize: fontSize, weight: weight)
             }
             
-            StyleKit.log("Style kit: System font with style \"\(self)\" is only available on iOS 8.2 or later")
+            StyleKit.log("Style kit: System font with style \"\(self)\" is only available on iOS 8.2 or later", onlyOnce: true)
             return UIFont.systemFont(ofSize: fontSize)
         }
     }

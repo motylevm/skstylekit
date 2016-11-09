@@ -43,7 +43,7 @@ public extension SKStyle {
         textField?.attributedPlaceholder = StyleKit.string(withStyle: self, string: text)
         
         if let _ = textAlignment {
-            StyleKit.log("Style kit warning: textAlignment have no effect on UITextField placeholder")
+            StyleKit.log("Style kit warning: textAlignment have no effect on UITextField placeholder", onlyOnce: true)
         }
     }
 }

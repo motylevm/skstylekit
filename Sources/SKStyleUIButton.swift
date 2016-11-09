@@ -27,11 +27,11 @@ public extension SKStyle {
         apply(control: button)
         
         if button?.buttonType != UIButtonType.custom {
-            StyleKit.log("Style kit warning: style support for non custom button types is limited, consider changing button type to custom")
+            StyleKit.log("Style kit warning: style support for non custom button types is limited, consider changing button type to custom", onlyOnce: true)
         }
         
         if let _ = textAlignment {
-            StyleKit.log("Style kit warning: textAlignment have no effect on UIButton, use contentHorizontalAlignment instead")
+            StyleKit.log("Style kit warning: textAlignment have no effect on UIButton, use contentHorizontalAlignment instead", onlyOnce: true)
         }
         
         guard flags & labelAllFlags != 0 else {

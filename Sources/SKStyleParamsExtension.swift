@@ -239,7 +239,7 @@ public extension SKStyle {
             let result: UIFont? = UIFont(name: fullFontName, size: fontSize)
             
             if result == nil {
-                StyleKit.log("Style kit: No font with name \(fullFontName)")
+                StyleKit.log("Style kit: No font with name \(fullFontName)", onlyOnce: true)
             }
             
             return result
@@ -251,7 +251,7 @@ public extension SKStyle {
                 if let style = SKFontStyle.from(rawValue: fontStyle) {
                     return style.systemFont(ofSize: fontSize)
                 } else {
-                    StyleKit.log("Style kit: No system font with style \"\(fontStyle)\", using default style")
+                    StyleKit.log("Style kit: No system font with style \"\(fontStyle)\", using default style", onlyOnce: true)
                 }
             }
 

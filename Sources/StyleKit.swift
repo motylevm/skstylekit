@@ -143,7 +143,9 @@ public class StyleKit: NSObject {
             
             if !onlyOnce || sharedInstance?.onceLoggedMessages.contains(message) == false {
                 
-                sharedInstance?.onceLoggedMessages.insert(message)
+                if onlyOnce {
+                    sharedInstance?.onceLoggedMessages.insert(message)
+                }
                 NSLog(message)
             }
         }
