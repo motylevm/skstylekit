@@ -29,6 +29,23 @@ class SKTextViewTests: XCTestCase {
         basicSetup()
     }
     
+    func testSetStyleByName() {
+        
+        // given
+        let textView = SKTextView()
+        let styleName = "textFieldStyle"
+        textView.text = defString
+        
+        // when
+        textView.styleName = styleName
+        
+        // then
+        XCTAssertNotNil(textView)
+        XCTAssertEqual(textView.styleName, styleName)
+        checkViewStyle(textView)
+        checkStringStyle(textView.attributedText)
+    }
+    
     func testSetStyle() {
         
         // given

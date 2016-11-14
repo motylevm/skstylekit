@@ -37,11 +37,14 @@ class SKStylingStringsTests: XCTestCase {
         
         // when
         let attrString = StyleKit.string(withStyle: style, string: str)
+        let attrStringObjC = StyleKit.objc_stringWithStyle(style, string: str)
 
         // then
         XCTAssertNotNil(style)
         XCTAssertEqual(str, attrString?.string)
+        XCTAssertEqual(str, attrStringObjC?.string)
         checkStringStyle(attrString, aligmentCheck: false)
+        checkStringStyle(attrStringObjC, aligmentCheck: false)
     }
     
     func testStyleAtrrString() {
@@ -52,11 +55,14 @@ class SKStylingStringsTests: XCTestCase {
         
         // when
         let attrString = StyleKit.string(withStyle: style, attributedString: str)
+        let attrStringObjC = StyleKit.objc_stringWithStyle(style, attributedString: str)
         
         // then
         XCTAssertNotNil(style)
         XCTAssertEqual(str.string, attrString?.string)
+        XCTAssertEqual(str.string, attrStringObjC?.string)
         checkStringStyle(attrString, aligmentCheck: false)
+        checkStringStyle(attrStringObjC, aligmentCheck: false)
     }
     
     func testStyleStringNoStyle() {
@@ -66,9 +72,11 @@ class SKStylingStringsTests: XCTestCase {
         
         // when
         let string = StyleKit.string(withStyle: nil, string: str)
+        let stringObjC = StyleKit.objc_stringWithStyle(nil, string: str)
         
         // then
         XCTAssertTrue(string == NSAttributedString(string: str))
+        XCTAssertTrue(stringObjC == NSAttributedString(string: str))
     }
     
     func testStyleAtrrStringNoStyle() {
@@ -78,8 +86,10 @@ class SKStylingStringsTests: XCTestCase {
         
         // when
         let attrString = StyleKit.string(withStyle: nil, attributedString: str)
+        let attrStringObjC = StyleKit.objc_stringWithStyle(nil, attributedString: str)
         
         // then
         XCTAssertTrue(attrString === str)
+        XCTAssertTrue(attrStringObjC === str)
     }
 }

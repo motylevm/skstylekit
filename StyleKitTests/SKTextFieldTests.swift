@@ -29,10 +29,29 @@ class SKTextFieldTests: XCTestCase {
         basicSetup()
     }
     
+    func testSetStyleByName() {
+        
+        // given
+        let styleName = "textFieldStyle"
+        let textField = SKTextField()
+        textField.text = defString
+        textField.placeholder = "987654321"
+        
+        // when
+        textField.styleName = styleName
+        
+        // then
+        XCTAssertNotNil(textField)
+        XCTAssertEqual(textField.styleName, styleName)
+        checkViewStyle(textField)
+        checkStringStyle(textField.attributedText)
+    }
+    
     func testSetStyle() {
         
         // given
-        let style = StyleKit.style(withName: "textFieldStyle")
+        let styleName = "textFieldStyle"
+        let style = StyleKit.style(withName: styleName)
         let textField = SKTextField()
         textField.text = defString
         textField.placeholder = "987654321"
@@ -42,15 +61,33 @@ class SKTextFieldTests: XCTestCase {
         
         // then
         XCTAssertNotNil(textField)
-        XCTAssertEqual(textField.styleName, "textFieldStyle")
+        XCTAssertEqual(textField.styleName, styleName)
         checkViewStyle(textField)
         checkStringStyle(textField.attributedText)
+    }
+    
+    func testSetStyleNamePlaceholder() {
+        
+        // given
+        let styleName = "textFieldPlaceholderStyle"
+        let textField = SKTextField()
+        textField.text = defString
+        textField.placeholder = "987654321"
+        
+        // when
+        textField.placeholderStyleName = styleName
+        
+        // then
+        XCTAssertNotNil(textField)
+        XCTAssertEqual(textField.placeholderStyleName, styleName)
+        checkStringStyle(textField.attributedPlaceholder, aligmentCheck: false)
     }
     
     func testSetStylePlaceholder() {
         
         // given
-        let style = StyleKit.style(withName: "textFieldPlaceholderStyle")
+        let styleName = "textFieldPlaceholderStyle"
+        let style = StyleKit.style(withName: styleName)
         let textField = SKTextField()
         textField.text = defString
         textField.placeholder = "987654321"
@@ -60,7 +97,7 @@ class SKTextFieldTests: XCTestCase {
         
         // then
         XCTAssertNotNil(textField)
-        XCTAssertEqual(textField.placeholderStyleName, "textFieldPlaceholderStyle")
+        XCTAssertEqual(textField.placeholderStyleName, styleName)
         checkStringStyle(textField.attributedPlaceholder, aligmentCheck: false)
     }
 }
