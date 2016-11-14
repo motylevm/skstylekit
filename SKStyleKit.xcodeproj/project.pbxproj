@@ -13,6 +13,8 @@
 		6F2B38CC1DAB741700D97853 /* SKProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CB1DAB741700D97853 /* SKProgressView.swift */; };
 		6F2B38CE1DAB74C100D97853 /* SKStyleUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */; };
 		6F2B38D01DAB758300D97853 /* SKProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */; };
+		6F33F9DD1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F33F9DC1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift */; };
+		6F33F9E01DD99F8900A0FC9C /* performanceLoadTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */; };
 		6F3A0D3F1DD1C56C0002C948 /* SKPerformanceUIButtonCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */; };
 		6F3A0D401DD1C56F0002C948 /* SKPerformanceUIButtonAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A0D3B1DD1C4AC0002C948 /* SKPerformanceUIButtonAdvanced.swift */; };
 		6FA2FE0C1DC8C723004C3A6A /* SKColorCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2FE0B1DC8C723004C3A6A /* SKColorCache.swift */; };
@@ -124,6 +126,8 @@
 		6F2B38CB1DAB741700D97853 /* SKProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKProgressView.swift; path = Sources/SKProgressView.swift; sourceTree = SOURCE_ROOT; };
 		6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIProgressView.swift; path = Sources/SKStyleUIProgressView.swift; sourceTree = SOURCE_ROOT; };
 		6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKProgressViewTests.swift; sourceTree = "<group>"; };
+		6F33F9DC1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceStyleLoad.swift; sourceTree = "<group>"; };
+		6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = performanceLoadTest.json; sourceTree = "<group>"; };
 		6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonCommon.swift; sourceTree = "<group>"; };
 		6F3A0D3B1DD1C4AC0002C948 /* SKPerformanceUIButtonAdvanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonAdvanced.swift; sourceTree = "<group>"; };
 		6FA2FE0B1DC8C723004C3A6A /* SKColorCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKColorCache.swift; path = Sources/SKColorCache.swift; sourceTree = SOURCE_ROOT; };
@@ -266,6 +270,7 @@
 				87D899481DCBC3A700DD6E97 /* SKPerformanceUILabelAdvancedTests.swift */,
 				6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */,
 				6F3A0D3B1DD1C4AC0002C948 /* SKPerformanceUIButtonAdvanced.swift */,
+				6F33F9DC1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift */,
 			);
 			name = "Performance Tests";
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				87A501AD1D9F9C57007CA1EC /* TestStyleJson1_AllConditionsTrue.json */,
 				87A501AE1D9F9C57007CA1EC /* TestStyleJson1.json */,
 				87A501A81D9F9C57007CA1EC /* styleUITestsStyles.json */,
+				6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */,
 			);
 			name = Res;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 				87A501C61D9F9C57007CA1EC /* styleUITestsStyles.json in Resources */,
 				87A501CB1D9F9C57007CA1EC /* TestStyleJson1_AllConditionsTrue.json in Resources */,
 				87A501C81D9F9C57007CA1EC /* styleZIndex20.json in Resources */,
+				6F33F9E01DD99F8900A0FC9C /* performanceLoadTest.json in Resources */,
 				87A501C91D9F9C57007CA1EC /* styleZIndexDefault.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,6 +767,7 @@
 				6FA2FE141DC9DDFF004C3A6A /* SKPerformanceUIViewExceptShadowBorderCornerTests.swift in Sources */,
 				87A501BB1D9F9C57007CA1EC /* SKStylesSourceTests.swift in Sources */,
 				6FB779661DAE159E00BADCFB /* SKTextFieldTests.swift in Sources */,
+				6F33F9DD1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift in Sources */,
 				87A501B21D9F9C57007CA1EC /* SKBaseConditionFactoryTests.swift in Sources */,
 				6F3A0D3F1DD1C56C0002C948 /* SKPerformanceUIButtonCommon.swift in Sources */,
 				87373FAB1DD18D9F005BAB90 /* SKStyleFlags.swift in Sources */,
