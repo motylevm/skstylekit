@@ -27,7 +27,8 @@ let forceParamValue = "@"
 
 
 let colorParam = "color"
-let colorParameters: Set<String> = ["fontColor",
+let colorParameters: Set<String> = ["color",
+                                    "fontColor",
                                     "backgroundColor",
                                     "borderColor",
                                     "shadowColor",
@@ -40,7 +41,8 @@ let colorParameters: Set<String> = ["fontColor",
                                     "trackTintColor"]
 
 let sizeParam = "size"
-let sizeParameters: Set<String> = ["borderWidth",
+let sizeParameters: Set<String> = ["size",
+                                   "borderWidth",
                                    "fontSize",
                                    "shadowRadius",
                                    "cornerRadius",
