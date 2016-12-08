@@ -253,6 +253,17 @@ Text underline style, possible values: `none`, `single`, `thick`, `double`
 ### textUnderlinePattern
 Text underline pattern, possible values: `solid`, `dot`, `dash`, `dashDot`, `dashDotDot`
 
+### textUnderlineColor
+Text underline color in hex format: `#RRGGBB` or `#AARRGGBB`.
+
 ### textAlignment
 The text alignment, possible values: `right`, `left`, `center`, `justified`
 
+### textStrikethrough
+Text strikethrough style, possible values: `none`, `single`, `thick`, `double`
+
+### textStrikethroughPattern
+Text strikethrough pattern, possible values: `solid`, `dot`, `dash`, `dashDot`, `dashDotDot`
+
+### textStrikethroughColor
+Text strikethrough color in hex format: `#RRGGBB` or `#AARRGGBB`.

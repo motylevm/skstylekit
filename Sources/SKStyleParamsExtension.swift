@@ -130,6 +130,11 @@ public extension SKStyle {
         return colorValue(forKey: #function)
     }
     
+    // MARK: - [Activity Indicator] Properties
+    public var activityIndicatorColor: UIColor? {
+        return colorValue(forKey: #function)
+    }
+    
     // MARK: - [Font] Properties
     
     /// Font name, can be applied to text containers (Label, TextField, TextView)
@@ -222,6 +227,26 @@ public extension SKStyle {
     /// Text underline pattern, can be applied to text containers (Label, TextField, TextView)
     public var textUnderlinePattern: NSUnderlineStyle? {
         return SKUnderlinePatternStyle.from(rawValue: stringValue(forKey: #function))?.style
+    }
+    
+    /// Text underline color
+    public var textUnderlineColor: UIColor? {
+        return colorValue(forKey: #function)
+    }
+    
+    // Text strikethrough style, can be applied to text containers (Label, TextField, TextView)
+    public var textStrikethrough: NSUnderlineStyle? {
+        return SKUnderlineStyle.from(rawValue: stringValue(forKey: #function))?.style
+    }
+    
+    /// Text strikethrough pattern, can be applied to text containers (Label, TextField, TextView)
+    public var textStrikethroughPattern: NSUnderlineStyle? {
+        return SKUnderlinePatternStyle.from(rawValue: stringValue(forKey: #function))?.style
+    }
+    
+    /// Text strikethrough color
+    public var textStrikethroughColor: UIColor? {
+        return colorValue(forKey: #function)
     }
     
     // MARK: - Calculated text attributes
@@ -347,6 +372,21 @@ public extension SKStyle {
             result.updateValue(paragraphStyle, forKey: NSParagraphStyleAttributeName)
         }
         
+        if let strikethroughStyle = textStrikethrough {
+            
+            var value: [NSUnderlineStyle] = [strikethroughStyle]
+            
+            if let strikethroughPatternStyle = textStrikethroughPattern {
+                value.append(strikethroughPatternStyle)
+            }
+            
+            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSStrikethroughStyleAttributeName)
+            
+            if let textStrikethroughColor = textStrikethroughColor {
+                result.updateValue(textStrikethroughColor, forKey: NSStrikethroughColorAttributeName)
+            }
+        }
+        
         if let underlineStyle = textUnderline {
             
             var value: [NSUnderlineStyle] = [underlineStyle]
@@ -356,6 +396,10 @@ public extension SKStyle {
             }
             
             result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSUnderlineStyleAttributeName)
+            
+            if let textUnderlineColor = textUnderlineColor {
+                result.updateValue(textUnderlineColor, forKey: NSUnderlineColorAttributeName)
+            }
         }
         
         return result.isEmpty ? nil : result

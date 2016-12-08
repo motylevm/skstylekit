@@ -22,6 +22,10 @@ import UIKit
 
 extension UIColor {
 
+    class func sk_Color(from colorString: String) -> UIColor? {
+        return sk_Color(fromDecString: colorString) ?? sk_Color(fromHexString: colorString)
+    }
+    
     class func sk_Color(fromHexString hexString: String?) -> UIColor? {
         guard let hexString = hexString else { return nil }
         
@@ -73,5 +77,28 @@ extension UIColor {
         }
         
         return nil
+    }
+    
+    class func sk_Color(fromDecString decString: String?) -> UIColor? {
+        guard let decString = decString else { return nil }
+        
+        let components = decString.components(separatedBy: CharacterSet(charactersIn: ",;:-"))
+        
+        let numberComponents: [CGFloat] = components.flatMap {
+            
+            if let value = Int($0), value <= 255 && value >= 0  {
+                return CGFloat(value) / 255
+            }
+            return nil
+        }
+        
+        guard components.count == numberComponents.count else { return nil }
+        
+        switch components.count {
+            
+            case 4: return UIColor(red: numberComponents[1], green: numberComponents[2], blue: numberComponents[3], alpha: numberComponents[0])
+            case 3: return UIColor(red: numberComponents[0], green: numberComponents[1], blue: numberComponents[2], alpha: 1)
+            default: return nil
+        }
     }
 }

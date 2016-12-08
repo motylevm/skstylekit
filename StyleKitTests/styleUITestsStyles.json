@@ -50,7 +50,11 @@
             "textParagraphSpacingBefore": 7,
             "textHyphenationFactor": 1.5,
             "textUnderline": "double",
-            "textUnderlinePattern": "dashDotDot"
+            "textUnderlinePattern": "dashDotDot",
+            "textUnderlineColor": "red",
+            "textStrikethrough": "double",
+            "textStrikethroughPattern": "dashDotDot",
+            "textStrikethroughColor": "blue"
 
         },
         
@@ -97,6 +101,12 @@
         
         "textFieldPlaceholderStyle": {
             "parent": "labelStyle"
+        },
+        
+        "activityViewStyle": {
+            
+            "parent": "viewStyle",
+            "activityIndicatorColor": "green"
         }
     },
     
@@ -158,7 +168,11 @@
             "textParagraphSpacingBefore": 7,
             "textHyphenationFactor": 1.5,
             "textUnderline": "double",
-            "textUnderlinePattern": "dashDotDot"
+            "textUnderlinePattern": "dashDotDot",
+            "textUnderlineColor": "red",
+            "textStrikethrough": "double",
+            "textStrikethroughPattern": "dashDotDot",
+            "textStrikethroughColor": "blue"
         }
     }
 }

@@ -38,7 +38,10 @@ let colorParameters: Set<String> = ["color",
                                     "minimumTrackTintColor",
                                     "maximumTrackTintColor",
                                     "progressTintColor",
-                                    "trackTintColor"]
+                                    "trackTintColor",
+                                    "activityIndicatorColor",
+                                    "textStrikethroughColor",
+                                    "textUnderlineColor"]
 
 let sizeParam = "size"
 let sizeParameters: Set<String> = ["size",

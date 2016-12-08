@@ -99,6 +99,13 @@ func checkStringStyle(_ attributedText: NSAttributedString?, aligmentCheck: Bool
     XCTAssertEqual(pargraphStyle?.paragraphSpacingBefore, 7)
     XCTAssertEqual(pargraphStyle?.hyphenationFactor, 1.5)
     XCTAssertEqual((attributes?[NSUnderlineStyleAttributeName] as? NSNumber)?.intValue, NSUnderlineStyle.patternDashDotDot.rawValue | NSUnderlineStyle.styleDouble.rawValue)
+    XCTAssertEqual((attributes?[NSUnderlineColorAttributeName] as? UIColor), UIColor.red)
+    XCTAssertEqual((attributes?[NSStrikethroughStyleAttributeName] as? NSNumber)?.intValue, NSUnderlineStyle.patternDashDotDot.rawValue | NSUnderlineStyle.styleDouble.rawValue)
+    XCTAssertEqual((attributes?[NSStrikethroughColorAttributeName] as? UIColor), UIColor.blue)
+}
+
+func checkActivityIndicatorViewStyle(_ activityIndicatorView: UIActivityIndicatorView?) {
+    XCTAssertEqual(activityIndicatorView?.color, UIColor.green)
 }
 
 func checkControlStyle(_ control: UIControl?) {

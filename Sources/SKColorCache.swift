@@ -12,16 +12,16 @@ private var cache = [String: UIColor]()
 
 class SKColorCache {
     
-    class func color(with hexString: String?) -> UIColor? {
-        guard let hexString = hexString else { return nil }
+    class func color(with colorString: String?) -> UIColor? {
+        guard let colorString = colorString else { return nil }
         
-        if let result = cache[hexString] {
+        if let result = cache[colorString] {
             return result
         }
         
-        if let result = UIColor.sk_Color(fromHexString: hexString) {
+        if let result = UIColor.sk_Color(from: colorString) {
             
-            cache[hexString] = result
+            cache[colorString] = result
             return result
         }
         

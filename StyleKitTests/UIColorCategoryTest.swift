@@ -24,6 +24,47 @@ import XCTest
 
 class UIColorCategoryTest: XCTestCase {
 
+    func testSk_ColorWithDec_1() {
+        
+        // given
+        let decColors = ["255,255,255", "255,255,255, 255", "255;255;255", "255;255;255;255", "255:255:255:255"]
+        let standartColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        // when
+        let colors = decColors.flatMap { UIColor.sk_Color(fromDecString: $0) }
+        
+        // then
+        for color in colors {
+            XCTAssertEqual(standartColor, color)
+        }
+    }
+    
+    func testSk_ColorWithDec_2() {
+        
+        // given
+        let decColors = ["0, 255,255,0", "0;255,255,0"]
+        let standartColor = UIColor.init(red: 1, green: 1, blue: 0, alpha: 0)
+        
+        // when
+        let colors = decColors.flatMap { UIColor.sk_Color(fromDecString: $0) }
+        
+        // then
+        for color in colors {
+            XCTAssertEqual(standartColor, color)
+        }
+    }
+    
+    func testSk_ColorWithDec_3() {
+        
+        // given
+        let dec: String? = nil
+        
+        // when
+        let color = UIColor.sk_Color(fromDecString: dec)
+        
+        // then
+        XCTAssertNil(color)
+    }
 
     func testSk_ColorWithHex_1() {
         
@@ -94,5 +135,20 @@ class UIColorCategoryTest: XCTestCase {
         color!.getRed(&r, green: &g, blue: &b, alpha: &a)
         
         XCTAssertEqual(a, 0)
+    }
+    
+    func testSk_ColorString_1() {
+        
+        // given
+        let strings = ["0,255,0,255", "#00FF00FF"]
+        let standartColor = UIColor.init(red: 1, green: 0, blue: 1, alpha: 0)
+        
+        // when
+        let colors = strings.flatMap { UIColor.sk_Color(from: $0) }
+        
+        // then
+        for color in colors {
+            XCTAssertEqual(standartColor, color)
+        }
     }
 }
