@@ -20,6 +20,8 @@
 
 import UIKit
 
+typealias SKStyleKit = StyleKit
+
 public class StyleKit: NSObject {
     
     internal static var sharedInstance: StyleKit?

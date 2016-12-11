@@ -135,6 +135,18 @@ public extension SKStyle {
         return colorValue(forKey: #function)
     }
     
+    // MARK: - [Tab Bar] Properties
+    
+    /// Bar tint color
+    public var barTintColor: UIColor? {
+        return colorValue(forKey: #function)
+    }
+    
+    /// Unselected items in this tab bar will be tinted with this color iOS 10+
+    public var unselectedItemTintColor: UIColor? {
+        return colorValue(forKey: #function)
+    }
+    
     // MARK: - [Font] Properties
     
     /// Font name, can be applied to text containers (Label, TextField, TextView)

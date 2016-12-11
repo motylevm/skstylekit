@@ -107,6 +107,13 @@
             
             "parent": "viewStyle",
             "activityIndicatorColor": "green"
+        },
+        
+        "tabBarSyle": {
+            
+            "tintColor": "green",
+            "barTintColor": "blue",
+            "unselectedItemTintColor": "red"
         }
     },
     

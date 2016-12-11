@@ -41,7 +41,9 @@ let colorParameters: Set<String> = ["color",
                                     "trackTintColor",
                                     "activityIndicatorColor",
                                     "textStrikethroughColor",
-                                    "textUnderlineColor"]
+                                    "textUnderlineColor",
+                                    "barTintColor",
+                                    "unselectedItemTintColor"]
 
 let sizeParam = "size"
 let sizeParameters: Set<String> = ["size",

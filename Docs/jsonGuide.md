@@ -180,6 +180,14 @@ Content vertical aligment, possible values: `center`, `top`, `bottom`, `fill`
 ### contentHorizontalAlignment
 Content horizontal aligment, possible values: `center`, `left`, `right`, `fill`
 
+## UITabBar
+
+### barTintColor
+Bar tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB`
+
+### unselectedItemTintColor
+Unselected items in this tab bar will be tinted with this color (iOS 10+)
+
 ## UISwitch
 
 ### onTintColor
