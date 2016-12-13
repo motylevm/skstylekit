@@ -17,6 +17,7 @@
 		6F33F9E01DD99F8900A0FC9C /* performanceLoadTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */; };
 		6F3A0D3F1DD1C56C0002C948 /* SKPerformanceUIButtonCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */; };
 		6F3A0D401DD1C56F0002C948 /* SKPerformanceUIButtonAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A0D3B1DD1C4AC0002C948 /* SKPerformanceUIButtonAdvanced.swift */; };
+		6F5F738F1E002E210086E6B6 /* SKStyleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5F738E1E002E210086E6B6 /* SKStyleKitTests.swift */; };
 		6F7DD60F1DF6F2D6008C1E57 /* SKActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7DD60E1DF6F2D6008C1E57 /* SKActivityIndicatorView.swift */; };
 		6F7DD6131DF6F56C008C1E57 /* SKActivityIndicatorViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7DD6121DF6F56C008C1E57 /* SKActivityIndicatorViewTests.swift */; };
 		6F8821DC1DF69EFD00C815FE /* SKStyleUIActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8821DB1DF69EFD00C815FE /* SKStyleUIActivityIndicator.swift */; };
@@ -135,6 +136,7 @@
 		6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = performanceLoadTest.json; sourceTree = "<group>"; };
 		6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonCommon.swift; sourceTree = "<group>"; };
 		6F3A0D3B1DD1C4AC0002C948 /* SKPerformanceUIButtonAdvanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonAdvanced.swift; sourceTree = "<group>"; };
+		6F5F738E1E002E210086E6B6 /* SKStyleKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKStyleKitTests.swift; sourceTree = "<group>"; };
 		6F7DD60E1DF6F2D6008C1E57 /* SKActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKActivityIndicatorView.swift; path = ../Sources/SKActivityIndicatorView.swift; sourceTree = "<group>"; };
 		6F7DD6121DF6F56C008C1E57 /* SKActivityIndicatorViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKActivityIndicatorViewTests.swift; sourceTree = "<group>"; };
 		6F8821DB1DF69EFD00C815FE /* SKStyleUIActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIActivityIndicator.swift; path = ../Sources/SKStyleUIActivityIndicator.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				87A501CF1D9F9C62007CA1EC /* Res */,
 				87A501361D9F9A00007CA1EC /* Info.plist */,
 				87A501941D9F9C57007CA1EC /* SKBaseConditionFactoryTests.swift */,
+				6F5F738E1E002E210086E6B6 /* SKStyleKitTests.swift */,
 				87A501951D9F9C57007CA1EC /* SKBaseConditionProcessorTests.swift */,
 				87A501961D9F9C57007CA1EC /* SKButtonTests.swift */,
 				87A501971D9F9C57007CA1EC /* SKDeviceConditionTests.swift */,
@@ -803,6 +806,7 @@
 				87EAD3D51DCF77F2008B6A38 /* SKStylingStringsTests.swift in Sources */,
 				87A501BA1D9F9C57007CA1EC /* SKStylesSourcePreprocessorTests.swift in Sources */,
 				874C63A11DFD4FB0007DFFD1 /* UITabBarTests.swift in Sources */,
+				6F5F738F1E002E210086E6B6 /* SKStyleKitTests.swift in Sources */,
 				87A36B021DCF423E0032B355 /* SKStylePublicInterfaceTests.swift in Sources */,
 				87A501B61D9F9C57007CA1EC /* SKFontStyleTests.swift in Sources */,
 				87D899471DCBC30600DD6E97 /* SKPerformanceUILabelCommonTests.swift in Sources */,

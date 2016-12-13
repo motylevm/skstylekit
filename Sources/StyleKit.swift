@@ -26,6 +26,7 @@ public class StyleKit: NSObject {
     
     internal static var sharedInstance: StyleKit?
     
+    // MARK: - Properties -
     private(set) var styles: [String: SKStyle]
     private(set) var configuration: StyleKitConfiguration
     private var onceLoggedMessages: Set<String> = []

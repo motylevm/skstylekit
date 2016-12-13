@@ -35,6 +35,22 @@ public extension StyleKit {
         return sharedInstance != nil
     }
     
+    public class func allStyles() -> [SKStyle]? {
+        guard let styles = sharedInstance?.styles else { return nil }
+        
+        var result = [SKStyle]()
+        var includedNames = Set<String>()
+        
+        for (_, value) in styles {
+            guard !includedNames.contains(value.name) else { continue }
+            
+            result.append(value)
+            includedNames.insert(value.name)
+        }
+        
+        return result.count > 0 ? result : nil
+    }
+    
     // MARK: - Style methods
     public class func style(withName name: String?) -> SKStyle? {
         guard let name = name else { return nil }
