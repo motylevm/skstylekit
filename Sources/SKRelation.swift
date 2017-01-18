@@ -18,25 +18,40 @@
 //    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-import Foundation
+import UIKit
 
-class SKBaseConditionFactory: SKConditionFactory {
+enum SKRelation: String {
     
-    // MARK: - SKConditionFactory
-    func conditionFromString(string: String) -> SKCondition? {
+    case equal = "="
+    case greater = ">"
+    case less = "<"
+    case greaternOrEqual = ">="
+    case lessOrEqual = "<="
+    case notEqual = "!="
+    
+    // MARK: - Compare
+    func compare(left: CGFloat, right: CGFloat) -> Bool {
         
-        if let scaleCondition = SKScaleCondition(string: string) {
-            return scaleCondition
+        switch self {
+            
+            case .equal: return left == right
+            case .greater: return left > right
+            case .less: return left < right
+            case .greaternOrEqual: return left >= right
+            case .lessOrEqual: return left <= right
+            case .notEqual: return left != right
         }
         
-        if let deviceCondition = SKDeviceCondition(string: string) {
-            return deviceCondition
-        }
+    }
+    
+    // MARK: - Factory
+    static func from(_ rawValue: String) -> SKRelation? {
         
-        if let screenCondition = SKScreenCondition(string: string) {
-            return screenCondition
+        switch rawValue {
+            
+            case "==", "": return .equal
+            case "!", "<>": return .notEqual
+            default: return SKRelation(rawValue: rawValue)
         }
-        
-        return nil
     }
 }
