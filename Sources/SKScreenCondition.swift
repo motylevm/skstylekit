@@ -67,6 +67,6 @@ final class SKScreenCondition: SKCondition {
     
     // MARK: - CustomStringConvertible
     var description: String {
-        return relation.rawValue + "\(value)" + (isHeightCondition ? "h" : "w")
+        return relation.rawValue + "\(Int(value))" + (isHeightCondition ? "h" : "w")
     }
 }

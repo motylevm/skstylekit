@@ -52,6 +52,26 @@ class SKConditionFactoryTests: XCTestCase {
         XCTAssertEqual(String(describing: condition!), str)
     }
     
+    func testScreenCondition() {
+        
+        // given
+        let strs = ["=568h", ">=800w", "!=444h"]
+        
+        // when
+        let conditions = strs.flatMap { SKBaseConditionFactory().conditionFromString(string: $0) }
+        
+        // then
+        XCTAssertEqual(conditions.count, strs.count)
+        
+        conditions.forEach {
+            XCTAssertTrue($0 is SKScreenCondition)
+        }
+        
+        for i in 0 ..< conditions.count {
+            XCTAssertEqual(String(describing: conditions[i]), strs[i])
+        }
+    }
+    
     func testInvalid() {
         
         // given
