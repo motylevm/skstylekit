@@ -20,7 +20,7 @@
 
 import UIKit
 
-typealias SKStyleKit = StyleKit
+public typealias SKStyleKit = StyleKit
 
 public class StyleKit: NSObject {
     

@@ -41,26 +41,7 @@ public extension SKStyle {
         }
         
         // Set style using attributed string
-        if flags & labelAdvancedFlag != 0 {
-            
-            let styledTitle = StyleKit.string(withStyle: self, string: title, defaultParagraphStyle: button?.sk_defaultParagraphStyle())
-            button?.setAttributedTitle(styledTitle, for: state)
-        
-            return
-        }
-        
-        // Set style using label properties only (2 times faster!)
-        if flags & labelCommonFlag != 0 {
-            
-            if let fontColor = fontColor {
-                button?.setTitleColor(fontColor, for: state)
-            }
-            
-            if let font = font() {
-                button?.titleLabel?.font = font
-            }
-            
-            button?.sk_setTitleWithoutStyleApplication(title, forState: state)
-        }
+        let styledTitle = StyleKit.string(withStyle: self, string: title, defaultParagraphStyle: button?.sk_defaultParagraphStyle())
+        button?.setAttributedTitle(styledTitle, for: state)
     }
 }
