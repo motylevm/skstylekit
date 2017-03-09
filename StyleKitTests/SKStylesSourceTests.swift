@@ -30,7 +30,7 @@ class SKStylesSourceTests: XCTestCase {
         let path = Bundle(for: SKStylesSourceTests.self).path(forResource: "TestStyleJson1", ofType: "json")!
         
         // when
-        let stylesSource = SKStylesSource(filePath: path, sourceType: .other)!
+        let stylesSource = SKStylesSourceProvider(filePath: path, sourceType: .other)!
         
         // then
         XCTAssertTrue(stylesSource.source.count > 0)
@@ -41,9 +41,9 @@ class SKStylesSourceTests: XCTestCase {
         // given
         let pathes = ["styleZIndexDefault", "styleZIndex10", "styleZIndex20"].flatMap({ Bundle(for: SKStylesSourceTests.self).path(forResource: $0, ofType: "json") })
         
-        var array = pathes.flatMap({ SKStylesSource(filePath: $0, sourceType: .other) }) +
-                    pathes.flatMap({ SKStylesSource(filePath: $0, sourceType: .main) }) +
-                    pathes.flatMap({ SKStylesSource(filePath: $0, sourceType: .styleKit) })
+        var array = pathes.flatMap({ SKStylesSourceProvider(filePath: $0, sourceType: .other) }) +
+                    pathes.flatMap({ SKStylesSourceProvider(filePath: $0, sourceType: .main) }) +
+                    pathes.flatMap({ SKStylesSourceProvider(filePath: $0, sourceType: .styleKit) })
         
         array.sort(by: { _,_ in arc4random() % 2 == 0 })
         

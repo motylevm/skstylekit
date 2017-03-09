@@ -20,14 +20,7 @@
 
 import Foundation
 
-enum SKStylesSourceType: Int {
-    
-    case main = 1
-    case styleKit = -1
-    case other = 0
-}
-
-class SKStylesSource: SKStylesSourceProvider {
+class SKStylesSourceProvider {
 
     // MARK: - Properties
     private(set) var source = [String: Any]()
@@ -35,8 +28,10 @@ class SKStylesSource: SKStylesSourceProvider {
     private(set) var sourceType: SKStylesSourceType = .other
     
     // MARK: - Init
-    init?(filePath: String, sourceType: SKStylesSourceType) {
+    init?(filePath: String, sourceType: SKStylesSourceType, zIndex: Int = 0) {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else { return nil }
+        
+        self.zIndex = zIndex
         
         do {
 
@@ -73,13 +68,13 @@ class SKStylesSource: SKStylesSourceProvider {
         switch bundle {
             
             case Bundle.main: return .main
-            case Bundle(for: SKStylesSource.self): return .styleKit
+            case Bundle(for: SKStylesSourceProvider.self): return .styleKit
             default: return .other
         }
     }
     
     // MARK: - Sorting by priority
-    func isOrderedBefore(otherSource: SKStylesSource) -> Bool {
+    func isOrderedBefore(otherSource: SKStylesSourceProvider) -> Bool {
         
         if sourceType == otherSource.sourceType {
             return zIndex < otherSource.zIndex

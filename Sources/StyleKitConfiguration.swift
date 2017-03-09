@@ -23,12 +23,32 @@ import Foundation
 @objc public final class StyleKitConfiguration: NSObject {
     
     public var factory: StyleKitFactory = DefaultStyleKitFactory()
-    
-    public var loadDefaultStyles: Bool = true
-    public var loadFrameworkStyles: Bool = true
-    public var loadApplicationStyles: Bool = true
-    
-    public var styleFiles: [String]?
-    
     public var suppressLogMessages: Bool = false
+    public var sources: [SKStyleKitSource] = []
+    
+    // MARK: - Source -
+    public func addMainSource() {
+        sources.append(SKStyleKitSource.styleKit())
+    }
+    
+    public func addDefaultSource() {
+        sources.append(SKStyleKitSource.main())
+    }
+    
+    public func addFileSource(path: String) {
+        sources.append(SKStyleKitSource.file(path, zIndex: 0))
+    }
+    
+    public func addBundleSource(bundle: Bundle) {
+        sources.append(SKStyleKitSource.bundle(bundle, zIndex: 0))
+    }
+    
+    // MARK: - Factory - 
+    public class func defaultConfiguration() -> StyleKitConfiguration {
+    
+        let result = StyleKitConfiguration()
+        result.addMainSource()
+        result.addDefaultSource()
+        return result
+    }
 }
