@@ -217,7 +217,3 @@ open class SKStyle: NSObject {
         try populateParams(fromProvider: provider, except: [name] + (aliases ?? []))
     }
 }
-
-public func ==(left: SKStyle?, right: SKStyle?) -> Bool {
-    return left === right
-}
