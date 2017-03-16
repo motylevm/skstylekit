@@ -28,11 +28,11 @@ import Foundation
     
     // MARK: - Source -
     public func addMainSource() {
-        sources.append(SKStyleKitSource.styleKit())
+        sources.append(SKStyleKitSource.main())
     }
     
     public func addDefaultSource() {
-        sources.append(SKStyleKitSource.main())
+        sources.append(SKStyleKitSource.styleKit())
     }
     
     public func addFileSource(path: String) {
