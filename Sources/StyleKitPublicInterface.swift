@@ -24,7 +24,7 @@ public extension StyleKit {
     
     // MARK: - Initialization
     public class func initStyleKit() {
-        initStyleKit(withConfiguration: StyleKitConfiguration())
+        initStyleKit(withConfiguration: StyleKitConfiguration.defaultConfiguration())
     }
     
     public class func initStyleKit(withConfiguration configuration: StyleKitConfiguration) {

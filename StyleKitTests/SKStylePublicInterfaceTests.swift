@@ -34,24 +34,6 @@ class StyleKitLogMock: StyleKit {
 
 class SKStylePublicInterfaceTests: XCTestCase {
     
-    func testInit() {
-    
-        // given
-        let defConf = StyleKitConfiguration()
-        
-        // when
-        StyleKit.initStyleKit()
-        
-        // then
-        let conf = StyleKit.sharedInstance!.configuration
-        XCTAssertEqual(conf.loadDefaultStyles, defConf.loadDefaultStyles)
-        XCTAssertEqual(conf.loadFrameworkStyles, defConf.loadFrameworkStyles)
-        XCTAssertEqual(conf.loadApplicationStyles, defConf.loadApplicationStyles)
-        XCTAssertEqual(conf.styleFiles ?? [], defConf.styleFiles ?? [])
-        XCTAssertEqual(conf.suppressLogMessages, defConf.suppressLogMessages)
-        
-    }
-    
     func testIsInitCheck() {
         
         // when

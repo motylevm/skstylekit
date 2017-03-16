@@ -42,10 +42,7 @@ func basicSetup() {
     let path = Bundle(for: TestClass.self).path(forResource: "styleUITestsStyles", ofType: "json")!
     
     let configuration = StyleKitConfiguration()
-    configuration.loadDefaultStyles = false
-    configuration.loadFrameworkStyles = false
-    configuration.loadApplicationStyles = false
-    configuration.styleFiles = [path]
+    configuration.sources = [path].map { SKStyleKitSource.file($0) }
     
     StyleKit.sharedInstance = StyleKit(withConfiguration: configuration)
 }

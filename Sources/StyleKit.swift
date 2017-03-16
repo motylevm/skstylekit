@@ -102,41 +102,11 @@ public class StyleKit: NSObject {
     // MARK: - Init helpers
     func styleSourceProviders() -> [SKStylesSourceProvider] {
         
-        var result = (Bundle.allBundles + Bundle.allFrameworks).flatMap({ styleSourceProviders(forBundle: $0) })
-        
-        if let userFiles = configuration.styleFiles {
-            result += userFiles.flatMap({ SKStylesSource(filePath: $0, sourceType: .main) })
-        }
-        
-        result.sort { (s1, s2) -> Bool in
-            return s1.isOrderedBefore(otherSource: s2)
-        }
-        
-        return result.map({ $0 as SKStylesSourceProvider })
-    }
-    
-    func styleSourceProviders(forBundle bundle: Bundle) -> [SKStylesSource] {
-        
-        let type = SKStylesSource.sourceType(forBundle: bundle)
-        
-        let allowLoad: Bool
-        
-        switch type {
-            
-            case .main: allowLoad = configuration.loadApplicationStyles
-            case .other: allowLoad = configuration.loadFrameworkStyles
-            case .styleKit: allowLoad = configuration.loadDefaultStyles
-        }
-        
-        guard allowLoad else { return [] }
-        
-        return styleFiles(forBundle: bundle).flatMap({ SKStylesSource(filePath: $0, sourceType: type) })
-    }
-    
-    func styleFiles(forBundle bundle: Bundle) -> [String] {
-        guard let files = try? FileManager.default.contentsOfDirectory(atPath: bundle.bundlePath) else { return [] }
-        
-        return files.filter({ $0.hasPrefix("style") && $0.hasSuffix(".json") }).flatMap({ bundle.path(forResource: $0, ofType: nil) })
+        let result = configuration.sources.flatMap { $0.getProviders() }
+
+        return result.sorted { (s1, s2) -> Bool in
+                                return s1.isOrderedBefore(otherSource: s2)
+                             }
     }
     
     // MARK: - Logging
