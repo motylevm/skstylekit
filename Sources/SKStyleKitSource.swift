@@ -68,6 +68,6 @@ public final class SKStyleKitSource {
     }
 
     public class func bundle(_ bundle: Bundle, zIndex: Int = 0)-> SKStyleKitSource {
-        return SKStyleKitSource(location: .bundle(Bundle.main), type: .other, zIndex: zIndex)
+        return SKStyleKitSource(location: .bundle(bundle), type: .other, zIndex: zIndex)
     }
 }
