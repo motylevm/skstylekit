@@ -114,6 +114,14 @@
             "tintColor": "green",
             "barTintColor": "blue",
             "unselectedItemTintColor": "red"
+        },
+        
+        "navBarStyle": {
+            
+            "parent": "labelStyle",
+            "tintColor": "green",
+            "barTintColor": "blue",
+            "isTranslucent": 0
         }
     },
     

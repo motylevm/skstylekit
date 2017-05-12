@@ -71,6 +71,6 @@ public extension SKStyle {
     }
     
     func checkIfContainsLabelAdvancedStyle() -> Bool {
-        return fontKern != nil || textUnderline != nil || paragraphStyle() != nil || fontKern != nil || textStrikethrough != nil || textUnderline != nil
+        return fontKern != nil || textUnderline != nil || paragraphStyle() != nil || textStrikethrough != nil || textUnderline != nil
     }
 }

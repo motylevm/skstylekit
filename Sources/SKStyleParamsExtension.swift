@@ -147,6 +147,11 @@ public extension SKStyle {
         return colorValue(forKey: #function)
     }
     
+    // MARK: - [Navigation Bar] Properties 
+    public var isTranslucent: Bool? {
+        return boolValue(forKey: #function)
+    }
+    
     // MARK: - [Font] Properties
     
     /// Font name, can be applied to text containers (Label, TextField, TextView)

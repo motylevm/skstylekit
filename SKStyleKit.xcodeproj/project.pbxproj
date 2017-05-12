@@ -16,6 +16,9 @@
 		6F2B38CC1DAB741700D97853 /* SKProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CB1DAB741700D97853 /* SKProgressView.swift */; };
 		6F2B38CE1DAB74C100D97853 /* SKStyleUIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */; };
 		6F2B38D01DAB758300D97853 /* SKProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */; };
+		6F2EE5241EC5EEA3007BEA72 /* SKStyleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2EE5231EC5EEA3007BEA72 /* SKStyleNavigationBar.swift */; };
+		6F2EE5291EC5F74F007BEA72 /* SKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2EE5281EC5F74F007BEA72 /* SKNavigationBar.swift */; };
+		6F2EE52B1EC5F831007BEA72 /* SKNavigationBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2EE52A1EC5F831007BEA72 /* SKNavigationBarTests.swift */; };
 		6F33F9DD1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F33F9DC1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift */; };
 		6F33F9E01DD99F8900A0FC9C /* performanceLoadTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */; };
 		6F3A0D3F1DD1C56C0002C948 /* SKPerformanceUIButtonCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */; };
@@ -140,6 +143,9 @@
 		6F2B38CB1DAB741700D97853 /* SKProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKProgressView.swift; path = Sources/SKProgressView.swift; sourceTree = SOURCE_ROOT; };
 		6F2B38CD1DAB74C100D97853 /* SKStyleUIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleUIProgressView.swift; path = Sources/SKStyleUIProgressView.swift; sourceTree = SOURCE_ROOT; };
 		6F2B38CF1DAB758300D97853 /* SKProgressViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKProgressViewTests.swift; sourceTree = "<group>"; };
+		6F2EE5231EC5EEA3007BEA72 /* SKStyleNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKStyleNavigationBar.swift; sourceTree = "<group>"; };
+		6F2EE5281EC5F74F007BEA72 /* SKNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKNavigationBar.swift; path = Sources/SKNavigationBar.swift; sourceTree = SOURCE_ROOT; };
+		6F2EE52A1EC5F831007BEA72 /* SKNavigationBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNavigationBarTests.swift; sourceTree = "<group>"; };
 		6F33F9DC1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceStyleLoad.swift; sourceTree = "<group>"; };
 		6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = performanceLoadTest.json; sourceTree = "<group>"; };
 		6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonCommon.swift; sourceTree = "<group>"; };
@@ -282,6 +288,14 @@
 			name = "Progress View";
 			sourceTree = "<group>";
 		};
+		6F2EE5271EC5F725007BEA72 /* Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				6F2EE5281EC5F74F007BEA72 /* SKNavigationBar.swift */,
+			);
+			name = "Navigation Bar";
+			sourceTree = "<group>";
+		};
 		6F7DD60D1DF6F2B4008C1E57 /* Activity Indicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +333,7 @@
 				6FAC21B21DA3903200A81748 /* SKStyleUITextView.swift */,
 				6F8821DB1DF69EFD00C815FE /* SKStyleUIActivityIndicator.swift */,
 				874C639E1DFD4C89007DFFD1 /* SKStyleUITabBar.swift */,
+				6F2EE5231EC5EEA3007BEA72 /* SKStyleNavigationBar.swift */,
 			);
 			name = "UI Elements Extensions";
 			sourceTree = "<group>";
@@ -373,6 +388,7 @@
 				87A501A11D9F9C57007CA1EC /* SKUnderlinePatternStyleTests.swift */,
 				87A501A21D9F9C57007CA1EC /* SKUnderlineStyleTests.swift */,
 				87A501A31D9F9C57007CA1EC /* SKViewTests.swift */,
+				6F2EE52A1EC5F831007BEA72 /* SKNavigationBarTests.swift */,
 				87A36B011DCF423E0032B355 /* SKStylePublicInterfaceTests.swift */,
 				87373FAA1DD18D9F005BAB90 /* SKStyleFlags.swift */,
 				6F2B38C81DAB71BD00D97853 /* SKSliderTests.swift */,
@@ -546,6 +562,7 @@
 				6F2B38C31DAB6FD400D97853 /* Slider */,
 				6F2B38CA1DAB73F100D97853 /* Progress View */,
 				6F7DD60D1DF6F2B4008C1E57 /* Activity Indicator */,
+				6F2EE5271EC5F725007BEA72 /* Navigation Bar */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -793,10 +810,12 @@
 				87A501821D9F9B91007CA1EC /* SKTextField.swift in Sources */,
 				874C639F1DFD4C89007DFFD1 /* SKStyleUITabBar.swift in Sources */,
 				87A501761D9F9B91007CA1EC /* SKImageView.swift in Sources */,
+				6F2EE5241EC5EEA3007BEA72 /* SKStyleNavigationBar.swift in Sources */,
 				87A501731D9F9B91007CA1EC /* SKDeviceCondition.swift in Sources */,
 				6FAC21B11DA38DA700A81748 /* SKStyleUITextField.swift in Sources */,
 				6F2B38CC1DAB741700D97853 /* SKProgressView.swift in Sources */,
 				8733DA981DA3659C0045A12B /* SKStyleUIView.swift in Sources */,
+				6F2EE5291EC5F74F007BEA72 /* SKNavigationBar.swift in Sources */,
 				6F011A841E2DF8C800C3D4A5 /* SKScreenCondition.swift in Sources */,
 				87A5018A1D9F9B91007CA1EC /* StyleKitPublicInterface.swift in Sources */,
 			);
@@ -835,6 +854,7 @@
 				87A501B41D9F9C57007CA1EC /* SKButtonTests.swift in Sources */,
 				87D899491DCBC3A700DD6E97 /* SKPerformanceUILabelAdvancedTests.swift in Sources */,
 				87A501BF1D9F9C57007CA1EC /* SKUnderlinePatternStyleTests.swift in Sources */,
+				6F2EE52B1EC5F831007BEA72 /* SKNavigationBarTests.swift in Sources */,
 				87A501CA1D9F9C57007CA1EC /* TestHelpers.swift in Sources */,
 				6FA2FE121DC9DDAD004C3A6A /* SKPerformanceUIViewExceptShadowTests.swift in Sources */,
 				87A501BD1D9F9C57007CA1EC /* SKSwitchTests.swift in Sources */,

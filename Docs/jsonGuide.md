@@ -188,6 +188,11 @@ Bar tint color, string representing color in hex format: `#RRGGBB` or `#AARRGGBB
 ### unselectedItemTintColor
 Unselected items in this tab bar will be tinted with this color (iOS 10+)
 
+## UINavigationBar
+
+### isTranslucent
+isTranslucent property of navigation bar (0 or 1)
+
 ## UISwitch
 
 ### onTintColor

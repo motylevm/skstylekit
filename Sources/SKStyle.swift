@@ -46,6 +46,10 @@ open class SKStyle: NSObject {
         return (source[key] as? NSNumber).map({ CGFloat($0) })
     }
     
+    open func boolValue(forKey key: String) -> Bool? {
+        return (source[key] as? NSNumber)?.boolValue
+    }
+    
     open func stringValue(forKey key: String) -> String? {
         return source[key] as? String
     }

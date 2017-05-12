@@ -62,7 +62,14 @@ func checkViewStyle(_ view: UIView) {
 func checkStringStyle(_ attributedText: NSAttributedString?, aligmentCheck: Bool = true) {
     
     var effectiveRange: NSRange = NSRange()
+    
     let attributes = attributedText?.attributes(at: 0, effectiveRange: &effectiveRange)
+    XCTAssertTrue(NSEqualRanges(NSMakeRange(0, 9), effectiveRange))
+    checkStringStyle(attributes: attributes, aligmentCheck: aligmentCheck)
+}
+
+func checkStringStyle(attributes: [String: Any]?, aligmentCheck: Bool = true) {
+    
     let pargraphStyle = attributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle
 
     guard let font = attributes?[NSFontAttributeName] as? UIFont else {
@@ -76,7 +83,6 @@ func checkStringStyle(_ attributedText: NSAttributedString?, aligmentCheck: Bool
     XCTAssertNotNil(pargraphStyle)
     XCTAssertTrue(isBold)
     
-    XCTAssertTrue(NSEqualRanges(NSMakeRange(0, 9), effectiveRange))
     XCTAssertEqual(font.pointSize, 21)
     XCTAssertEqual(attributes?[NSForegroundColorAttributeName] as? UIColor, UIColor.green)
     XCTAssertEqual((attributes?[NSKernAttributeName] as? NSNumber)?.floatValue, 0.1)
