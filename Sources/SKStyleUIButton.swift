@@ -34,7 +34,11 @@ public extension SKStyle {
             StyleKit.log("Style kit warning: textAlignment have no effect on UIButton, use contentHorizontalAlignment instead", onlyOnce: true)
         }
         
-        guard flags & labelAllFlags != 0 else {
+        if !checkFlag(flagLabelWasSet) {
+            setLabelFlags()
+        }
+        
+        guard checkFlag(flagLabelAny) else {
             
             button?.sk_setTitleWithoutStyleApplication(title, forState: state)
             return

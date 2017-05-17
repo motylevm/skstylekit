@@ -27,8 +27,13 @@ public extension SKStyle {
         
         apply(view: control)
         
-        guard flags & controllAllFlags != 0 else { return }
+        if !checkFlag(flagControllWasSet) {
+            setControlFlags()
+        }
         
+        guard checkFlag(flagControllAny) else { return }
+        
+       
         if let contentVerticalAlignment = contentVerticalAlignment {
             control?.contentVerticalAlignment = contentVerticalAlignment
         }
@@ -41,5 +46,15 @@ public extension SKStyle {
     // MARK: - Check Style
     func checkIfContainsControlStyle() -> Bool {
         return contentVerticalAlignment != nil || contentHorizontalAlignment != nil
+    }
+    
+    // MARK: - Set flags
+    private func setControlFlags() {
+        
+        if contentVerticalAlignment != nil || contentHorizontalAlignment != nil {
+            setFlag(flagControllAny)
+        }
+
+        setFlag(flagControllWasSet)
     }
 }

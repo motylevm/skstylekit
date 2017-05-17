@@ -9,66 +9,34 @@
 import Foundation
 
 // UIView bit flags
-let viewCommonFlag = 1 << 0
-let viewBorderFlag = 1 << 1
-let viewColorFlag  = 1 << 2
-let viewShadowFlag = 1 << 3
-let viewAllFlags = viewCommonFlag | viewBorderFlag | viewColorFlag | viewShadowFlag
-
-// UILabel bit flags
-let labelCommonFlag = 1 << 4
-let labelAdvancedFlag = 1 << 5
-let labelAllFlags = labelCommonFlag | labelAdvancedFlag
+let flagViewCommon       = 1 << 0
+let flagViewBorder       = 1 << 1
+let flagViewColor        = 1 << 2
+let flagViewShadow       = 1 << 3
+let flagViewAny          = flagViewCommon | flagViewBorder | flagViewColor | flagViewShadow
+let flagViewWasSet       = 1 << 4
 
 // UIControl bit flags
-let controllAllFlags = 1 << 6
+let flagControllAny      = 1 << 5
+let flagControllWasSet   = 1 << 6
+
+// UILabel bit flags
+let flagLabelCommon      = 1 << 7
+let flagLabelAdvanced    = 1 << 8
+let flagLabelAny         = flagLabelCommon | flagLabelAdvanced
+let flagLabelWasSet      = 1 << 9
+
 
 extension SKStyle {
     
     // MARK: - Getting flags
-    func getFlags() -> Int {
-        return getViewFlags() | getLabelFlags() | getControlFlags()
-    }
-
-    private func getViewFlags() -> Int {
-        
-        var result = 0
-        
-        if checkIfContainsViewCommonStyle() {
-            result = result | viewCommonFlag
-        }
-        
-        if checkIfContainsViewBorderStyle() {
-            result = result | viewBorderFlag
-        }
-        
-        if checkIfContainsViewColorStyle() {
-            result = result | viewColorFlag
-        }
-        
-        if checkIfContainsViewShadowStyle() {
-            result = result | viewShadowFlag
-        }
-        
-        return result
+    @inline(__always)
+    func checkFlag(_ flag: Int) -> Bool {
+        return flags & flag != 0
     }
     
-    private func getLabelFlags() -> Int {
-        
-        var result = 0
-        
-        if checkIfContainsLabelCommonStyle() {
-            result = result | labelCommonFlag
-        }
-        
-        if checkIfContainsLabelAdvancedStyle() {
-            result = result | labelAdvancedFlag
-        }
-        
-        return result
-    }
-    
-    private func getControlFlags() -> Int {
-        return checkIfContainsControlStyle() ? controllAllFlags : 0
+    @inline(__always)
+    func setFlag(_ flag: Int) {
+        flags = flags | flag
     }
 }

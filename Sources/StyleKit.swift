@@ -65,10 +65,6 @@ public class StyleKit: NSObject {
         for (_, style) in styles {
             populateParams(inStyle: style)
         }
-        
-        for (_, style) in styles {
-            style.updateSourceFlags()
-        }
     }
     
     private func populateParents(inStyle style: SKStyle) {

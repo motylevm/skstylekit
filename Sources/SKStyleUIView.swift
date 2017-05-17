@@ -24,12 +24,16 @@ public extension SKStyle {
     
     // MARK: - UIView
     public func apply(view: UIView?) {
-
-        guard flags & viewAllFlags != 0 else { return }
+        
+        if !checkFlag(flagViewWasSet) {
+            setViewFlags()
+        }
+        
+        guard checkFlag(flagViewAny) else { return }
 
         // Common
-        if flags & viewCommonFlag != 0 {
-            
+        if checkFlag(flagViewCommon) {
+        
             if let alpha = alpha {
                 view?.alpha = alpha
             }
@@ -40,7 +44,7 @@ public extension SKStyle {
         }
         
         // Border
-        if flags & viewBorderFlag != 0 {
+        if checkFlag(flagViewBorder) {
             
             if let borderWidth = borderWidth {
                 view?.layer.borderWidth = borderWidth
@@ -52,7 +56,7 @@ public extension SKStyle {
         }
 
         // Colors
-        if flags & viewColorFlag != 0 {
+        if checkFlag(flagViewBorder) {
             
             if let backgroundColor = backgroundColor {
                 view?.backgroundColor = backgroundColor
@@ -64,7 +68,7 @@ public extension SKStyle {
         }
         
         // Shadow
-        if flags & viewShadowFlag != 0 {
+        if checkFlag(flagViewShadow) {
             
             if let shadowRadius = shadowRadius {
                 view?.layer.shadowRadius = shadowRadius
@@ -84,20 +88,25 @@ public extension SKStyle {
         }
     }
     
-    // MARK: - Check Style
-    func checkIfContainsViewCommonStyle() -> Bool {
-        return alpha != nil || cornerRadius != nil
-    }
-    
-    func checkIfContainsViewBorderStyle() -> Bool {
-        return borderWidth != nil || borderColor != nil
-    }
-    
-    func checkIfContainsViewColorStyle() -> Bool {
-        return backgroundColor != nil || tintColor != nil
-    }
-    
-    func checkIfContainsViewShadowStyle() -> Bool {
-        return shadowRadius != nil || shadowOffset != nil || shadowColor != nil || shadowOpacity != nil
+    // MARK: - Set flags
+    func setViewFlags() {
+        
+        if alpha != nil || cornerRadius != nil {
+            setFlag(flagViewCommon)
+        }
+        
+        if borderWidth != nil || borderColor != nil {
+            setFlag(flagViewBorder)
+        }
+        
+        if backgroundColor != nil || tintColor != nil {
+            setFlag(flagViewColor)
+        }
+        
+        if shadowRadius != nil || shadowOffset != nil || shadowColor != nil || shadowOpacity != nil {
+            setFlag(flagViewShadow)
+        }
+        
+        setFlag(flagViewWasSet)
     }
 }

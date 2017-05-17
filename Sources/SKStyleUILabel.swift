@@ -27,14 +27,18 @@ public extension SKStyle {
         
         apply(view: label)
         
-        guard flags & labelAllFlags != 0 else {
+        if !checkFlag(flagLabelWasSet) {
+            setLabelFlags()
+        }
+        
+        guard checkFlag(flagLabelAny) else {
             
             label?.sk_setTextWithoutStyleApplication(text)
             return
         }
         
         // Set style using attributed string
-        if flags & labelAdvancedFlag != 0 {
+        if checkFlag(flagLabelAdvanced) {
             
             label?.attributedText = StyleKit.string(withStyle: self,
                                                     string: text,
@@ -48,7 +52,7 @@ public extension SKStyle {
         }
         
         // Set style using label properties only (2 times faster!)
-        if flags & labelCommonFlag != 0 {
+        if checkFlag(flagLabelCommon) {
             
             if let fontColor = fontColor {
                 label?.textColor = fontColor
@@ -66,11 +70,17 @@ public extension SKStyle {
         }
     }
     
-    func checkIfContainsLabelCommonStyle() -> Bool {
-        return fontColor != nil || textAlignment != nil || font() != nil
-    }
-    
-    func checkIfContainsLabelAdvancedStyle() -> Bool {
-        return fontKern != nil || textUnderline != nil || paragraphStyle() != nil || textStrikethrough != nil || textUnderline != nil
+    // MARK: - Set flags
+    func setLabelFlags() {
+        
+        if fontColor != nil || textAlignment != nil || font() != nil {
+            setFlag(flagLabelCommon)
+        }
+        
+        if fontKern != nil || textUnderline != nil || paragraphStyle() != nil || textStrikethrough != nil || textUnderline != nil {
+            setFlag(flagLabelAdvanced)
+        }
+
+        setFlag(flagLabelWasSet)
     }
 }

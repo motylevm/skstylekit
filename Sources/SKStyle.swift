@@ -28,7 +28,7 @@ open class SKStyle: NSObject {
     public private(set) var aliases: [String]?
     private(set) var isParentsPopulated: Bool = false
     private(set) var isParamsPopulated: Bool = false
-    private(set) var flags: Int = 0
+    var flags: Int = 0
 
     // MARK: - Init
     public init(source: [String: Any], name: String) {
@@ -37,8 +37,6 @@ open class SKStyle: NSObject {
         self.name = name
         self.source = source
         self.aliases = source[aliasesKey] as? [String]
-        
-        flags = getFlags()
     }
     
     // MARK: - Properties get
@@ -56,11 +54,6 @@ open class SKStyle: NSObject {
     
     open func colorValue(forKey key: String) -> UIColor? {
         return SKColorCache.color(with: stringValue(forKey: key))
-    }
-    
-    // MARK: - Flags
-    func updateSourceFlags() {
-        flags = getFlags()
     }
     
     // MARK: - Style apply

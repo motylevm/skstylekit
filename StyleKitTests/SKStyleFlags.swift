@@ -34,9 +34,19 @@ class SKStyleFlags: XCTestCase {
         
         // given
         let styles = ["viewStyle", "viewStyleExceptShadow", "viewStyleExceptShadowBorderCorner"].map({ StyleKit.style(withName: $0)! })
-        let expectedFlags = [viewAllFlags, viewAllFlags ^ viewShadowFlag, viewAllFlags ^ viewShadowFlag ^ viewBorderFlag]
+        let expectedFlags = [flagViewAny | flagViewWasSet, flagViewAny | flagViewWasSet ^ flagViewShadow, flagViewAny | flagViewWasSet ^ flagViewShadow ^ flagViewBorder]
         
-        // then
+        // when & then
+        styles.forEach {
+            
+            XCTAssertFalse($0.checkFlag(flagViewWasSet))
+            XCTAssertFalse($0.checkFlag(flagViewAny))
+            
+            $0.apply(view: nil)
+            
+            XCTAssertTrue($0.checkFlag(flagViewWasSet))
+        }
+        
         let flags = styles.map({ $0.flags })
         
         XCTAssertEqual(flags, expectedFlags)
@@ -46,11 +56,20 @@ class SKStyleFlags: XCTestCase {
         
         // given
         let styles = ["labelCommon", "labelAdvanced"].map({ StyleKit.style(withName: $0)! })
-        let expectedFlags = [labelCommonFlag, labelAllFlags]
+        let expectedFlags = [flagLabelCommon | flagLabelWasSet | flagViewWasSet, flagLabelAdvanced | flagLabelCommon | flagLabelWasSet | flagViewWasSet]
         
-        // then
+        // when & then
+        styles.forEach {
+            
+            XCTAssertFalse($0.checkFlag(flagLabelWasSet))
+            XCTAssertFalse($0.checkFlag(flagLabelAny))
+            
+            $0.apply(label: nil, text: nil)
+            
+            XCTAssertTrue($0.checkFlag(flagLabelWasSet))
+        }
+        
         let flags = styles.map({ $0.flags })
-        
         XCTAssertEqual(flags, expectedFlags)
     }
     
@@ -58,9 +77,14 @@ class SKStyleFlags: XCTestCase {
         
         // given
         let style = StyleKit.style(withName: "controlStyle")!
-        let expectedFlags = controllAllFlags
         
-        // then
-        XCTAssertTrue(style.flags & expectedFlags != 0)
+        // when & then
+        XCTAssertFalse(style.checkFlag(flagControllWasSet))
+        XCTAssertFalse(style.checkFlag(flagControllAny))
+        
+        style.apply(control: nil)
+        
+        XCTAssertTrue(style.checkFlag(flagControllWasSet))
+        XCTAssertTrue(style.checkFlag(flagControllAny))
     }
 }
