@@ -56,7 +56,7 @@ public extension SKStyle {
         }
 
         // Colors
-        if checkFlag(flagViewBorder) {
+        if checkFlag(flagViewColor) {
             
             if let backgroundColor = backgroundColor {
                 view?.backgroundColor = backgroundColor
