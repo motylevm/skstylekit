@@ -158,6 +158,18 @@
             "alpha": 0.5
         },
         
+        "viewStyleExceptColor": {
+          
+            "cornerRadius": 5,
+            "borderWidth": 4,
+            "borderColor": "color.green",
+            "shadowRadius": 3,
+            "shadowOffset": "{3,2}",
+            "shadowColor": "blue",
+            "shadowOpacity": 0.3,
+            "alpha": 0.5
+        },
+        
         "labelCommon": {
             
             "fontColor": "green",

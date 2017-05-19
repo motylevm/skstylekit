@@ -33,8 +33,11 @@ class SKStyleFlags: XCTestCase {
     func testFlagSetView() {
         
         // given
-        let styles = ["viewStyle", "viewStyleExceptShadow", "viewStyleExceptShadowBorderCorner"].map({ StyleKit.style(withName: $0)! })
-        let expectedFlags = [flagViewAny | flagViewWasSet, flagViewAny | flagViewWasSet ^ flagViewShadow, flagViewAny | flagViewWasSet ^ flagViewShadow ^ flagViewBorder]
+        let styles = ["viewStyle", "viewStyleExceptShadow", "viewStyleExceptShadowBorderCorner", "viewStyleExceptColor"].map({ StyleKit.style(withName: $0)! })
+        let expectedFlags = [flagViewAny | flagViewWasSet,
+                             flagViewAny | flagViewWasSet ^ flagViewShadow,
+                             flagViewAny | flagViewWasSet ^ flagViewShadow ^ flagViewBorder,
+                             flagViewAny | flagViewWasSet ^ flagViewColor]
         
         // when & then
         styles.forEach {
