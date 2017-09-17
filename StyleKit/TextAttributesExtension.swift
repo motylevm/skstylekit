@@ -20,30 +20,16 @@
 
 import UIKit
 
-public extension SKStyle {
+extension Dictionary where Key == NSAttributedStringKey {
     
-    public func apply(textField: UITextField?, text: String?) {
+    func sk_toStringKeys() -> [String: Any] {
         
-        apply(control: textField)
+        var result = [String: Any]()
         
-        if let textAttributes = textAttributes(defaultParagraphStyle: textField?.sk_defaultParagraphStyle()) {
-            
-            textField?.defaultTextAttributes = textAttributes.sk_toStringKeys()
+        forEach { (key, value) in
+            result[key.rawValue] = value
         }
-
-        textField?.attributedText = StyleKit.string(withStyle: self, string: text, defaultParagraphStyle: textField?.sk_defaultParagraphStyle())
         
-        if let textAlignment = textAlignment {
-            textField?.textAlignment = textAlignment
-        }
-    }
-    
-    public func apply(textField: UITextField?, placeholderText text: String?) {
-        
-        textField?.attributedPlaceholder = StyleKit.string(withStyle: self, string: text)
-        
-        if let _ = textAlignment {
-            StyleKit.log("Style kit warning: textAlignment have no effect on UITextField placeholder", onlyOnce: true)
-        }
+        return result
     }
 }

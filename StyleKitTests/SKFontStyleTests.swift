@@ -20,15 +20,25 @@
 
 
 import XCTest
+import UIKit
 @testable import SKStyleKit
 
 class SKFontStyleTests: XCTestCase {
     
+    @available(iOS 8.2, *)
     func testWeight() {
         
         // given
-        let styles = ["ultraLight", "Thin", "light", "regULar", "medium", "seMibold", "bold", "heavy", "black", "italic"]
-        let expectedWeights: [CGFloat] = [UIFontWeightUltraLight, UIFontWeightThin, UIFontWeightLight, UIFontWeightRegular, UIFontWeightMedium, UIFontWeightSemibold, UIFontWeightBold, UIFontWeightHeavy, UIFontWeightBlack, -1]
+        let styles = ["ultraLight", "Thin", "light", "regULar", "medium", "seMibold", "bold", "heavy", "black"]
+        let expectedWeights: [UIFont.Weight] = [.ultraLight,
+                                                .thin,
+                                                .light,
+                                                .regular,
+                                                .medium,
+                                                .semibold,
+                                                .bold,
+                                                .heavy,
+                                                .black]
         
         // when
         let weights = styles.flatMap({ SKFontStyle.from(rawValue: $0)?.weight })
@@ -54,7 +64,14 @@ class SKFontStyleTests: XCTestCase {
             // given
             let styles = ["ultraLight", "Thin", "light", "regULar", "medium", "heavy", "black", "italic", "bold"]
             let fontSize: CGFloat = 15
-            var expectedFonts =  [UIFontWeightUltraLight, UIFontWeightThin, UIFontWeightLight, UIFontWeightRegular, UIFontWeightMedium, UIFontWeightHeavy, UIFontWeightBlack].map({ UIFont.systemFont(ofSize: fontSize, weight: $0) })
+            let expectedWeights: [UIFont.Weight] = [.ultraLight,
+                                                    .thin,
+                                                    .light,
+                                                    .regular,
+                                                    .medium,
+                                                    .heavy,
+                                                    .black]
+            var expectedFonts = expectedWeights.map({ UIFont.systemFont(ofSize: fontSize, weight: $0) })
             expectedFonts.append(UIFont.italicSystemFont(ofSize: fontSize))
             expectedFonts.append(UIFont.boldSystemFont(ofSize: fontSize))
             
@@ -69,7 +86,14 @@ class SKFontStyleTests: XCTestCase {
             // given
             let styles = ["ultraLight", "Thin", "light", "regULar", "medium", "heavy", "black", "italic", "bold"]
             let fontSize: CGFloat = 15
-            var expectedFonts =  [UIFontWeightUltraLight, UIFontWeightThin, UIFontWeightLight, UIFontWeightRegular, UIFontWeightMedium, UIFontWeightHeavy, UIFontWeightBlack].map({ _ in UIFont.systemFont(ofSize: fontSize) })
+            let expectedWeights: [UIFont.Weight] = [.ultraLight,
+                                                    .thin,
+                                                    .light,
+                                                    .regular,
+                                                    .medium,
+                                                    .heavy,
+                                                    .black]
+            var expectedFonts = expectedWeights.map({ _ in UIFont.systemFont(ofSize: fontSize) })
             expectedFonts.append(UIFont.italicSystemFont(ofSize: fontSize))
             expectedFonts.append(UIFont.boldSystemFont(ofSize: fontSize))
             

@@ -34,20 +34,20 @@ enum SKFontStyle: String {
     case italic
     
     @available(iOS 8.2, *)
-    var weight: CGFloat {
+    var weight: UIFont.Weight? {
         
         switch self {
             
-            case .ultraLight: return UIFontWeightUltraLight
-            case .thin: return UIFontWeightThin
-            case .light: return UIFontWeightLight
-            case .regular: return UIFontWeightRegular
-            case .medium: return UIFontWeightMedium
-            case .semibold: return UIFontWeightSemibold
-            case .bold: return UIFontWeightBold
-            case .heavy: return UIFontWeightHeavy
-            case .black: return UIFontWeightBlack
-            case .italic: return -1
+            case .ultraLight: return UIFont.Weight.ultraLight
+            case .thin: return UIFont.Weight.thin
+            case .light: return UIFont.Weight.light
+            case .regular: return UIFont.Weight.regular
+            case .medium: return UIFont.Weight.medium
+            case .semibold: return UIFont.Weight.semibold
+            case .bold: return UIFont.Weight.bold
+            case .heavy: return UIFont.Weight.heavy
+            case .black: return UIFont.Weight.black
+            case .italic: return nil
         }
     }
     
@@ -55,17 +55,20 @@ enum SKFontStyle: String {
         
         switch self {
             
-        case .italic: return UIFont.italicSystemFont(ofSize: fontSize)
-        case .bold: return UIFont.boldSystemFont(ofSize: fontSize)
+            case .italic: return UIFont.italicSystemFont(ofSize: fontSize)
+            case .bold: return UIFont.boldSystemFont(ofSize: fontSize)
             
-        default:
+            default:
             
-            if #available(iOS 8.2, *) {
-                return UIFont.systemFont(ofSize: fontSize, weight: weight)
-            }
-            
-            StyleKit.log("Style kit: System font with style \"\(self)\" is only available on iOS 8.2 or later", onlyOnce: true)
-            return UIFont.systemFont(ofSize: fontSize)
+                if #available(iOS 8.2, *) {
+                    
+                    if let weight = weight {
+                        return UIFont.systemFont(ofSize: fontSize, weight: weight)
+                    }
+                }
+                
+                StyleKit.log("Style kit: System font with style \"\(self)\" is only available on iOS 8.2 or later", onlyOnce: true)
+                return UIFont.systemFont(ofSize: fontSize)
         }
     }
     

@@ -28,8 +28,9 @@ public extension SKStyle {
         
         textView?.attributedText = StyleKit.string(withStyle: self, string: text, defaultParagraphStyle: textView?.sk_defaultParagraphStyle())
         
+
         if let textAttributes = textAttributes() {
-            textView?.typingAttributes = textAttributes
+            textView?.typingAttributes = textAttributes.sk_toStringKeys()
         }
         
         if let textAlignment = textAlignment {

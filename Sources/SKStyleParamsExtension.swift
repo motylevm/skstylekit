@@ -369,24 +369,24 @@ public extension SKStyle {
         return resultIsEmpty ? nil : result
     }
     
-    public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [String: Any]? {
+    public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [NSAttributedStringKey: Any]? {
         
-        var result = [String: Any]()
+        var result = [NSAttributedStringKey: Any]()
         
         if let font = font() {
-            result.updateValue(font, forKey: NSFontAttributeName)
+            result.updateValue(font, forKey: NSAttributedStringKey.font)
         }
         
         if let fontColor = fontColor {
-            result.updateValue(fontColor, forKey: NSForegroundColorAttributeName)
+            result.updateValue(fontColor, forKey: NSAttributedStringKey.foregroundColor)
         }
         
         if let kern = fontKern {
-            result.updateValue(kern, forKey: NSKernAttributeName)
+            result.updateValue(kern, forKey: NSAttributedStringKey.kern)
         }
         
         if let paragraphStyle = paragraphStyle(defaultParagraphStyle: defaultParagraphStyle) {
-            result.updateValue(paragraphStyle, forKey: NSParagraphStyleAttributeName)
+            result.updateValue(paragraphStyle, forKey: NSAttributedStringKey.paragraphStyle)
         }
         
         if let strikethroughStyle = textStrikethrough {
@@ -397,10 +397,10 @@ public extension SKStyle {
                 value.append(strikethroughPatternStyle)
             }
             
-            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSStrikethroughStyleAttributeName)
+            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSAttributedStringKey.strikethroughStyle)
             
             if let textStrikethroughColor = textStrikethroughColor {
-                result.updateValue(textStrikethroughColor, forKey: NSStrikethroughColorAttributeName)
+                result.updateValue(textStrikethroughColor, forKey: NSAttributedStringKey.strikethroughColor)
             }
         }
         
@@ -412,10 +412,10 @@ public extension SKStyle {
                 value.append(underlinePatternStyle)
             }
             
-            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSUnderlineStyleAttributeName)
+            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSAttributedStringKey.underlineStyle)
             
             if let textUnderlineColor = textUnderlineColor {
-                result.updateValue(textUnderlineColor, forKey: NSUnderlineColorAttributeName)
+                result.updateValue(textUnderlineColor, forKey: NSAttributedStringKey.underlineColor)
             }
         }
         
