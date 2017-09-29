@@ -36,9 +36,9 @@ final class SKScreenCondition: SKCondition {
         let matches = screenConditionRegExp.matches(in: string, range: totalRange)
         guard matches.count == 1, let match = matches.first, NSEqualRanges(match.range, totalRange) && match.numberOfRanges == 4 else { return nil }
         
-        guard let relationString = string.sk_substring(with: match.rangeAt(1)) else { return nil }
-        guard let valueString = string.sk_substring(with: match.rangeAt(2)) else { return nil }
-        guard let dimensionString = string.sk_substring(with: match.rangeAt(3)) else { return nil }
+        guard let relationString = string.sk_substring(with: match.range(at: 1)) else { return nil }
+        guard let valueString = string.sk_substring(with: match.range(at: 2)) else { return nil }
+        guard let dimensionString = string.sk_substring(with: match.range(at: 3)) else { return nil }
         
         guard let relation = SKRelation.from(relationString) else { return nil }
         guard let value = Int(valueString) else { return nil }
