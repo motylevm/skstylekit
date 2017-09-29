@@ -147,7 +147,7 @@
 		6F2EE5231EC5EEA3007BEA72 /* SKStyleNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKStyleNavigationBar.swift; path = ../Sources/SKStyleNavigationBar.swift; sourceTree = "<group>"; };
 		6F2EE5281EC5F74F007BEA72 /* SKNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKNavigationBar.swift; path = Sources/SKNavigationBar.swift; sourceTree = SOURCE_ROOT; };
 		6F2EE52A1EC5F831007BEA72 /* SKNavigationBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNavigationBarTests.swift; sourceTree = "<group>"; };
-		6F329BD01F69203400B4D97A /* TextAttributesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttributesExtension.swift; sourceTree = "<group>"; };
+		6F329BD01F69203400B4D97A /* TextAttributesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextAttributesExtension.swift; path = ../Sources/TextAttributesExtension.swift; sourceTree = "<group>"; };
 		6F33F9DC1DD99DDF00A0FC9C /* SKPerformanceStyleLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceStyleLoad.swift; sourceTree = "<group>"; };
 		6F33F9DE1DD99E1300A0FC9C /* performanceLoadTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = performanceLoadTest.json; sourceTree = "<group>"; };
 		6F3A0D391DD1C4780002C948 /* SKPerformanceUIButtonCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformanceUIButtonCommon.swift; sourceTree = "<group>"; };
