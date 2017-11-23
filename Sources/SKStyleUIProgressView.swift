@@ -22,7 +22,12 @@ import UIKit
 
 public extension SKStyle {
     
-    // MARK: - UISlider
+    // MARK: - UIProgressView -
+    /**
+        Applies style to a progress view
+     
+        - parameter progress: Progress view to apply style to
+    */
     public func apply(progress: UIProgressView?) {
         
         apply(view: progress)

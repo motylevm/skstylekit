@@ -27,23 +27,42 @@ import Foundation
     public var sources: [SKStyleKitSource] = []
     
     // MARK: - Source -
+    /**
+        Adds main bundle as styles search location to configuration
+    */
     public func addMainSource() {
         sources.append(SKStyleKitSource.main())
     }
     
+    /**
+        Adds default styles to configuration
+    */
     public func addDefaultSource() {
         sources.append(SKStyleKitSource.styleKit())
     }
     
+    /**
+        Adds file source for styles to configuration
+     
+        - parameter path: JSON file path
+    */
     public func addFileSource(path: String) {
         sources.append(SKStyleKitSource.file(path, zIndex: 0))
     }
     
+    /**
+        Adds bundle source for styles to configuration
+     
+        - parameter bundle: Bundle to search style files in
+    */
     public func addBundleSource(bundle: Bundle) {
         sources.append(SKStyleKitSource.bundle(bundle, zIndex: 0))
     }
     
-    // MARK: - Factory - 
+    // MARK: - Factory -
+    /**
+        Default configuration factory method
+    */
     public class func defaultConfiguration() -> StyleKitConfiguration {
     
         let result = StyleKitConfiguration()

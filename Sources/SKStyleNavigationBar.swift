@@ -22,6 +22,12 @@ import UIKit
 
 public extension SKStyle {
     
+    // MARK: - UITabBar -
+    /**
+        Applies style to a navigation bar
+     
+        - parameter navBar: Navigation bar to apply style to
+    */
     public func apply(navBar: UINavigationBar) {
         
         if let tintColor = tintColor {

@@ -22,7 +22,12 @@ import UIKit
 
 public extension SKStyle {
     
-    // MARK: - UISlider
+    // MARK: - UISlider -
+    /**
+        Applies style to a slider
+     
+        - parameter slider: Slider to apply style to
+    */
     public func apply(slider: UISlider?) {
         
         apply(control: slider)

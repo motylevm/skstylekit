@@ -22,7 +22,12 @@ import UIKit
 
 public extension SKStyle {
     
-    // MARK: - UIControl
+    // MARK: - UIControl -
+    /**
+        Applies style to a control
+     
+        - parameter control: Control view to apply style to
+    */
     public func apply(control: UIControl?) {
         
         apply(view: control)
@@ -43,12 +48,12 @@ public extension SKStyle {
         }
     }
     
-    // MARK: - Check Style
+    // MARK: - Check Style -
     func checkIfContainsControlStyle() -> Bool {
         return contentVerticalAlignment != nil || contentHorizontalAlignment != nil
     }
     
-    // MARK: - Set flags
+    // MARK: - Set flags -
     private func setControlFlags() {
         
         if contentVerticalAlignment != nil || contentHorizontalAlignment != nil {
