@@ -22,7 +22,13 @@ import UIKit
 
 public extension SKStyle {
 
-    // MARK: - UILabel
+    // MARK: - UILabel -
+    /**
+        Applies style to a label
+     
+        - parameter label: Label to apply style to
+        - parameter text: Text to set
+    */
     public func apply(label: UILabel?, text: String?) {
         
         apply(view: label)
@@ -70,7 +76,7 @@ public extension SKStyle {
         }
     }
     
-    // MARK: - Set flags
+    // MARK: - Set flags -
     func setLabelFlags() {
         
         if fontColor != nil || textAlignment != nil || font() != nil {

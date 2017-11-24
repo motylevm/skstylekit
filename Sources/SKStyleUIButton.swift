@@ -22,6 +22,14 @@ import UIKit
 
 public extension SKStyle {
     
+    // MARK: - UIButton -
+    /**
+        Applies style to a button
+     
+        - parameter button: Button view to apply style to
+        - parameter title: Title to set
+        - parameter forState: Control state for which to set style
+    */
     public func apply(button: UIButton?, title: String?, forState state: UIControlState) {
         
         apply(control: button)

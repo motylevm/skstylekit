@@ -22,6 +22,13 @@ import UIKit
 
 public extension SKStyle {
     
+    // MARK: - UITextView -
+    /**
+        Applies style to a text view
+     
+        - parameter textView: Text view to apply style to
+        - parameter text: Text to set
+    */
     public func apply(textView: UITextView?, text: String?) {
         
         apply(view: textView)

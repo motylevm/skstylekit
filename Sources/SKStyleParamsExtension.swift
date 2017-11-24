@@ -267,6 +267,11 @@ public extension SKStyle {
     }
     
     // MARK: - Calculated text attributes
+    /**
+        This method can be used to get UIFont from style (if you need to pass it somewhere)
+
+        - returns: UIFont object or nil if no fontName or fontSize or fontStyle specified
+    */
     public func font() -> UIFont? {
         
         guard fontName != nil || self.fontSize != nil || fontStyle != nil else {
@@ -369,6 +374,13 @@ public extension SKStyle {
         return resultIsEmpty ? nil : result
     }
     
+    /**
+         This method can be used to get text attributes from style (if you need to pass them somewhere)
+     
+         - parameter defaultParagraphStyle: Paragraph style to apply before applying text attributes from style (mainly for internal purposes) (default nil)
+     
+         - returns: Text attributes dictionary
+    */
     public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [NSAttributedStringKey: Any]? {
         
         var result = [NSAttributedStringKey: Any]()

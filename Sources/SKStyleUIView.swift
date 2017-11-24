@@ -22,7 +22,12 @@ import UIKit
 
 public extension SKStyle {
     
-    // MARK: - UIView
+    // MARK: - UIView -
+    /**
+        Applies style to a view
+     
+        - parameter view: View to apply style to
+    */
     public func apply(view: UIView?) {
         
         if !checkFlag(flagViewWasSet) {
@@ -88,7 +93,7 @@ public extension SKStyle {
         }
     }
     
-    // MARK: - Set flags
+    // MARK: - Set flags -
     func setViewFlags() {
         
         if alpha != nil || cornerRadius != nil {

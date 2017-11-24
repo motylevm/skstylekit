@@ -31,7 +31,7 @@ public class StyleKit: NSObject {
     private(set) var configuration: StyleKitConfiguration
     private var onceLoggedMessages: Set<String> = []
 
-    // MARK: - Init
+    // MARK: - Init -
     init(withConfiguration configuration: StyleKitConfiguration) {
         
         self.configuration = configuration
@@ -95,7 +95,7 @@ public class StyleKit: NSObject {
         }
     }
     
-    // MARK: - Init helpers
+    // MARK: - Init helpers -
     func styleSourceProviders() -> [SKStylesSourceProvider] {
         
         let result = configuration.sources.flatMap { $0.getProviders() }
@@ -105,7 +105,7 @@ public class StyleKit: NSObject {
                              }
     }
     
-    // MARK: - Logging
+    // MARK: - Logging -
     class func log(_ message: String, onlyOnce: Bool = false) {
         
         if sharedInstance == nil || sharedInstance?.configuration.suppressLogMessages == false {

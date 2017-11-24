@@ -22,6 +22,12 @@ import UIKit
 
 public extension SKStyle {
     
+    // MARK: - UISwitch -
+    /**
+        Applies style to a switch
+     
+        - parameter switchControl: Switch to apply style to
+    */
     public func apply(switchControl: UISwitch?) {
         
         apply(control: switchControl)

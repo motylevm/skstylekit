@@ -22,6 +22,12 @@ import UIKit
 
 public extension SKStyle {
     
+    // MARK: - UIActivityIndicatorView -
+    /**
+        Applies style to a activity indicator
+     
+        - parameter activityIndicator: Activity indicator to apply style to
+    */
     public func apply(activityIndicator: UIActivityIndicatorView) {
         
         apply(view: activityIndicator)
