@@ -32,7 +32,7 @@ final class SKScreenCondition: SKCondition {
     // MARK: - Init
     init?(string: String) {
         
-        let totalRange = NSRange(location: 0, length: string.characters.count)
+        let totalRange = NSRange(location: 0, length: string.count)
         let matches = screenConditionRegExp.matches(in: string, range: totalRange)
         guard matches.count == 1, let match = matches.first, NSEqualRanges(match.range, totalRange) && match.numberOfRanges == 4 else { return nil }
         

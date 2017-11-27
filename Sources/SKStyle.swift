@@ -41,7 +41,7 @@ open class SKStyle: NSObject {
     
     // MARK: - Properties get
     open func cgFloatValue(forKey key: String) -> CGFloat? {
-        return (source[key] as? NSNumber).map({ CGFloat($0) })
+        return (source[key] as? NSNumber).map({ CGFloat(truncating: $0) })
     }
     
     open func boolValue(forKey key: String) -> Bool? {

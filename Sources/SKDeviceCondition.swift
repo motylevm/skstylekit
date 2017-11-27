@@ -34,7 +34,7 @@ final class SKDeviceCondition: SKCondition {
         if processedString.hasPrefix("!") {
             
             reverse = true
-            processedString = processedString.substring(from: string.index(after: string.startIndex))
+            processedString = String(processedString[string.index(after: string.startIndex)...])
         }
         
         switch processedString {

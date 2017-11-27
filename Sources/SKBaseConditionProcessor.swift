@@ -71,8 +71,8 @@ class SKBaseConditionProcessor: SKConditionProcessor {
         
         if let pos = key.range(of: conditionChar) {
             
-            let param = key.substring(to: pos.lowerBound)
-            let condition = key.substring(from: pos.lowerBound)
+            let param = String(key[..<pos.lowerBound])
+            let condition = String(key[pos.lowerBound...])
             
             let valid = try checkCondition(key: condition)
             return (valid, param)

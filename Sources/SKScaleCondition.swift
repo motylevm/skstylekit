@@ -30,12 +30,12 @@ final class SKScaleCondition: SKCondition {
     init?(string: String) {
         guard string.hasSuffix("x") else { return nil }
   
-        var processedString = string.substring(to: string.index(before: string.endIndex))
-        
+        var processedString = String(string[..<string.index(before: string.endIndex)])
+
         if processedString.hasPrefix("!") {
             
             reverse = true
-            processedString = processedString.substring(from: string.index(after: string.startIndex))
+            processedString = String(processedString[string.index(after: string.startIndex)...])
         }
         
         if let scale = NumberFormatter().number(from: processedString) as? CGFloat {
