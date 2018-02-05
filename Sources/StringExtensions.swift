@@ -30,6 +30,6 @@ extension String {
         
         guard start < end else { return nil }
         
-        return substring(with: start ..< end)
+        return String(self[start..<end])
     }
 }

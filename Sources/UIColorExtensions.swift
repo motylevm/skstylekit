@@ -37,7 +37,7 @@ extension UIColor {
             var result: CUnsignedInt = 0
             
             let range = cString.index(cString.startIndex, offsetBy: cursorIndex) ..< cString.index(cString.startIndex, offsetBy: cursorIndex + 2)
-            let subString = cString.substring(with: range)
+            let subString = String(cString[range])
             
             let success = Scanner(string: subString).scanHexInt32(&result)
             cursorIndex += 2
@@ -46,11 +46,11 @@ extension UIColor {
         }
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substring(from: cString.index(after: cString.startIndex))
+            cString = String(cString[cString.index(after: cString.startIndex)...])
         }
         
         // ARGB
-        if cString.characters.count == 8 {
+        if cString.count == 8 {
             
             if let a = nextDigit(),
                let r = nextDigit(),
@@ -64,7 +64,7 @@ extension UIColor {
         }
         
         // RGB
-        if cString.characters.count == 6 {
+        if cString.count == 6 {
             
             if let r = nextDigit(),
                let g = nextDigit(),
