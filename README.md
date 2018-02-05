@@ -193,12 +193,21 @@ However in this case, you should not set text or attributedText property directl
 
 ## Using Style Kit With Attributed Strings
 
-Styles can also be applied to strings/attributed strings: 
+Styles can also be applied to strings/attributed strings:
+
+```json
+{
+    "header3": {
+        "fontSize": 25,
+        "fontColor": "#7F007F"
+    }
+}
+```
 
 ```swift
 
 let s = "Some string"
-let style = StyleKit.style(withName: "StyleName")
+let style = StyleKit.style(withName: "header3")
 
 SKStyle.string(withStyle: style, string: s) -> NSAttributedString?
 SKStyle.string(withStyle: style, attributedString: NSAttributedString(string: s)) -> NSAttributedString?
