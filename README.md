@@ -2,7 +2,7 @@
 
 <p align="left">
 	<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift_4.0-compatible-4BC51D.svg?style=flat" alt="Swift 4.0 compatible" /></a>
-	<a href="https://cocoapods.org/pods/tablekit"><img src="https://img.shields.io/badge/pod-1.0-blue.svg" alt="CocoaPods compatible" /></a>
+	<a href="https://cocoapods.org/pods/tablekit"><img src="https://img.shields.io/badge/pod-1.1-blue.svg" alt="CocoaPods compatible" /></a>
 	<img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 	<a href="https://raw.githubusercontent.com/motylevm/skstylekit/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
@@ -127,7 +127,7 @@ Then switch to attributes inspector and set style name property:
 
 That's it!
 
-####Note: Styles also can be combined like "firstStyleName+secondStyleName+<...>"
+Note: Styles also can be combined like "firstStyleName+secondStyleName+<...>"
 
 ## Button Example
 
@@ -153,7 +153,7 @@ SKButton has separate styles for differets states. Let's declare them:
 	}
 }
 ```
-####Note: Style for "normal" should set all parameters that going to be changed in other stats' styles
+Note: Style for "normal" should set all parameters that going to be changed in other stats' styles
 
 Then set them in Interface Bilder:
 
@@ -206,10 +206,19 @@ SKStyle.string(withStyle: style, attributedString: NSAttributedString(string: s)
 
 These functions also allow to specify range to apply style like:
 
+```json
+{
+    "header1": {
+        "fontSize": 25,
+        "fontColor": "#7F007F"
+    }
+}
+```
+
 ```swift
 
 let s = "Some string"
-let style = StyleKit.style(withName: "StyleName")
+let style = StyleKit.style(withName: "header1")
 
 SKStyle.string(withStyle: style, string: s, range: NSRange(location: 0, length: 5)) -> NSAttributedString?
 SKStyle.string(withStyle: style, attributedString: NSAttributedString(string: s), range: NSRange(location: 0, length: 8)) -> NSAttributedString?
