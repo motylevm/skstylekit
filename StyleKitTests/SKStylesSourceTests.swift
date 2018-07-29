@@ -39,11 +39,11 @@ class SKStylesSourceTests: XCTestCase {
     func testSort() {
         
         // given
-        let pathes = ["styleZIndexDefault", "styleZIndex10", "styleZIndex20"].flatMap({ Bundle(for: SKStylesSourceTests.self).path(forResource: $0, ofType: "json") })
+        let pathes = ["styleZIndexDefault", "styleZIndex10", "styleZIndex20"].compactMap({ Bundle(for: SKStylesSourceTests.self).path(forResource: $0, ofType: "json") })
         
-        var array = pathes.flatMap({ SKStylesSourceProvider(filePath: $0, sourceType: .other) }) +
-                    pathes.flatMap({ SKStylesSourceProvider(filePath: $0, sourceType: .main) }) +
-                    pathes.flatMap({ SKStylesSourceProvider(filePath: $0, sourceType: .styleKit) })
+        var array = pathes.compactMap({ SKStylesSourceProvider(filePath: $0, sourceType: .other) }) +
+                    pathes.compactMap({ SKStylesSourceProvider(filePath: $0, sourceType: .main) }) +
+                    pathes.compactMap({ SKStylesSourceProvider(filePath: $0, sourceType: .styleKit) })
         
         array.sort(by: { _,_ in arc4random() % 2 == 0 })
         

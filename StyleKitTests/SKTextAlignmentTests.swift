@@ -31,7 +31,7 @@ class SKTextAlignmentTests: XCTestCase {
         let expected: [NSTextAlignment] = [.right, .left, .center, .justified]
         
         // when
-        let ret = styles.flatMap({ SKTextAlignment.from(rawValue: $0)?.alignment })
+        let ret = styles.compactMap({ SKTextAlignment.from(rawValue: $0)?.alignment })
         
         // then
         XCTAssertEqual(expected, ret)

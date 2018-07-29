@@ -58,7 +58,7 @@ class SKConditionFactoryTests: XCTestCase {
         let strs = ["=568h", ">=800w", "!=444h"]
         
         // when
-        let conditions = strs.flatMap { SKBaseConditionFactory().conditionFromString(string: $0) }
+        let conditions = strs.compactMap { SKBaseConditionFactory().conditionFromString(string: $0) }
         
         // then
         XCTAssertEqual(conditions.count, strs.count)

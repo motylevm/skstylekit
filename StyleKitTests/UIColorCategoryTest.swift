@@ -31,7 +31,7 @@ class UIColorCategoryTest: XCTestCase {
         let standartColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 1)
         
         // when
-        let colors = decColors.flatMap { UIColor.sk_Color(fromDecString: $0) }
+        let colors = decColors.compactMap { UIColor.sk_Color(fromDecString: $0) }
         
         // then
         for color in colors {
@@ -46,7 +46,7 @@ class UIColorCategoryTest: XCTestCase {
         let standartColor = UIColor.init(red: 1, green: 1, blue: 0, alpha: 0)
         
         // when
-        let colors = decColors.flatMap { UIColor.sk_Color(fromDecString: $0) }
+        let colors = decColors.compactMap { UIColor.sk_Color(fromDecString: $0) }
         
         // then
         for color in colors {
@@ -144,7 +144,7 @@ class UIColorCategoryTest: XCTestCase {
         let standartColor = UIColor.init(red: 1, green: 0, blue: 1, alpha: 0)
         
         // when
-        let colors = strings.flatMap { UIColor.sk_Color(from: $0) }
+        let colors = strings.compactMap { UIColor.sk_Color(from: $0) }
         
         // then
         for color in colors {

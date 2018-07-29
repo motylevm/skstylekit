@@ -31,7 +31,7 @@ class SKUnderlineStyleTests: XCTestCase {
         let expected: [NSUnderlineStyle] = [.styleNone, .styleSingle, .styleThick, .styleDouble]
         
         // when
-        let ret = styles.flatMap({ SKUnderlineStyle.from(rawValue: $0)?.style })
+        let ret = styles.compactMap({ SKUnderlineStyle.from(rawValue: $0)?.style })
         
         // then
         XCTAssertEqual(expected, ret)

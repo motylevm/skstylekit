@@ -33,7 +33,7 @@ class SKScreenConditionTests: XCTestCase {
         let conditions = ["568h", "!320w", ">=3h", "<=350w"]
         
         // when
-        let result = conditions.flatMap { SKScreenCondition(string: $0) }
+        let result = conditions.compactMap { SKScreenCondition(string: $0) }
         
         // then
         XCTAssertEqual(result.count, conditions.count)
@@ -61,7 +61,7 @@ class SKScreenConditionTests: XCTestCase {
         let conditions = ["==+568h", "!!320w", "><3h", "=>350w", "=350", "40"]
         
         // when
-        let result = conditions.flatMap { SKScreenCondition(string: $0) }
+        let result = conditions.compactMap { SKScreenCondition(string: $0) }
         
         // then
         XCTAssertEqual(result.count, 0)
@@ -78,7 +78,7 @@ class SKScreenConditionTests: XCTestCase {
         let expected = [true, true, true, true, false, false, true, true, false, false]
         
         // when 
-        let result = conditions.flatMap { SKScreenCondition(string: $0)?.check() }
+        let result = conditions.compactMap { SKScreenCondition(string: $0)?.check() }
         
         // then
         XCTAssertEqual(result, expected)

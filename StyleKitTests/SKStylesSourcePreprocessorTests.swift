@@ -40,7 +40,7 @@ class SKBaseConditionProcessorMock2: SKBaseConditionProcessor {
     }
     
     override func checkParamWithCondition(key: String) throws -> (valid: Bool, param: String) {
-        return (true, try super.checkParamWithCondition(key: key).param)
+        return (try checkCondition(key: key), try super.checkParamWithCondition(key: key).param)
     }
 }
 
