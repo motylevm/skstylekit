@@ -180,7 +180,7 @@ open class SKButton: UIButton {
     
     func applyCurrentStyle(includeTextStyle: Bool) {
         
-        let style = StyleKit.style(withStyles: statePriorityChain.filter({ state.contains($0) }).flatMap({ self.style(forState: $0) }))
+        let style = StyleKit.style(withStyles: statePriorityChain.filter({ state.contains($0) }).compactMap({ self.style(forState: $0) }))
         
         if includeTextStyle {
             

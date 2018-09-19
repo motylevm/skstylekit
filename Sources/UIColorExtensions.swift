@@ -84,7 +84,7 @@ extension UIColor {
         
         let components = decString.components(separatedBy: CharacterSet(charactersIn: ",;:-"))
         
-        let numberComponents: [CGFloat] = components.flatMap {
+        let numberComponents: [CGFloat] = components.compactMap {
             
             if let value = Int($0), value <= 255 && value >= 0  {
                 return CGFloat(value) / 255

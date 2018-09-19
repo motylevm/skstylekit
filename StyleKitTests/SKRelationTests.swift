@@ -30,7 +30,7 @@ class SKRelationTests: XCTestCase {
         let expected: [SKRelation] = [.equal, .equal, .equal, .greater, .greaternOrEqual, .less, .lessOrEqual, .notEqual, .notEqual, .notEqual]
         
         // when
-        let result = rawStrings.flatMap { SKRelation.from($0) }
+        let result = rawStrings.compactMap { SKRelation.from($0) }
         
         // then
         XCTAssertEqual(result, expected)
@@ -42,7 +42,7 @@ class SKRelationTests: XCTestCase {
         let rawStrings = ["fsd", "===", "=>", "><"]
         
         // when
-        let result = rawStrings.flatMap { SKRelation.from($0) }
+        let result = rawStrings.compactMap { SKRelation.from($0) }
         
         // then
         XCTAssertEqual(0, result.count)

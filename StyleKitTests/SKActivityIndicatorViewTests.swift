@@ -39,7 +39,7 @@ class SKActivityIndicatorViewTests: XCTestCase {
         activityIndicator.styleName = styleName
         
         // then
-        XCTAssertNotNil(activityIndicator.style)
+        XCTAssertNotNil(activityIndicator.skStyle)
         XCTAssertEqual(activityIndicator.styleName, styleName)
         checkViewStyle(activityIndicator)
         checkActivityIndicatorViewStyle(activityIndicator)
@@ -53,10 +53,10 @@ class SKActivityIndicatorViewTests: XCTestCase {
         let activityIndicator = SKActivityIndicatorView()
         
         // when
-        activityIndicator.style = style
+        activityIndicator.skStyle = style
         
         // then
-        XCTAssertNotNil(activityIndicator.style)
+        XCTAssertNotNil(activityIndicator.skStyle)
         XCTAssertEqual(activityIndicator.styleName, styleName)
         checkViewStyle(activityIndicator)
         checkActivityIndicatorViewStyle(activityIndicator)

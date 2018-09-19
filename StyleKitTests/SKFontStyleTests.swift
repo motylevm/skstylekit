@@ -41,7 +41,7 @@ class SKFontStyleTests: XCTestCase {
                                                 .black]
         
         // when
-        let weights = styles.flatMap({ SKFontStyle.from(rawValue: $0)?.weight })
+        let weights = styles.compactMap({ SKFontStyle.from(rawValue: $0)?.weight })
         
         // then
         XCTAssertEqual(expectedWeights, weights)
@@ -76,7 +76,7 @@ class SKFontStyleTests: XCTestCase {
             expectedFonts.append(UIFont.boldSystemFont(ofSize: fontSize))
             
             // when
-            let fonts = styles.flatMap({ SKFontStyle.from(rawValue: $0)?.systemFont(ofSize: fontSize) })
+            let fonts = styles.compactMap({ SKFontStyle.from(rawValue: $0)?.systemFont(ofSize: fontSize) })
             
             // then
             XCTAssertEqual(fonts, expectedFonts)

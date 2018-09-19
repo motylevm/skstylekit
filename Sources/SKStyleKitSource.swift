@@ -46,12 +46,12 @@ public final class SKStyleKitSource {
             case .bundle(let bundle):
                 
                 guard let bundleFiles = try? FileManager.default.contentsOfDirectory(atPath: bundle.bundlePath) else { return [] }
-                files = bundleFiles.filter({ $0.hasPrefix("style") && $0.hasSuffix(".json") }).flatMap({ bundle.path(forResource: $0, ofType: nil) })
+                files = bundleFiles.filter({ $0.hasPrefix("style") && $0.hasSuffix(".json") }).compactMap({ bundle.path(forResource: $0, ofType: nil) })
                 
             case .file(let path): files = [path]
         }
         
-        return files.flatMap { SKStylesSourceProvider(filePath: $0, sourceType: type, zIndex: zIndex) }
+        return files.compactMap { SKStylesSourceProvider(filePath: $0, sourceType: type, zIndex: zIndex) }
     }
     
     // MARK: - Factory -

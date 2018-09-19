@@ -141,7 +141,7 @@ extension StyleKit: SKStylesProvider {
         let names = name.components(separatedBy: CharacterSet(charactersIn: ",+*;"))
         guard names.count > 1 else { return nil }
         
-        let styleComponents = names.flatMap({ styles[$0] })
+        let styleComponents = names.compactMap({ styles[$0] })
         guard styleComponents.count == names.count else { return nil }
         
         return complexStyle(withStyles: styleComponents, name: name)
