@@ -67,7 +67,7 @@ public extension SKStyle {
     public var shadowOffset: CGSize? {
         
         if let str = stringValue(forKey: #function) {
-            return CGSizeFromString(str)
+            return NSCoder.cgSize(for: str)
         }
         
         return nil
@@ -90,11 +90,11 @@ public extension SKStyle {
     
     // MARK: - [Control] Properties
     
-    public var contentVerticalAlignment: UIControlContentVerticalAlignment? {
+    public var contentVerticalAlignment: UIControl.ContentVerticalAlignment? {
         return SKControlContentVerticalAlignment.from(rawValue: stringValue(forKey: #function))?.alignment
     }
     
-    public var contentHorizontalAlignment: UIControlContentHorizontalAlignment? {
+    public var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment? {
         return SKControlContentHorizontalAlignment.from(rawValue: stringValue(forKey: #function))?.alignment
     }
     
@@ -381,24 +381,24 @@ public extension SKStyle {
      
          - returns: Text attributes dictionary
     */
-    public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [NSAttributedStringKey: Any]? {
+    public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [NSAttributedString.Key: Any]? {
         
-        var result = [NSAttributedStringKey: Any]()
+        var result = [NSAttributedString.Key: Any]()
         
         if let font = font() {
-            result.updateValue(font, forKey: NSAttributedStringKey.font)
+            result.updateValue(font, forKey: NSAttributedString.Key.font)
         }
         
         if let fontColor = fontColor {
-            result.updateValue(fontColor, forKey: NSAttributedStringKey.foregroundColor)
+            result.updateValue(fontColor, forKey: NSAttributedString.Key.foregroundColor)
         }
         
         if let kern = fontKern {
-            result.updateValue(kern, forKey: NSAttributedStringKey.kern)
+            result.updateValue(kern, forKey: NSAttributedString.Key.kern)
         }
         
         if let paragraphStyle = paragraphStyle(defaultParagraphStyle: defaultParagraphStyle) {
-            result.updateValue(paragraphStyle, forKey: NSAttributedStringKey.paragraphStyle)
+            result.updateValue(paragraphStyle, forKey: NSAttributedString.Key.paragraphStyle)
         }
         
         if let strikethroughStyle = textStrikethrough {
@@ -409,10 +409,10 @@ public extension SKStyle {
                 value.append(strikethroughPatternStyle)
             }
             
-            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSAttributedStringKey.strikethroughStyle)
+            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSAttributedString.Key.strikethroughStyle)
             
             if let textStrikethroughColor = textStrikethroughColor {
-                result.updateValue(textStrikethroughColor, forKey: NSAttributedStringKey.strikethroughColor)
+                result.updateValue(textStrikethroughColor, forKey: NSAttributedString.Key.strikethroughColor)
             }
         }
         
@@ -424,10 +424,10 @@ public extension SKStyle {
                 value.append(underlinePatternStyle)
             }
             
-            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSAttributedStringKey.underlineStyle)
+            result.updateValue(value.reduce(0, { $0 | $1.rawValue }), forKey: NSAttributedString.Key.underlineStyle)
             
             if let textUnderlineColor = textUnderlineColor {
-                result.updateValue(textUnderlineColor, forKey: NSAttributedStringKey.underlineColor)
+                result.updateValue(textUnderlineColor, forKey: NSAttributedString.Key.underlineColor)
             }
         }
         

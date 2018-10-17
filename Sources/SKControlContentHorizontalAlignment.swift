@@ -26,7 +26,7 @@ enum SKControlContentHorizontalAlignment: String {
     case right
     case fill
     
-    var alignment: UIControlContentHorizontalAlignment {
+    var alignment: UIControl.ContentHorizontalAlignment {
         
         switch self {
             

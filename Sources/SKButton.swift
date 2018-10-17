@@ -20,7 +20,7 @@
 
 import UIKit
 
-private var statePriorityChain: [UIControlState] = [.normal, .selected, .highlighted, .disabled]
+private var statePriorityChain: [UIControl.State] = [.normal, .selected, .highlighted, .disabled]
 
 open class SKButton: UIButton {
     
@@ -153,11 +153,11 @@ open class SKButton: UIButton {
     }
     
     // MARK: - Style get/set
-    open func style(forState state: UIControlState) -> SKStyle? {
+    open func style(forState state: UIControl.State) -> SKStyle? {
         return styles[state.rawValue]
     }
     
-    open func set(style: SKStyle?, forState state: UIControlState) {
+    open func set(style: SKStyle?, forState state: UIControl.State) {
         
         if let style = style {
             styles.updateValue(style, forKey: state.rawValue)
@@ -194,7 +194,7 @@ open class SKButton: UIButton {
     }
     
     // MARK: - Overridden methods
-    override open func setTitle(_ title: String?, for state: UIControlState) {
+    override open func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: state)
         
         if !suppressStyleOnTextChange {
@@ -202,7 +202,7 @@ open class SKButton: UIButton {
         }
     }
     
-    override open func setAttributedTitle(_ title: NSAttributedString?, for state: UIControlState) {
+    override open func setAttributedTitle(_ title: NSAttributedString?, for state: UIControl.State) {
         super.setAttributedTitle(title, for: state)
         
         hasExternalAttributedText.updateValue(title != nil, forKey: state.rawValue)

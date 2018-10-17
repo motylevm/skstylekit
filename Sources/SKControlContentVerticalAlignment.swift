@@ -27,7 +27,7 @@ enum SKControlContentVerticalAlignment: String {
     case bottom
     case fill
     
-    var alignment: UIControlContentVerticalAlignment {
+    var alignment: UIControl.ContentVerticalAlignment {
         
         switch self {
             

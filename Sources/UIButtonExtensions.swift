@@ -36,7 +36,7 @@ public extension UIButton {
         return result
     }
     
-    func sk_setTitleWithoutStyleApplication(_ title: String?, forState state: UIControlState) {
+    func sk_setTitleWithoutStyleApplication(_ title: String?, forState state: UIControl.State) {
         
         if let skButton = self as? SKButton {
             

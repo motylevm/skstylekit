@@ -30,11 +30,11 @@ public extension SKStyle {
         - parameter title: Title to set
         - parameter forState: Control state for which to set style
     */
-    public func apply(button: UIButton?, title: String?, forState state: UIControlState) {
+    public func apply(button: UIButton?, title: String?, forState state: UIControl.State) {
         
         apply(control: button)
         
-        if button?.buttonType != UIButtonType.custom {
+        if button?.buttonType != UIButton.ButtonType.custom {
             StyleKit.log("Style kit warning: style support for non custom button types is limited, consider changing button type to custom", onlyOnce: true)
         }
         

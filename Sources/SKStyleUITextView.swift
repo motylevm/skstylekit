@@ -37,7 +37,7 @@ public extension SKStyle {
         
 
         if let textAttributes = textAttributes() {
-            textView?.typingAttributes = textAttributes.sk_toStringKeys()
+            textView?.typingAttributes = textAttributes
         }
         
         if let textAlignment = textAlignment {

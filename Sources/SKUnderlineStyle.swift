@@ -31,10 +31,10 @@ enum SKUnderlineStyle: String {
         
         switch self {
             
-            case .none: return .styleNone
-            case .single: return .styleSingle
-            case .thick: return .styleThick
-            case .double: return .styleDouble
+        case .none: return []
+        case .single: return .single
+        case .thick: return .thick
+        case .double: return .double
         }
     }
     

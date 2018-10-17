@@ -32,7 +32,7 @@ enum SKUnderlinePatternStyle: String {
         
         switch self {
             
-            case .solid: return .patternSolid
+            case .solid: return []
             case .dot: return .patternDot
             case .dash: return .patternDash
             case .dashDot: return .patternDashDot

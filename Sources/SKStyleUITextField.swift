@@ -34,8 +34,7 @@ public extension SKStyle {
         apply(control: textField)
         
         if let textAttributes = textAttributes(defaultParagraphStyle: textField?.sk_defaultParagraphStyle()) {
-            
-            textField?.defaultTextAttributes = textAttributes.sk_toStringKeys()
+            textField?.defaultTextAttributes = textAttributes
         }
 
         textField?.attributedText = StyleKit.string(withStyle: self, string: text, defaultParagraphStyle: textField?.sk_defaultParagraphStyle())
