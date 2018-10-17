@@ -28,7 +28,7 @@ class SKUnderlinePatternStyleTests: XCTestCase {
         
         // given
         let styles = ["Solid", "dOt", "dash", "dAshDot", "dashDotDOT"]
-        let expected: [NSUnderlineStyle] = [.patternSolid, .patternDot, .patternDash, .patternDashDot, .patternDashDotDot]
+        let expected: [NSUnderlineStyle] = [[], .patternDot, .patternDash, .patternDashDot, .patternDashDotDot]
         
         // when
         let ret = styles.compactMap({ SKUnderlinePatternStyle.from(rawValue: $0)?.style })

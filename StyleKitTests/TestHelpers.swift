@@ -68,24 +68,24 @@ func checkStringStyle(_ attributedText: NSAttributedString?, aligmentCheck: Bool
     checkStringStyle(attributes: attributes, aligmentCheck: aligmentCheck)
 }
 
-func checkStringStyle(attributes: [NSAttributedStringKey: Any]?, aligmentCheck: Bool = true) {
+func checkStringStyle(attributes: [NSAttributedString.Key: Any]?, aligmentCheck: Bool = true) {
     
-    let pargraphStyle = attributes?[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle
+    let pargraphStyle = attributes?[NSAttributedString.Key.paragraphStyle] as? NSParagraphStyle
 
-    guard let font = attributes?[NSAttributedStringKey.font] as? UIFont else {
+    guard let font = attributes?[NSAttributedString.Key.font] as? UIFont else {
         
         XCTAssert(false)
         return
     }
     
-    let isBold = (font.fontDescriptor.symbolicTraits.rawValue & UIFontDescriptorSymbolicTraits.traitBold.rawValue) != 0
+    let isBold = (font.fontDescriptor.symbolicTraits.rawValue & UIFontDescriptor.SymbolicTraits.traitBold.rawValue) != 0
     
     XCTAssertNotNil(pargraphStyle)
     XCTAssertTrue(isBold)
     
     XCTAssertEqual(font.pointSize, 21)
-    XCTAssertEqual(attributes?[NSAttributedStringKey.foregroundColor] as? UIColor, UIColor.green)
-    XCTAssertEqual((attributes?[NSAttributedStringKey.kern] as? NSNumber)?.floatValue, 0.1)
+    XCTAssertEqual(attributes?[NSAttributedString.Key.foregroundColor] as? UIColor, UIColor.green)
+    XCTAssertEqual((attributes?[NSAttributedString.Key.kern] as? NSNumber)?.floatValue, 0.1)
     XCTAssertEqual(pargraphStyle?.lineSpacing, 15)
     XCTAssertEqual(pargraphStyle?.lineHeightMultiple, 3)
     XCTAssertEqual(pargraphStyle?.minimumLineHeight, 10)
@@ -101,10 +101,10 @@ func checkStringStyle(attributes: [NSAttributedStringKey: Any]?, aligmentCheck: 
     XCTAssertEqual(pargraphStyle?.tailIndent, 8)
     XCTAssertEqual(pargraphStyle?.paragraphSpacingBefore, 7)
     XCTAssertEqual(pargraphStyle?.hyphenationFactor, 1.5)
-    XCTAssertEqual((attributes?[NSAttributedStringKey.underlineStyle] as? NSNumber)?.intValue, NSUnderlineStyle.patternDashDotDot.rawValue | NSUnderlineStyle.styleDouble.rawValue)
-    XCTAssertEqual((attributes?[NSAttributedStringKey.underlineColor] as? UIColor), UIColor.red)
-    XCTAssertEqual((attributes?[NSAttributedStringKey.strikethroughStyle] as? NSNumber)?.intValue, NSUnderlineStyle.patternDashDotDot.rawValue | NSUnderlineStyle.styleDouble.rawValue)
-    XCTAssertEqual((attributes?[NSAttributedStringKey.strikethroughColor] as? UIColor), UIColor.blue)
+    XCTAssertEqual((attributes?[NSAttributedString.Key.underlineStyle] as? NSNumber)?.intValue, NSUnderlineStyle.patternDashDotDot.rawValue | NSUnderlineStyle.double.rawValue)
+    XCTAssertEqual((attributes?[NSAttributedString.Key.underlineColor] as? UIColor), UIColor.red)
+    XCTAssertEqual((attributes?[NSAttributedString.Key.strikethroughStyle] as? NSNumber)?.intValue, NSUnderlineStyle.patternDashDotDot.rawValue | NSUnderlineStyle.double.rawValue)
+    XCTAssertEqual((attributes?[NSAttributedString.Key.strikethroughColor] as? UIColor), UIColor.blue)
 }
 
 func checkActivityIndicatorViewStyle(_ activityIndicatorView: UIActivityIndicatorView?) {
@@ -113,8 +113,8 @@ func checkActivityIndicatorViewStyle(_ activityIndicatorView: UIActivityIndicato
 
 func checkControlStyle(_ control: UIControl?) {
     
-    XCTAssertEqual(control?.contentHorizontalAlignment, UIControlContentHorizontalAlignment.right)
-    XCTAssertEqual(control?.contentVerticalAlignment, UIControlContentVerticalAlignment.top)
+    XCTAssertEqual(control?.contentHorizontalAlignment, UIControl.ContentHorizontalAlignment.right)
+    XCTAssertEqual(control?.contentVerticalAlignment, UIControl.ContentVerticalAlignment.top)
 }
 
 func checkSliderStyle(_ slider: UISlider?) {

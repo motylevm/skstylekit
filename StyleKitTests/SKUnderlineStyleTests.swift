@@ -28,7 +28,7 @@ class SKUnderlineStyleTests: XCTestCase {
         
         // given
         let styles = ["None", "single", "THick", "doublE"]
-        let expected: [NSUnderlineStyle] = [.styleNone, .styleSingle, .styleThick, .styleDouble]
+        let expected: [NSUnderlineStyle] = [[], .single, .thick, .double]
         
         // when
         let ret = styles.compactMap({ SKUnderlineStyle.from(rawValue: $0)?.style })
