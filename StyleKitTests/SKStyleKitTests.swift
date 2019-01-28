@@ -55,4 +55,17 @@ class SKStyleKitTests: XCTestCase {
             XCTAssertTrue(names.contains(style.name))
         }
     }
+    
+    func testAllStylesHasStyle() {
+        
+        // given
+        let names = (1 ... 20).map { "style\($0)" }
+        let expected: [Bool] = (1 ... 20).map { $0 <= 11 ? true : false }
+        
+        // when
+        let exists = names.map { StyleKit.hasStyle(withName: $0) }
+        
+        // then
+        XCTAssertEqual(exists, expected)
+    }
 }

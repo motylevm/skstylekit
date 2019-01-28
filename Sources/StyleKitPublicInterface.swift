@@ -97,6 +97,27 @@ public extension StyleKit {
     }
     
     /**
+         Checks if style exists for given name
+     
+         - parameter withName:
+            Style name (can be short name or name with category(s) prefix
+            Example: "myStyle" or "category1.myStyle"
+     
+         - returns: true if style was found, false otherwise
+     */
+    public class func hasStyle(withName name: String?) -> Bool {
+        guard let name = name else { return false }
+        
+        guard let styleKit = sharedInstance else {
+            
+            log("Style kit is not initialized, call initStyleKit()")
+            return false
+        }
+        
+        return styleKit.style(withName: name) != nil
+    }
+    
+    /**
         Applies style to attributed string
 
         - parameter withStyle: Style to apply
