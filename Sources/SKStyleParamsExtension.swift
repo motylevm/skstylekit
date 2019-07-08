@@ -23,48 +23,48 @@ import UIKit
 public extension SKStyle {
     
     // MARK: - Abstract properties
-    public var color: UIColor? {
+    var color: UIColor? {
         return colorValue(forKey: #function)
     }
     
-    public var size: CGFloat? {
+    var size: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
    
     // MARK: - [View] Properties
     
     /// Background color, can be applied to any View
-    public var backgroundColor: UIColor? {
+    var backgroundColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     /// Cackground radius, can be applied to any View
-    public var cornerRadius: CGFloat? {
+    var cornerRadius: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Border width, can be applied to any View
-    public var borderWidth: CGFloat? {
+    var borderWidth: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Border color, can be applied to any View
-    public var borderColor: UIColor? {
+    var borderColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     /// Alpha, can be applied to any View
-    public var alpha: CGFloat? {
+    var alpha: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Shadow radius, can be applied to any View
-    public var shadowRadius: CGFloat? {
+    var shadowRadius: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Shadow offset, can be applied to any View
-    public var shadowOffset: CGSize? {
+    var shadowOffset: CGSize? {
         
         if let str = stringValue(forKey: #function) {
             return NSCoder.cgSize(for: str)
@@ -74,195 +74,195 @@ public extension SKStyle {
     }
     
     /// Tint color, can be applied to any View
-    public var tintColor: UIColor? {
+    var tintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     /// Shadow color, can be applied to any View
-    public var shadowColor: UIColor? {
+    var shadowColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     /// Shadow opacity, can be applied to any View
-    public var shadowOpacity: CGFloat? {
+    var shadowOpacity: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     // MARK: - [Control] Properties
     
-    public var contentVerticalAlignment: UIControl.ContentVerticalAlignment? {
+    var contentVerticalAlignment: UIControl.ContentVerticalAlignment? {
         return SKControlContentVerticalAlignment.from(rawValue: stringValue(forKey: #function))?.alignment
     }
     
-    public var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment? {
+    var contentHorizontalAlignment: UIControl.ContentHorizontalAlignment? {
         return SKControlContentHorizontalAlignment.from(rawValue: stringValue(forKey: #function))?.alignment
     }
     
     // MARK: - [Slider] Properties
     
-    public var minimumTrackTintColor: UIColor? {
+    var minimumTrackTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
-    public var maximumTrackTintColor: UIColor? {
+    var maximumTrackTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     // MARK: - [Switch] Properties
     
     /// On tint color, can be applied to Switch
-    public var onTintColor: UIColor? {
+    var onTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     /// Thumb tint color, can be applied to Switch
-    public var thumbTintColor: UIColor? {
+    var thumbTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     // MARK: - [Progress View] Properties
     
-    public var progressTintColor: UIColor? {
+    var progressTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
-    public var trackTintColor: UIColor? {
+    var trackTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     // MARK: - [Activity Indicator] Properties
-    public var activityIndicatorColor: UIColor? {
+    var activityIndicatorColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     // MARK: - [Tab Bar] Properties
     
     /// Bar tint color
-    public var barTintColor: UIColor? {
+    var barTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     /// Unselected items in this tab bar will be tinted with this color iOS 10+
-    public var unselectedItemTintColor: UIColor? {
+    var unselectedItemTintColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     // MARK: - [Navigation Bar] Properties 
-    public var isTranslucent: Bool? {
+    var isTranslucent: Bool? {
         return boolValue(forKey: #function)
     }
     
     // MARK: - [Font] Properties
     
     /// Font name, can be applied to text containers (Label, TextField, TextView)
-    public var fontName: String? {
+    var fontName: String? {
         return stringValue(forKey: #function)
     }
     
     /// Font style, can be applied to text containers (Label, TextField, TextView)
-    public var fontStyle: String? {
+    var fontStyle: String? {
         return stringValue(forKey: #function)
     }
     
     /// Font size, can be applied to text containers (Label, TextField, TextView)
-    public var fontSize: CGFloat? {
+    var fontSize: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Font color, can be applied to text containers (Label, TextField, TextView)
-    public var fontColor: UIColor? {
+    var fontColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     /// Font kern, can be applied to text containers (Label, TextField, TextView)
-    public var fontKern: CGFloat? {
+    var fontKern: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Font line spacing, can be applied to text containers (Label, TextField, TextView)
-    public var fontLineSpacing: CGFloat? {
+    var fontLineSpacing: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Font line height multiplier, can be applied to text containers (Label, TextField, TextView)
-    public var fontLineHeightMultiple: CGFloat? {
+    var fontLineHeightMultiple: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Font minimum line height, can be applied to text containers (Label, TextField, TextView)
-    public var fontMinimumLineHeight: CGFloat? {
+    var fontMinimumLineHeight: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Font maximum line height, can be applied to text containers (Label, TextField, TextView)
-    public var fontMaximumLineHeight: CGFloat? {
+    var fontMaximumLineHeight: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     // MARK: - [Text] Properties
     
     /// Text aligment, can be applied to text containers (Label, TextField, TextView)
-    public var textAlignment: NSTextAlignment? {
+    var textAlignment: NSTextAlignment? {
         return SKTextAlignment.from(rawValue: stringValue(forKey: #function))?.alignment
     }
     
     /// Text paragraph spacing, can be applied to text containers (Label, TextField, TextView)
-    public var textParagraphSpacing: CGFloat? {
+    var textParagraphSpacing: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Text paragraph first line head indent, can be applied to text containers (Label, TextField, TextView)
-    public var textParagraphFirstLineHeadIndent: CGFloat? {
+    var textParagraphFirstLineHeadIndent: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Text paragraph head indent, can be applied to text containers (Label, TextField, TextView)
-    public var textParagraphHeadIndent: CGFloat? {
+    var textParagraphHeadIndent: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Text paragraph tail indent, can be applied to text containers (Label, TextField, TextView)
-    public var textParagraphTailIndent: CGFloat? {
+    var textParagraphTailIndent: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Text paragraph spacing before, can be applied to text containers (Label, TextField, TextView)
-    public var textParagraphSpacingBefore: CGFloat? {
+    var textParagraphSpacingBefore: CGFloat? {
         return cgFloatValue(forKey: #function)
     }
     
     /// Text hypernation factor, can be applied to text containers (Label, TextField, TextView)
-    public var textHyphenationFactor: Float? {
+    var textHyphenationFactor: Float? {
         return cgFloatValue(forKey: #function).map({ Float($0) })
     }
     
     /// Text underline style, can be applied to text containers (Label, TextField, TextView)
-    public var textUnderline: NSUnderlineStyle? {
+    var textUnderline: NSUnderlineStyle? {
         return SKUnderlineStyle.from(rawValue: stringValue(forKey: #function))?.style
     }
     
     /// Text underline pattern, can be applied to text containers (Label, TextField, TextView)
-    public var textUnderlinePattern: NSUnderlineStyle? {
+    var textUnderlinePattern: NSUnderlineStyle? {
         return SKUnderlinePatternStyle.from(rawValue: stringValue(forKey: #function))?.style
     }
     
     /// Text underline color
-    public var textUnderlineColor: UIColor? {
+    var textUnderlineColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
     // Text strikethrough style, can be applied to text containers (Label, TextField, TextView)
-    public var textStrikethrough: NSUnderlineStyle? {
+    var textStrikethrough: NSUnderlineStyle? {
         return SKUnderlineStyle.from(rawValue: stringValue(forKey: #function))?.style
     }
     
     /// Text strikethrough pattern, can be applied to text containers (Label, TextField, TextView)
-    public var textStrikethroughPattern: NSUnderlineStyle? {
+    var textStrikethroughPattern: NSUnderlineStyle? {
         return SKUnderlinePatternStyle.from(rawValue: stringValue(forKey: #function))?.style
     }
     
     /// Text strikethrough color
-    public var textStrikethroughColor: UIColor? {
+    var textStrikethroughColor: UIColor? {
         return colorValue(forKey: #function)
     }
     
@@ -272,7 +272,7 @@ public extension SKStyle {
 
         - returns: UIFont object or nil if no fontName or fontSize or fontStyle specified
     */
-    public func font() -> UIFont? {
+    func font() -> UIFont? {
         
         guard fontName != nil || self.fontSize != nil || fontStyle != nil else {
             return nil
@@ -381,7 +381,7 @@ public extension SKStyle {
      
          - returns: Text attributes dictionary
     */
-    public func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [NSAttributedString.Key: Any]? {
+    func textAttributes(defaultParagraphStyle: NSParagraphStyle? = nil) -> [NSAttributedString.Key: Any]? {
         
         var result = [NSAttributedString.Key: Any]()
         

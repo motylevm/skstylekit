@@ -30,7 +30,7 @@ public extension SKStyle {
         - parameter title: Title to set
         - parameter forState: Control state for which to set style
     */
-    public func apply(button: UIButton?, title: String?, forState state: UIControl.State) {
+    func apply(button: UIButton?, title: String?, forState state: UIControl.State) {
         
         apply(control: button)
         

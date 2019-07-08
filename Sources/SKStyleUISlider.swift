@@ -28,7 +28,7 @@ public extension SKStyle {
      
         - parameter slider: Slider to apply style to
     */
-    public func apply(slider: UISlider?) {
+    func apply(slider: UISlider?) {
         
         apply(control: slider)
         

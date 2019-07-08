@@ -28,7 +28,7 @@ public extension SKStyle {
      
         - parameter control: Control view to apply style to
     */
-    public func apply(control: UIControl?) {
+    func apply(control: UIControl?) {
         
         apply(view: control)
         

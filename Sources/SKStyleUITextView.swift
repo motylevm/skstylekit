@@ -29,7 +29,7 @@ public extension SKStyle {
         - parameter textView: Text view to apply style to
         - parameter text: Text to set
     */
-    public func apply(textView: UITextView?, text: String?) {
+    func apply(textView: UITextView?, text: String?) {
         
         apply(view: textView)
         

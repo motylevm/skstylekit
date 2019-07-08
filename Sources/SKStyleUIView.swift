@@ -28,7 +28,7 @@ public extension SKStyle {
      
         - parameter view: View to apply style to
     */
-    public func apply(view: UIView?) {
+    func apply(view: UIView?) {
         
         if !checkFlag(flagViewWasSet) {
             setViewFlags()

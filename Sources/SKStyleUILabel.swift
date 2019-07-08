@@ -29,7 +29,7 @@ public extension SKStyle {
         - parameter label: Label to apply style to
         - parameter text: Text to set
     */
-    public func apply(label: UILabel?, text: String?) {
+    func apply(label: UILabel?, text: String?) {
         
         apply(view: label)
         

@@ -28,7 +28,7 @@ public extension SKStyle {
      
         - parameter progress: Progress view to apply style to
     */
-    public func apply(progress: UIProgressView?) {
+    func apply(progress: UIProgressView?) {
         
         apply(view: progress)
         

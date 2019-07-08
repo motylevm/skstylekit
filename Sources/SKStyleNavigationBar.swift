@@ -28,7 +28,7 @@ public extension SKStyle {
      
         - parameter navBar: Navigation bar to apply style to
     */
-    public func apply(navBar: UINavigationBar) {
+    func apply(navBar: UINavigationBar) {
         
         if let tintColor = tintColor {
             navBar.tintColor = tintColor

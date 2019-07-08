@@ -29,7 +29,7 @@ public extension SKStyle {
         - parameter textField: Text field to apply style to
         - parameter text: Text to set
     */
-    public func apply(textField: UITextField?, text: String?) {
+    func apply(textField: UITextField?, text: String?) {
         
         apply(control: textField)
         
@@ -50,7 +50,7 @@ public extension SKStyle {
         - parameter textField: Text field to apply style to
         - parameter placeholderText: Text to set as a place holder
     */
-    public func apply(textField: UITextField?, placeholderText text: String?) {
+    func apply(textField: UITextField?, placeholderText text: String?) {
         
         textField?.attributedPlaceholder = StyleKit.string(withStyle: self, string: text)
         

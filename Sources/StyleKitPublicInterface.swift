@@ -27,7 +27,7 @@ public extension StyleKit {
     /**
         Initializes style kit with default configuration
     */
-    public class func initStyleKit() {
+    class func initStyleKit() {
         initStyleKit(withConfiguration: StyleKitConfiguration.defaultConfiguration())
     }
     
@@ -36,14 +36,14 @@ public extension StyleKit {
      
         - parameter withConfiguration: Configuration to initialize style kit with
     */
-    public class func initStyleKit(withConfiguration configuration: StyleKitConfiguration) {
+    class func initStyleKit(withConfiguration configuration: StyleKitConfiguration) {
         sharedInstance = StyleKit(withConfiguration: configuration)
     }
     
     /**
         Flag to check style kit current state
     */
-    public class func isInitialized() -> Bool {
+    class func isInitialized() -> Bool {
         return sharedInstance != nil
     }
     
@@ -52,7 +52,7 @@ public extension StyleKit {
 
         - returns: All available styles
     */
-    public class func allStyles() -> [SKStyle]? {
+    class func allStyles() -> [SKStyle]? {
         guard let styles = sharedInstance?.styles else { return nil }
         
         var result = [SKStyle]()
@@ -78,7 +78,7 @@ public extension StyleKit {
      
         - returns: Style for given name or nil
     */
-    public class func style(withName name: String?) -> SKStyle? {
+    class func style(withName name: String?) -> SKStyle? {
         guard let name = name else { return nil }
  
         guard let styleKit = sharedInstance else {
@@ -105,7 +105,7 @@ public extension StyleKit {
      
          - returns: true if style was found, false otherwise
      */
-    public class func hasStyle(withName name: String?) -> Bool {
+    class func hasStyle(withName name: String?) -> Bool {
         guard let name = name else { return false }
         
         guard let styleKit = sharedInstance else {
@@ -127,11 +127,12 @@ public extension StyleKit {
      
         - returns: Styled attributed string
     */
-    public class func string(withStyle style: SKStyle?,
-                             attributedString: NSAttributedString?,
-                             range: NSRange? = nil,
-                             defaultParagraphStyle: NSParagraphStyle? = nil) -> NSAttributedString? {
-        
+    class func string(
+        withStyle style: SKStyle?,
+        attributedString: NSAttributedString?,
+        range: NSRange? = nil,
+        defaultParagraphStyle: NSParagraphStyle? = nil) -> NSAttributedString?
+    {
         return style?.styleString(text: attributedString, range: range, defaultParagraphStyle: defaultParagraphStyle) ?? attributedString
     }
     
@@ -145,11 +146,12 @@ public extension StyleKit {
      
         - returns: Styled attributed string
     */
-    public class func string(withStyle style: SKStyle?,
-                             string: String?,
-                             range: NSRange? = nil,
-                             defaultParagraphStyle: NSParagraphStyle? = nil) -> NSAttributedString? {
-        
+    class func string(
+        withStyle style: SKStyle?,
+        string: String?,
+        range: NSRange? = nil,
+        defaultParagraphStyle: NSParagraphStyle? = nil) -> NSAttributedString?
+    {
         let attributedString = string.map({ NSAttributedString(string: $0) })
         return style?.styleString(text: attributedString, range: range, defaultParagraphStyle: defaultParagraphStyle) ?? attributedString
     }
@@ -161,7 +163,7 @@ public extension StyleKit {
      
         - returns: Single SKStyle object, application of which gives the same result as application of styles from given array (in FIFO order)
     */
-    public class func style(withStyles styles: [SKStyle]) -> SKStyle? {
+    class func style(withStyles styles: [SKStyle]) -> SKStyle? {
         
         guard let styleKit = sharedInstance else {
             
@@ -181,7 +183,7 @@ public extension StyleKit {
      
         - returns: Styled attributed string
     */
-    @objc public class func objc_stringWithStyle(_ style: SKStyle?, attributedString: NSAttributedString?) -> NSAttributedString? {
+    @objc class func objc_stringWithStyle(_ style: SKStyle?, attributedString: NSAttributedString?) -> NSAttributedString? {
         return StyleKit.string(withStyle: style, attributedString: attributedString)
     }
     
@@ -194,7 +196,7 @@ public extension StyleKit {
      
         - returns: Styled attributed string
     */
-    @objc public class func objc_stringWithStyle(_ style: SKStyle?, attributedString: NSAttributedString?, range: NSRange) -> NSAttributedString? {
+    @objc class func objc_stringWithStyle(_ style: SKStyle?, attributedString: NSAttributedString?, range: NSRange) -> NSAttributedString? {
         return StyleKit.string(withStyle: style, attributedString: attributedString, range: range)
     }
     
@@ -208,7 +210,7 @@ public extension StyleKit {
      
         - returns: Styled attributed string
     */
-    @objc public class func objc_stringWithStyle(_ style: SKStyle?, attributedString: NSAttributedString?, range: NSRange, defaultParagraphStyle: NSParagraphStyle?) -> NSAttributedString? {
+    @objc class func objc_stringWithStyle(_ style: SKStyle?, attributedString: NSAttributedString?, range: NSRange, defaultParagraphStyle: NSParagraphStyle?) -> NSAttributedString? {
         return StyleKit.string(withStyle: style, attributedString: attributedString, range: range, defaultParagraphStyle: defaultParagraphStyle)
     }
     
@@ -220,7 +222,7 @@ public extension StyleKit {
      
          - returns: Styled attributed string
     */
-    @objc public class func objc_stringWithStyle(_ style: SKStyle?, string: String?) -> NSAttributedString? {
+    @objc class func objc_stringWithStyle(_ style: SKStyle?, string: String?) -> NSAttributedString? {
         return StyleKit.string(withStyle: style, string: string)
     }
     
@@ -233,7 +235,7 @@ public extension StyleKit {
 
         - returns: Styled attributed string
     */
-    @objc public class func objc_stringWithStyle(_ style: SKStyle?, string: String?, range: NSRange) -> NSAttributedString? {
+    @objc class func objc_stringWithStyle(_ style: SKStyle?, string: String?, range: NSRange) -> NSAttributedString? {
         return StyleKit.string(withStyle: style, string: string, range: range)
     }
     
@@ -247,7 +249,7 @@ public extension StyleKit {
      
         - returns: Styled attributed string
     */
-    @objc public class func objc_stringWithStyle(_ style: SKStyle?, string: String?, range: NSRange, defaultParagraphStyle: NSParagraphStyle) -> NSAttributedString? {
+    @objc class func objc_stringWithStyle(_ style: SKStyle?, string: String?, range: NSRange, defaultParagraphStyle: NSParagraphStyle) -> NSAttributedString? {
         return StyleKit.string(withStyle: style, string: string, range: range, defaultParagraphStyle: defaultParagraphStyle)
     }
 }

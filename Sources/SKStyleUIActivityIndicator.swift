@@ -28,7 +28,7 @@ public extension SKStyle {
      
         - parameter activityIndicator: Activity indicator to apply style to
     */
-    public func apply(activityIndicator: UIActivityIndicatorView) {
+    func apply(activityIndicator: UIActivityIndicatorView) {
         
         apply(view: activityIndicator)
         

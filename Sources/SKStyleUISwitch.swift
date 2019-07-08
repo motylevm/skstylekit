@@ -28,7 +28,7 @@ public extension SKStyle {
      
         - parameter switchControl: Switch to apply style to
     */
-    public func apply(switchControl: UISwitch?) {
+    func apply(switchControl: UISwitch?) {
         
         apply(control: switchControl)
         
